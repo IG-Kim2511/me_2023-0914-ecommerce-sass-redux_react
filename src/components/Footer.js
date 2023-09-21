@@ -41,8 +41,7 @@ const Footer = () => {
       </section>
       <section className='bottom'>
         <div className="left">
-          <span className="logo">Store0914</span>
-          <span className="copyright">with redux</span>
+          Store0914 with redux         
         </div>
         <div className="right">
           <img src='/img/payment.png'/>

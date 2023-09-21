@@ -17,27 +17,31 @@
         justify-content: center;
 
         .item{
-            display: flex;   /* 🦄text 수직정렬 */
-            align-items: center;  /* 🦄text 수직정렬 */
+            /* 🦄text 수직정렬
+              display: flex;  
+              align-items: center;              
+            */
+            display: flex;  
+            align-items: center;  
             font-size: 18px;
         }
 
         .left{
-            flex: 1;
+            flex: 1;    /* 🦄flex:1  */
 
             display: flex;
             align-items: center;
             gap: 25px;
         }
         .center{
-            flex: 1;
+            flex: 1;     /* 🦄flex:1  */
             text-align: center;
 
             font-size: 30px;
             letter-spacing: 2px;
         }
         .right{
-            flex: 1;
+            flex: 1;     /* 🦄flex:1  */
 
             display: flex;
             align-items: center;
@@ -70,13 +74,105 @@
                         color: white;                        
                     }
                 }
+            }
+        }        
+    }
+}
 
 
+// ---------------🍀footer--------------
+.footer{
+    margin: 100px 200px 20px 200px;
+    .top{
+        display: flex;
+        gap: 50px;
+
+        .item{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            // 🦄text-align: justify;
+            text-align: justify;
+            font-size: 14px;
+
+            h1{
+                font-size: 18px;
+                font-weight: 500;
+                color: rgb(68, 67, 67);
+            }
+            span{
+                color: gray;
             }
         }
-
-
-        
+    }
+    
+    .bottom{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 50px;
+        .left{         
+            flex: 1;
+            display: flex;
+            justify-content: center;
+   
+        }
+        .right{
+            flex: 1;
+            display: flex;
+            justify-content: center;
+   
+            img{
+                height: 50px;
+            }
+        }
     }
 
 }
+
+
+
+
+
+
+
+// ---------------🍀navbar--------------
+
+
+
+
+
+
+
+// ---------------🍀navbar--------------
+
+
+
+
+
+
+
+// ---------------🍀navbar--------------
+
+
+
+
+
+
+
+// ---------------🍀navbar--------------
+
+
+
+
+
+
+
+// ---------------🍀navbar--------------
+
+
+
+
+
