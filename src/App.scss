@@ -179,16 +179,87 @@
             border-radius: 50%;
         }
     }
-
 }
 
+// ---------------🍀featuredProducts--------------
+.featuredProducts{
+    margin: 100px 200px;
+
+    .top{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 50px;
+
+        h1{
+            flex: 2;
+            text-transform: capitalize;
+        }
+        p{
+            flex: 3;
+            color: gray;
+        }
+    }
+    .bottom{
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+
+    }
+
+    .card{
+        width: 280px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 50px;
+        
+        .image{
+            width: 100%;
+            height: 400px;
+            overflow: hidden;        /* 🦄 overflow: hidden; 스크롤바 없앰 */
+            position: relative;
+            
+            .mainImg{
+                z-index: 1;
+            }
+
+            &:hover{
+                .secondImg{
+                    z-index: 2;   /* 🦄 hover...z-index변화 */
+                }                
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+            }         
+        }
+
+        // h2{
+        //     font-size: 16px;
+        //     font-weight: 400;
+        // }
+
+        .prices{
+            display: flex;
+            gap: 20px;
+            // h3{
+            //     font-size: 18px;
+            //     font-weight: 500;
+
+            //     &:first-child{
+            //         text-decoration: dashed;
+            //     }
+            // }
+        }
 
 
 
+    }
 
-
-// ---------------🍀navbar--------------
-
+}
 
 
 
