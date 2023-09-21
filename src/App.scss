@@ -1,7 +1,15 @@
+
+// ---------------🍀global--------------
+
+.link{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+// ---------------🍀navbar--------------
 .navbar{
     height: 80px;
-
-    background-color: rgb(197, 197, 193);
     .wrapper{
         padding: 10px 30px;
         display: flex;
@@ -15,15 +23,22 @@
         }
 
         .left{
+            flex: 1;
+
             display: flex;
             align-items: center;
             gap: 25px;
         }
         .center{
+            flex: 1;
+            text-align: center;
+
             font-size: 30px;
             letter-spacing: 2px;
         }
         .right{
+            flex: 1;
+
             display: flex;
             align-items: center;
             gap: 25px;

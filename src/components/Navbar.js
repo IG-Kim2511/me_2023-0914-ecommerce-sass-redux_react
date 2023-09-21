@@ -38,7 +38,7 @@ const Navbar = () => {
                 </div>
             </section>
             <section className="center">
-                <Link className='link' to="/">Store0914 with redux, SASS</Link>
+               { <Link className='link' to="/">Store0914</Link>}
             </section>
             <section className="right">
                 <div className="item">
