@@ -2,12 +2,14 @@ import React from 'react'
 import Slider from '../components/Slider'
 import SliderMUI from '../components/SliderMUI'
 import FeaturedProducts from '../components/FeaturedProducts'
+import Categories from '../components/Categories'
 
 const Home = () => {
   return (
     <div>
       <Slider/> 
       {/* <SliderMUI/> */}
+      <Categories/>
       <FeaturedProducts type="featured"/>
       
 
