@@ -1,10 +1,12 @@
 import React from 'react'
 import Slider from '../components/Slider'
+import SliderMUI from '../components/SliderMUI'
 
 const Home = () => {
   return (
     <div>
-      <Slider/>
+      <Slider/> 
+      {/* <SliderMUI/> */}
 
     </div>
   )
