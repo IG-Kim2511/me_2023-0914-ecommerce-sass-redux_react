@@ -16,11 +16,13 @@ import Home from './pages/Home';
 
 
 
-// 🍀Layout
+// 🍉Layout
 const Layout = () => {
   return (
     <div className="app">
       <Navbar />
+
+      {/* 🍉children👉 <Outlet/> */}
       <Outlet />
       <Footer />
     </div>
@@ -28,6 +30,7 @@ const Layout = () => {
 };
 
 // 🍀router
+// 🍉createBrowserRouter
 const router = createBrowserRouter([
   {
     path: "/",
@@ -53,6 +56,7 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <div>
+    {/* 🍉<RouterProvider router={router} />  */}
       <RouterProvider router={router} /> 
     </div>
   )
