@@ -9,7 +9,7 @@ const Home = () => {
       <Slider/> 
       {/* <SliderMUI/> */}
       <FeaturedProducts type="featured"/>
-      <FeaturedProducts type="trending"/>
+      
 
     </div>
   )

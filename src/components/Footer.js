@@ -41,7 +41,7 @@ const Footer = () => {
       </section>
       <section className='bottom'>
         <div className="left">
-          Store0914 with redux         
+          Store0914 with redux, dummydata   
         </div>
         <div className="right">
           <img src='/img/payment.png'/>

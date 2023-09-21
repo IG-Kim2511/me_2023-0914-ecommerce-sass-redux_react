@@ -16,27 +16,27 @@ const FeaturedProducts = ({type}) => {
         <section className='bottom'>
             {/* {products[0].id} */}
 
-            {products.map((item)=>(
-                // 🦄link to product.js 
-                <Link className='link' to={`/product/${item.id}`}>
-                    <div className="card">
-                        {/* 🦄q: hover하면 이미지가 바뀜.
-                        컨테이너안에 이미지가 2개있어야 함 */}
-                        <section className='image'>
-                            <img src=''/>
-                        </section>
-                        <h2>item.title</h2>
-                        <section className='prices'>
-                            <h3>old price</h3>
-                            <h3>price</h3>
-                        </section>
-                    </div>            
-                </Link>
-            ))}
- 
-        </section>
-
-    
+            {
+                products.map((item)=>(
+                    // 🦄link to product.js 
+                    <Link className='link' to={`/product/${item.id}`}>
+                        <div className="card">
+                            {/* 🦄q: hover하면 이미지가 바뀜.
+                            컨테이너안에 이미지가 2개있어야 함 */}
+                            <section className='image'>
+                                <img src={item.images[0]}/>
+                                <img src={item.images[2]}/>
+                            </section>
+                            <h2>{item.title} <span>(id:{item.id})</span></h2>
+                            <section className='prices'>
+                                <h3>price : {item.price}</h3>
+                                <h3>stock : {item.stock}</h3>
+                            </section>
+                        </div>            
+                    </Link>
+                 ))
+            } 
+        </section>    
     </div>
   )
 }
