@@ -3,7 +3,7 @@ import Filter from "./Filter";
 import ProductList from "./ProductList";
 import products from "../../data";
 
-const App2 = () => {
+const FilterPage = () => {
   const [filteredProducts, setFilteredProducts] = useState(products);
 
   const applyFilters = ({ categories, maxPrice, sortOrder }) => {
@@ -36,4 +36,4 @@ const App2 = () => {
   );
 };
 
-export default App2;
+export default FilterPage;

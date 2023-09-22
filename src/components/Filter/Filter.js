@@ -7,6 +7,7 @@ const Filter = ({ onFilter }) => {
 
   const handleCategoryChange = (e) => {
     const { value, checked } = e.target;
+    
     if (checked) {
       setCategoryFilters((prevFilters) => [...prevFilters, value]);
     } else {
@@ -33,66 +34,66 @@ const Filter = ({ onFilter }) => {
   };
 
   return (
-    <div>
+    <div id="Filter">
       <h2>Filter Products</h2>
-      <div>
-        <h3>Categories</h3>
-        <label>
-          <input
-            type="checkbox"
-            value="smartphones"
-            onChange={handleCategoryChange}
-            checked={categoryFilters.includes("smartphones")}
-          />
-          Smartphones
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            value="laptops"
-            onChange={handleCategoryChange}
-            checked={categoryFilters.includes("laptops")}
-          />
-          Laptops
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            value="fragrances"
-            onChange={handleCategoryChange}
-            checked={categoryFilters.includes("fragrances")}
-          />
-          Fragrances
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            value="skincare"
-            onChange={handleCategoryChange}
-            checked={categoryFilters.includes("skincare")}
-          />
-          Skincare
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            value="groceries"
-            onChange={handleCategoryChange}
-            checked={categoryFilters.includes("groceries")}
-          />
-          Groceries
-        </label>
-        <label>
-          <input
-            type="checkbox"
-            value="home-decoration"
-            onChange={handleCategoryChange}
-            checked={categoryFilters.includes("home-decoration")}
-          />
-          Home Decoration
-        </label>
-      </div>
-      <div>
+      <section>
+          <h3>Categories</h3>
+          <label>
+            <input
+              type="checkbox"
+              value="smartphones"
+              onChange={handleCategoryChange}
+              checked={categoryFilters.includes("smartphones")}
+            />
+            Smartphones
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              value="laptops"
+              onChange={handleCategoryChange}
+              checked={categoryFilters.includes("laptops")}
+            />
+            Laptops
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              value="fragrances"
+              onChange={handleCategoryChange}
+              checked={categoryFilters.includes("fragrances")}
+            />
+            Fragrances
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              value="skincare"
+              onChange={handleCategoryChange}
+              checked={categoryFilters.includes("skincare")}
+            />
+            Skincare
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              value="groceries"
+              onChange={handleCategoryChange}
+              checked={categoryFilters.includes("groceries")}
+            />
+            Groceries
+          </label>
+          <label>
+            <input
+              type="checkbox"
+              value="home-decoration"
+              onChange={handleCategoryChange}
+              checked={categoryFilters.includes("home-decoration")}
+            />
+            Home Decoration
+          </label>
+      </section>
+      <section>
         <h3>Price</h3>
         <input
           type="range"
@@ -102,8 +103,8 @@ const Filter = ({ onFilter }) => {
           onChange={handlePriceChange}
         />
         <p>Max Price: ${priceFilter}</p>
-      </div>
-      <div>
+      </section>
+      <section>
         <h3>Sort Order</h3>
         <label>
           <input
@@ -125,8 +126,8 @@ const Filter = ({ onFilter }) => {
           />
           Descending
         </label>
-      </div>
-      <button onClick={applyFilters}>Apply Filters</button>
+      </section>
+      <button className="myButton" onClick={applyFilters}>Apply Filters</button>
     </div>
   );
 };
