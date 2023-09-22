@@ -23,7 +23,7 @@ const FeaturedProducts = ({type}) => {
                         <div className="card">
                             {/* 🦄q: hover하면 이미지가 바뀜.
                             컨테이너안에 이미지가 2개있어야 함 */}
-                            <section className='image'>
+                            <section className='imageWrap'>
                                 <img src={item.images[0]} className="mainImg"/>
                                 <img src={item.images[2]} className="secondImg"/>
                             </section>
