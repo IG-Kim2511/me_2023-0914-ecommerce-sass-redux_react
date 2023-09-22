@@ -2,16 +2,26 @@ import React from 'react'
 import products from '../data'
 
 const Filter = () => {
+
+    // 🚀404 there are 6 type of category object in data.js.  make input tag by 6type of category
+    const uniqueCategories = Array.from(new Set(products.map(product => product.category)));
+    
+
   return (
     <div id='filter'>
         {/* input checkbox */}
         <section className='filterItem'>
             <h2>Product categories 6 type</h2>
-            <div className="inputItem">
-                <input type="checkbox" id='groceries'/>
-                 {/* 🦄htmlFor */}
-                <label htmlFor='groceries'>groceries</label>            
-            </div>
+
+            {/* 👉404 */}
+            {uniqueCategories.map(category => (
+                <div className="inputItem" key={category}>
+                  <input type="checkbox" id={category} />
+                  {/* 🦄htmlFor */}
+                  <label htmlFor={category}>{category}</label>
+                </div>
+              ))}
+
         </section>
 
         {/* 🦄input type='range' */}
@@ -43,3 +53,10 @@ const Filter = () => {
 }
 
 export default Filter
+
+
+// <div className="inputItem">
+// <input type="checkbox" id='groceries'/>
+//  {/* 🦄htmlFor */}
+// <label htmlFor='groceries'>groceries</label>            
+// </div>
