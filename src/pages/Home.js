@@ -1,7 +1,7 @@
 import React from 'react'
 import Slider from '../components/Slider'
 import SliderMUI from '../components/SliderMUI'
-import FeaturedProducts from '../components/FeaturedProducts'
+import FilteredProducts from '../components/FilteredProducts'
 import Categories from '../components/Categories'
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
       <Slider/> 
       {/* <SliderMUI/> */}
       <Categories/>
-      <FeaturedProducts type="featured"/>
+      <FilteredProducts/>
       
 
     </div>
