@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 const Categories = () => {
   return (
     <div id="categories">
+      <h1>Categories</h1>
       <section class="parent">
         <div class="div1">
           <img src="/img/groceries.jpg" alt=""/>
