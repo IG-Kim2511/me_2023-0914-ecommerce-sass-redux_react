@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { useParams } from 'react-router-dom';
 
 const Products = () => {
-  return (
-    <div id='products'>Products</div>
-  )
-}
+  // Use destructuring to get the "id" parameter from the URL
+  const { id } = useParams();
 
-export default Products
+  return (
+    <div id='product'>Products {id}</div>
+  );
+};
+
+export default Products;
