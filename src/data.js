@@ -1,4 +1,12 @@
-
+ /*
+ 🍀category
+ smartphones
+ laptops
+ fragrances
+ skincare
+ groceries
+ home-decoration
+ */
  const products = [
     {
     "id": 1,

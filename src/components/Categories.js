@@ -4,89 +4,73 @@ import { Link } from "react-router-dom";
 const Categories = () => {
   return (
     <div id="categories">
-        <img src="../assets/home-decoration.jpg"/>
-        <img src="../assets/pexels-model (1).jpg"/>
-      <div className="col">
-        <div className="row">
-          <img
-            src="/img/groceries.jpg"
-            alt=""
-          />
+      <section class="parent">
+        <div class="div1">
+          <img src="/img/groceries.jpg" alt=""/>
           <button>
           {/* 🍀/products/~~~ */}
-            <Link className="link" to="/products/1">
-              Sale
-            </Link>
+            <Link className="link" to="/products/1">groceries</Link>
           </button>
         </div>
-        <div className="row">
-          <img
-            src="/img/fragrances.jpg"
-            alt=""
-          />
-          <button>
-            <Link to="/products/1" className="link">
-              Women
-            </Link>
+        <div class="div2">
+          <img src="/img/fragrances.jpg" alt=""/>
+          <button>          
+            <Link className="link" to="/products/1">fragrances</Link>
           </button>
         </div>
-      </div>
-      <div className="col">
-        <div className="row">
-          {" "}
-          <img
-            src="../assets/home-decoration.jpg"
-            alt=""
-          />
-          <button>
-            <Link to="/products/1" className="link">
-              New Season
-            </Link>
+        <div class="div3">
+          <img src="/img/home-decoration.jpg" alt=""/>
+          <button>          
+            <Link className="link" to="/products/1">home-decoration</Link>
           </button>
         </div>
-      </div>
-      <div className="col col-l">
-        <div className="row">
-          <div className="col">
+        <div class="div4">
+          <img src="/img/laptops.jpg" alt=""/>
+          <button>          
+            <Link className="link" to="/products/1">laptops</Link>
+          </button>
+        </div>
+        <div class="div5">
+          <img src="/img/skincare.jpg" alt=""/>
+          <button>          
+            <Link className="link" to="/products/1">skincare</Link>
+          </button>
+        </div>
+        <div class="div6">
+          <img src="/img/smartphones.jpg" alt=""/>
+          <button>          
+            <Link className="link" to="/products/1">smartphones</Link>
+          </button>
+        </div>
+      </section>
+
+    {/* 🦄flex로 grid처럼 만들기 (grid x) */}
+
+    {/* 👉css
+      .cate2{display: flex;}
+    */}
+      {/* 
+        <main className="cate2">
+          <section className="col">
+            <div className="row">1</div>
+            <div className="row">2</div>
+          </section>
+          <section className="col">
+            <div className="row">3</div>
+          </section>
+          <section className="col col-l">
             <div className="row">
-              <img
-                src="../assets/laptops.jpg"
-                alt=""
-              />
-              <button>
-                <Link to="/products/1" className="link">
-                  Men
-                </Link>
-              </button>
+              <section className="col">
+                <div className="row">4</div>
+              </section>
+              <section className="col">
+                <div className="row">5</div>
+              </section>
             </div>
-          </div>
-          <div className="col">
-            <div className="row">
-              {" "}
-              <img
-                src="../assets/skincare.jpg"
-                alt=""
-              />
-              <button>
-                <Link to="/products/1" className="link">
-                  Accessories
-                </Link>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div className="row">
-          <img
-            src="../assets/smartphones.jpg"
-            alt=""
-          />
-          <button>
-            <Link to="/products/1" className="link">
-              Shoes
-            </Link>
-          </button>
-        </div>
-      </div>
+            <div className="row">6</div>
+          </section>
+        </main> 
+       */}
     </div>
   );
 };
