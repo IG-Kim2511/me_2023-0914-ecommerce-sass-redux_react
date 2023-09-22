@@ -9,10 +9,8 @@ const Home = () => {
     <div>
       <Slider/> 
       {/* <SliderMUI/> */}
-      <Categories/>
-      <FilteredProducts/>
+      <Categories/>  
       
-
     </div>
   )
 }
@@ -20,11 +18,3 @@ const Home = () => {
 export default Home
 
 
-
-// <Slider/>
-// {/* 🦄같은 components props만 다르게해서 여러번 rendering */}
-// <FeaturedProducts type="featured"/>
-// {/* 🦄같은 components props만 다르게해서 여러번 rendering */}
-// <FeaturedProducts type="trending"/>
-// <Categories/>
-// <Contact/>

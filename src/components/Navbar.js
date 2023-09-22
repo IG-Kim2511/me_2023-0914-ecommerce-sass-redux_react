@@ -37,27 +37,7 @@ const Navbar = () => {
                 <div className="item">
                 { <Link className='link' to="/">Store</Link>}                    
                 </div> 
-
-               {/*  <div className="item">
-                    <Link className ="link" to="/products/1">smartphones</Link>
-                </div>
-                <div className="item">
-                    <Link className ="link" to="/products/2">laptops</Link>
-                </div>
-                <div className="item">
-                    <Link className ="link" to="/products/3">fragrances</Link>
-                </div>
-                <div className="item">
-                    <Link className ="link" to="/products/3">skincare</Link>
-                </div>
-                <div className="item">
-                    <Link className ="link" to="/products/3">groceries</Link>
-                </div>
-                <div className="item">
-                    <Link className ="link" to="/products/3">home-decoration</Link>
-                </div> */}
-
-
+                
                 <select onChange={handleCategoryChange}>
                     <option value="">Select a category</option>
                     <option value="smartphones">Smartphones</option>
@@ -106,3 +86,25 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+
+
+
+        //    {/*  <div className="item">
+        //             <Link className ="link" to="/products/1">smartphones</Link>
+        //         </div>
+        //         <div className="item">
+        //             <Link className ="link" to="/products/2">laptops</Link>
+        //         </div>
+        //         <div className="item">
+        //             <Link className ="link" to="/products/3">fragrances</Link>
+        //         </div>
+        //         <div className="item">
+        //             <Link className ="link" to="/products/3">skincare</Link>
+        //         </div>
+        //         <div className="item">
+        //             <Link className ="link" to="/products/3">groceries</Link>
+        //         </div>
+        //         <div className="item">
+        //             <Link className ="link" to="/products/3">home-decoration</Link>
+        //         </div> */}
