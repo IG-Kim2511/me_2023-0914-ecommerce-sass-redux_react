@@ -6,11 +6,11 @@ const ProductList = ({ products }) => {
     <div id="ProductList">
       <h2>ProductList</h2>
 
-      <section className="bottom">
+      <section>
         {products.length === 0 ? (
           <p>No results</p>
         ) : (
-          <ul>
+          <ul className="bottom">
             {products.map((item) => (
 
               // 🦄link to product.js 
