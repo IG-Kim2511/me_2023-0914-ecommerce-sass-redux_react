@@ -22,7 +22,7 @@ const Slider = () => {
   };
 
   return (
-    <div className="slider">    
+    <div id="slider">    
 
       {/*🦄0348 react에서 transition효과 넣기 : image 모두 화면에 구현, style을 jsx html에 넣고, transform에 코드 넣음  */}
       {/*🦄translateX

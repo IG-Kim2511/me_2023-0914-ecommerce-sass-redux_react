@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='footer'>
+    <div id='footer'>
       <section className='top'>
         <div className="item">
           <h1>Categories</h1>

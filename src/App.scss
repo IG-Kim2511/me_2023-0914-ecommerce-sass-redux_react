@@ -8,7 +8,7 @@
 
 
 // ---------------🍀navbar--------------
-.navbar{
+#navbar{
     height: 80px;
     .wrapper{
         padding: 10px 30px;
@@ -81,7 +81,7 @@
 
 
 // ---------------🍀footer--------------
-.footer{
+#footer{
     margin: 100px 200px 20px 200px;
     .top{
         display: flex;
@@ -132,7 +132,7 @@
 }
 
 // ---------------🍀slider--------------
-.slider{
+#slider{
     // height: calc(100vh - 80px); /* 🦄navbar height 80px만큼 뺌 */
     // width: 100vw;
     height: 50vh;
@@ -240,19 +240,27 @@
                 }         
             }
        
-            .title{
-                margin: auto;
-            }
-          
-            .prices{
-                display: flex;
-                gap: 20px;
+            .titleWrapper{
+                background-color: rgb(236, 236, 236);
+                // width: 100%;
+                text-align: center;
 
-                margin: auto;
-           
-             
+                h4{
+                    margin: 5px auto;  
+                }
+                .title{
+                                  
+                }
               
-            }            
+                .prices{
+                    display: flex;
+                    gap: 20px;
+                    justify-content: center;
+    
+               
+                    // margin: auto;    
+                }            
+            }
         }
     }
 
@@ -266,7 +274,7 @@
 
 // ---------------🍀categories--------------
 
-.categories{
+#categories{
     img{
         width: 10%;
     }

@@ -27,10 +27,12 @@ const FeaturedProducts = ({type}) => {
                                 <img src={item.images[0]} className="mainImg"/>
                                 <img src={item.images[2]} className="secondImg"/>
                             </section>
-                            <h4 className='title'>{item.title} <span>(id:{item.id})</span></h4>
-                            <section className='prices'>
-                                <h4>price : {item.price}</h4>
-                                <h4>(stock : {item.stock})</h4>
+                            <section className='titleWrapper'>
+                                <h4 className='title'>{item.title} <span>(id:{item.id})</span></h4>
+                                <div className='prices'>
+                                    <h4>price : {item.price}</h4>
+                                    <h4>(stock : {item.stock})</h4>
+                                </div>
                             </section>
                         </div>            
                     </Link>

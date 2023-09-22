@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Categories = () => {
   return (
-    <div className="categories">
+    <div id="categories">
         <img src="../assets/home-decoration.jpg"/>
         <img src="../assets/pexels-model (1).jpg"/>
       <div className="col">

@@ -15,7 +15,7 @@ const Navbar = () => {
     //   const products = useSelector((state) => state.cart.products);
 
   return (
-    <div className='navbar'>
+    <div id='navbar'>
         <div className="wrapper">
             <section className="left">
                 <div className="item">
@@ -38,7 +38,7 @@ const Navbar = () => {
                 </div>
             </section>
             <section className="center">
-               { <Link className='link' to="/">Store0914</Link>}
+               { <Link className='link' to="/">Store</Link>}
             </section>
             <section className="right">
                 <div className="item">
