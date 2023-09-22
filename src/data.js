@@ -1,5 +1,6 @@
  /*
- 🍀category
+ 🍀category type
+ 
  smartphones
  laptops
  fragrances
