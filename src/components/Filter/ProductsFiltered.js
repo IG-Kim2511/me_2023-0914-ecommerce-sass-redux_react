@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProductList = ({ products }) => {
+const ProductsFiltered = ({ products }) => {
   return (
-    <div id="ProductList">
-      <h2>ProductList</h2>
+    <div id="ProductsFiltered">
+      <h2>Filtered Products</h2>
 
       <section>
         {products.length === 0 ? (
@@ -41,7 +41,7 @@ const ProductList = ({ products }) => {
   );
 };
 
-export default ProductList;
+export default ProductsFiltered;
 
 
 // {products.map((product) => (

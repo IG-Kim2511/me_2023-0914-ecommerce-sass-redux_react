@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Filter from "./Filter";
-import ProductList from "./ProductList";
+import ProductsFiltered from "./ProductsFiltered";
 import products from "../../data";
 
 const FilterPage = () => {
@@ -35,7 +35,7 @@ const FilterPage = () => {
         <Filter onFilter={applyFilters} />      
       </div>
       <div className="right">
-        <ProductList products={filteredProducts} />
+        <ProductsFiltered products={filteredProducts} />
       </div>
       </section>
     </div>
