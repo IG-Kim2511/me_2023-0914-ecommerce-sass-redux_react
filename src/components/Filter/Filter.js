@@ -36,8 +36,8 @@ const Filter = ({ onFilter }) => {
   return (
     <div id="Filter">
       <h2>Filter Products</h2>
-      <section>
-          <h3>Categories</h3>
+      <h3>Categories</h3>
+      <section className="checkboxWrapper">
           <label>
             <input
               type="checkbox"

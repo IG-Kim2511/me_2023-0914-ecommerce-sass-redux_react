@@ -28,10 +28,16 @@ const FilterPage = () => {
   };
 
   return (
-    <div>
-      <h1>Product Filter App</h1>
-      <Filter onFilter={applyFilters} />
-      <ProductList products={filteredProducts} />
+    <div id="FilterPage">
+      
+      <section className="wrapper">
+      <div className="left">
+        <Filter onFilter={applyFilters} />      
+      </div>
+      <div className="right">
+        <ProductList products={filteredProducts} />
+      </div>
+      </section>
     </div>
   );
 };

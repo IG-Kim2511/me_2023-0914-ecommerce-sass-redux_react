@@ -327,6 +327,7 @@ body {
 }
 
 
+
 // ---------------🍀categories--------------
 
 #categories{
@@ -379,8 +380,105 @@ body {
 }
 
 
-// ---------------🍀  --------------
+// ---------------🍀 FilterPage --------------
+#FilterPage{
+    .wrapper{
+        display: flex;
+        
+        .left{
+            flex:1;    
+        }
+        .right{
+            flex:2;
 
+        }
+    }
+
+}
+
+// ---------------🍀 Filter--------------
+#Filter{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+    .checkboxWrapper{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        
+        label{
+            // padding: 5px;
+        }
+    }
+
+}
+// ---------------🍀 ProductList--------------
+#ProductList{    
+    // margin: 100px 200px;
+    padding-top: 50px;
+    .bottom{    
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px; 
+
+        // ---card----
+      .card{
+            width: 280px;
+            display: flex;
+            flex-direction: column;    
+
+            border: 1px solid gray;
+            border-radius: 4px;
+            
+            .imageWrap{
+                width: 100%;
+                height: 400px;
+                overflow: hidden;        /* 🦄 overflow: hidden; 스크롤바 없앰 */
+                position: relative;
+                
+                .mainImg{
+                    z-index: 1;
+                }
+
+                &:hover{
+                    .secondImg{
+                        z-index: 2;   /* 🦄 hover...z-index변화 */
+                    }                
+                }
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    position: absolute;
+                }         
+            }
+       
+            .titleWrapper{
+                background-color: rgb(236, 236, 236);
+                // width: 100%;
+                text-align: center;
+
+                h4{
+                    margin: 5px auto;  
+                }
+                .title{
+                                  
+                }
+              
+                .prices{
+                    display: flex;
+                    gap: 20px;
+                    justify-content: center;
+    
+               
+                    // margin: auto;    
+                }            
+            }
+        }
+    }
+}
 
 
 
