@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import products from "../data";
-import FilteredProducts from "./FilteredProducts";
+import CategoryProducts from "./CategoryProducts";
 
 const FilterMe = () => {
   // 🚀404 there are 6 type of category object in data.js.  make input tag by 6type of category
@@ -107,7 +107,7 @@ const FilterMe = () => {
         </section>
       </main>
       <main className="right">
-        <FilteredProducts  category={selectedSubCats} maxPrice={maxPrice}  sort={sort}  />
+        <CategoryProducts  category={selectedSubCats} maxPrice={maxPrice}  sort={sort}  />
       </main>
     </div>
   );

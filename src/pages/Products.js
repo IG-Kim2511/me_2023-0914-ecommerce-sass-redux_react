@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import FilteredProducts from '../components/FilteredProducts';
+import CategoryProducts from '../components/CategoryProducts';
 
 const Products = () => {
   // Use destructuring to get the "id" parameter from the URL
@@ -9,7 +9,7 @@ const Products = () => {
   return (
     <div id='product'>
 
-      <FilteredProducts category={id}/>
+      <CategoryProducts category={id}/>
 
 
     </div>

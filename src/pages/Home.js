@@ -1,7 +1,7 @@
 import React from 'react'
 import Slider from '../components/Slider'
 import SliderMUI from '../components/SliderMUI'
-import FilteredProducts from '../components/FilteredProducts'
+import CategoryProducts from '../components/CategoryProducts'
 import Categories from '../components/Categories'
 
 

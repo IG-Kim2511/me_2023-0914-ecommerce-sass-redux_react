@@ -3,21 +3,21 @@ import products from '../data'
 import { Link } from 'react-router-dom'
 
 
-const FilteredProducts = ({category}) => {
+const CategoryProducts = ({category}) => {
     console.log(products)
 
     // 🦄filter category rendering
-    const filteredProducts = products.filter((product) => product.category === category);
+    const CategoryProducts = products.filter((product) => product.category === category);
 
   return (
-    <div className="FilteredProducts">
+    <div className="CategoryProducts">
         <section className='top'>
             <h1>{category} products</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga adipisci aliquid dolorum veniam modi architecto culpa, impedit, quas maiores vitae asperiores distinctio tenetur minus ipsa ducimus eum quae itaque porro?</p>
         </section>
 
         <section className='bottom'>
-            {filteredProducts.map((item) => (
+            {CategoryProducts.map((item) => (
 
                  // 🦄link to product.js 
                 <Link className='link' to={`/product/${item.id}`} key={item.id}>
@@ -44,7 +44,7 @@ const FilteredProducts = ({category}) => {
   )
 }
 
-export default FilteredProducts
+export default CategoryProducts
 
 //    {/* {products[0].id} */}
 

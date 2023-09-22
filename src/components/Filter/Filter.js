@@ -7,7 +7,7 @@ const Filter = ({ onFilter }) => {
 
   const handleCategoryChange = (e) => {
     const { value, checked } = e.target;
-    
+
     if (checked) {
       setCategoryFilters((prevFilters) => [...prevFilters, value]);
     } else {
@@ -102,7 +102,7 @@ const Filter = ({ onFilter }) => {
           value={priceFilter}
           onChange={handlePriceChange}
         />
-        <p>Max Price: ${priceFilter}</p>
+        <p>Price range: $0~ ${priceFilter}</p>
       </section>
       <section>
         <h3>Sort Order</h3>
