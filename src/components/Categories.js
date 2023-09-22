@@ -10,7 +10,7 @@ const Categories = () => {
           <img src="/img/groceries.jpg" alt=""/>
           <button>
           {/* 🍀/products/~~~ */}
-            <Link className="link" to="/products/1">groceries</Link>
+            <Link className="link" to="/products/groceries">groceries</Link>
           </button>
         </div>
         <div class="div2">

@@ -1,3 +1,9 @@
+/* 
+ 🚀make select tag with it
+when i click option tap. address is not move to  the page. 
+I wanna move page as soon as i click option
+*/
+
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
@@ -17,9 +23,12 @@ const Navbar = () => {
     const [selectedCategory, setSelectedCategory] = useState(''); // State to track the selected category
 
     const handleCategoryChange = (event) => {
-      setSelectedCategory(event.target.value); // Update the selected category when the dropdown value changes
-    };
-
+        const selectedCategory = event.target.value;
+        if (selectedCategory) {
+          window.location.href = `/products/${selectedCategory}`;
+        }
+      };
+    
 
   return (
     <div id='navbar'>
@@ -53,7 +62,7 @@ const Navbar = () => {
                 </div> */}
 
 
-                <select value={selectedCategory} onChange={handleCategoryChange}>
+                <select onChange={handleCategoryChange}>
                     <option value="">Select a category</option>
                     <option value="smartphones">Smartphones</option>
                     <option value="laptops">Laptops</option>
@@ -61,17 +70,7 @@ const Navbar = () => {
                     <option value="skincare">Skincare</option>
                     <option value="groceries">Groceries</option>
                     <option value="home-decoration">Home Decoration</option>
-                </select>
-
-                {/* Display the selected category as a link */}
-                {selectedCategory && (
-                    <div className="item">
-                        <Link className="link" to={`/products/${selectedCategory}`}>
-                            {selectedCategory}
-                        </Link>
-                    </div>
-                )}
-               
+                </select>        
             </section>
 
             {/*   
