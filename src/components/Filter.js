@@ -13,9 +13,6 @@ const Filter = () => {
     new Set(products.map((product) => product.category))
   );
 
-
-
-
 // 🍀input checkbox
   const [selectedSubCats, setSelectedSubCats] = useState([]);
 
@@ -39,6 +36,7 @@ const Filter = () => {
 
 // 🍀input radio
   const [sort, setSort] = useState(null);
+  console.log(sort)
 
 
   return (
@@ -85,17 +83,31 @@ const Filter = () => {
         <section className="filterItem">
           <h2>Sort by</h2>
           <div className="inputItem">
-            <input type="radio"></input>
-            <label>Price (Lowest first)</label>
+            <input
+                type="radio"
+                id="asc"
+                value="asc"
+                name="price"
+                //  🦄 onChange={(e) => setSort("asc")}
+                onChange={(e) => setSort("asc")}
+            />
+            <label htmlFor="asc">Price (Lowest first)</label>
           </div>
           <div className="inputItem">
-            <input type="radio"></input>
-            <label>Price (Highest first)</label>
+            <input
+                type="radio"
+                id="desc"
+                value="desc"
+                name="price"
+                //  🦄 onChange={(e) => setSort("desc")}
+                onChange={(e) => setSort("desc")}
+            />
+            <label htmlFor="desc">Price (Highest first)</label>
           </div>
         </section>
       </main>
       <main className="right">
-        <FilteredProducts  maxPrice={maxPrice} category={selectedSubCats} />
+        <FilteredProducts  category={selectedSubCats} maxPrice={maxPrice}  sort={sort}  />
       </main>
     </div>
   );
