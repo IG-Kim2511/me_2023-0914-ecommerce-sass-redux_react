@@ -33,11 +33,7 @@ const Navbar = () => {
   return (
     <div id='navbar'>
         <div className="wrapper">
-            <section className="left">
-                <div className="item">
-                    {/* 🦄public 폴더안 img가져옴 , src="/img/~~~ " */}
-                    <img src='/img/en.png'/>                    
-                </div>
+            <section className="left">        
                 <div className="item">
                 { <Link className='link' to="/">Store</Link>}                    
                 </div> 

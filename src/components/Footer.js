@@ -44,6 +44,7 @@ const Footer = () => {
           Store0914 with redux, dummydata   
         </div>
         <div className="right">
+         {/* 🦄public 폴더안 img가져옴 , src="/img/~~~ " */}
           <img src='/img/payment.png'/>
         </div>
       </section>
