@@ -35,7 +35,10 @@ const Navbar = () => {
         <div className="wrapper">
             <section className="left">        
                 <div className="item">
-                { <Link className='link' to="/">Store</Link>}                    
+                 { <Link className='link' to="/">Store</Link>}                    
+                </div> 
+                <div className="item">
+                  { <Link className='link' to="/all">All Items</Link>}                    
                 </div> 
                 
                 <select onChange={handleCategoryChange}>

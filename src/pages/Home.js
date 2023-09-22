@@ -3,7 +3,7 @@ import Slider from '../components/Slider'
 import SliderMUI from '../components/SliderMUI'
 import FilteredProducts from '../components/FilteredProducts'
 import Categories from '../components/Categories'
-import Filter from '../components/Filter'
+
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
       <Slider/> 
       {/* <SliderMUI/> */}
       <Categories/>  
-      <Filter/>
+      
       
     </div>
   )

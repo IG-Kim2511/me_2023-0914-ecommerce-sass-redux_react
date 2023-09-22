@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import Products from './pages/Products';
 import Product from './pages/Product';
 import Home from './pages/Home';
+import App2 from './components/Filter/App2';
 
 
 
@@ -25,6 +26,7 @@ const Layout = () => {
       {/* 🍉children👉 <Outlet/> */}
       <Outlet />
       <Footer />
+      <App2/>
     </div>
   );
 };
@@ -40,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home/>,
+      },
+      {
+        path: "/all",
+        element: <App2/>,
       },
       {
         path: "/products/:id",

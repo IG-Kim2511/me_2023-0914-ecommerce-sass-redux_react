@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import products from "../data";
 import FilteredProducts from "./FilteredProducts";
 
-const Filter = () => {
+const FilterMe = () => {
   // 🚀404 there are 6 type of category object in data.js.  make input tag by 6type of category
   /* 
     중복된 값을 제거하기 위해 Set 객체로 변환합니다. Set 객체는 중복을 허용하지 않는 고유한 값만 포함할 수 있는 자료 구조입니다.
@@ -113,7 +113,7 @@ const Filter = () => {
   );
 };
 
-export default Filter;
+export default FilterMe;
 
 // <div className="inputItem">
 // <input type="checkbox" id='groceries'/>
