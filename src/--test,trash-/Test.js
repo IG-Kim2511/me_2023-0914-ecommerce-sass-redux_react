@@ -3,29 +3,28 @@ import { useParams } from 'react-router-dom';
 import products from '../data';
 
 const Product = () => {
-  // 
+  // Use destructuring to get the "id" parameter from the URL
   const { id } = useParams();
-  
-  // 🍉fetchProductData로 찾아낸 data를 여기에 넣고 사용함
-  const [product, setProduct] = useState(null);
-  
+
   const [loading, setLoading] = useState(true);
+  const [product, setProduct] = useState(null);
 
   useEffect(() => {
-    // 🍀find id, setProduct
+    // Simulate loading data from your products array or an API
     const fetchProductData = async () => {
       try {
-        // 🍉find(~) 
+        // Assuming products is an array of objects, find the product by id
         const productData = products.find((product) => product.id === parseInt(id));
 
-        // setProduct
         if (productData) {
           setProduct(productData);
           setLoading(false);
-        } else {        
+        } else {
+          // Handle the case where the product with the given id is not found
           console.error(`Product with ID ${id} not found.`);
         }
-      } catch (error) {        
+      } catch (error) {
+        // Handle any errors that occur during data fetching
         console.error('Error fetching product data:', error);
       }
     };
@@ -41,16 +40,15 @@ const Product = () => {
         <div>
           <section className='left'>
             <div className='images'>
-              <img src={product.images[1]} alt={product.title} />
-              <img src={product.images[2]} alt={product.title} />
-              
+              <img src={product.images[0]} alt={product.title} />
+              {/* Add additional images as needed */}
             </div>
             <div className='mainImg'>
               <img src={product.images[0]} alt={product.title} />
             </div>
           </section>
           <section className='right'>
-          
+            {/* Add content for the right section as needed */}
           </section>
         </div>
       ) : (
