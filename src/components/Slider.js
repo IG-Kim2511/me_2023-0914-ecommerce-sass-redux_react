@@ -29,8 +29,8 @@ const Slider = () => {
           0x 50 = 0vw (translate)
           1x 50 = 50vw (translate)
           2x 50 = 100vw (translate)
-      */}
-      <div className="container" style={{transform:`translateX(-${currentSlide * 50}vw)`}}>
+      */} 
+      <section className="container" style={{transform:`translateX(-${currentSlide * 50}vw)`}}>
 
       {/* // 🦄 */}
         {/* <img src={data[0]} alt="" />
@@ -39,9 +39,9 @@ const Slider = () => {
         <img src="/img/skincare.jpg" />
         <img src="/img/smartphones.jpg" />
         <img src="/img/groceries.jpg" />
-      </div>
-      <div className="icons">
+      </section>
 
+      <section className="icons">
       {/* // 🦄 */}
         <button className="icon" onClick={prevSlide}>
           <WestOutlinedIcon />
@@ -49,7 +49,7 @@ const Slider = () => {
         <button className="icon" onClick={nextSlide}>
           <EastOutlinedIcon />
         </button>
-      </div>
+      </section>
     </div>
   );
 };

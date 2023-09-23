@@ -216,16 +216,17 @@ body {
     }
 
     .icons{
-        width: fit-content;     /*🦄fit-content; */
+        // width: fit-content;     /*🦄fit-content; */
         display: flex;
+        justify-content: space-between;
+        align-items: center;
         
-
-        position: absolute;
+        position: absolute;     
         left: 0;
         right: 0;
-        bottom: 50px;
-
-        gap: 10px;
+        top: 50%;
+        transform: translateY(-50%);    /* 수직정렬 */
+     
         margin: auto;       /* 가운데 정렬 */
 
         .icon{
