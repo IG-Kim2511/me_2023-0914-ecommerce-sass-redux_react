@@ -1,17 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProductsFiltered = ({ products }) => {
+const ProductsFiltered = ({ filteredProducts }) => {
   return (
     <div id="ProductsFiltered">
       <h2>Filtered Products</h2>
 
       <section>
-        {products.length === 0 ? (
+        {filteredProducts.length === 0 ? (
           <p>No results</p>
         ) : (
           <ul className="bottom">
-            {products.map((item) => (
+            {filteredProducts.map((item) => (
 
               // 🦄link to product.js 
             <Link className='link' to={`/product/${item.id}`} key={item.id}>

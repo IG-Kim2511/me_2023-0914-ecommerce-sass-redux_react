@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import products from "../data";
-import CategoryProducts from "./CategoryProducts";
+import CategoryProducts from "../components/CategoryProducts";
 
 const FilterMe = () => {
   // 🚀404 there are 6 type of category object in data.js.  make input tag by 6type of category

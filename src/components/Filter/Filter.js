@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 
 const Filter = ({ onFilter }) => {
+
+  // 🍉
   const [categoryFilters, setCategoryFilters] = useState([]);
-  const [priceFilter, setPriceFilter] = useState(0);
+
+  const [priceFilter, setPriceFilter] = useState(1800);
+
   const [sortOrder, setSortOrder] = useState("asc");
 
+  // 🍉input checkbox
   const handleCategoryChange = (e) => {
     const { value, checked } = e.target;
 
@@ -17,15 +22,19 @@ const Filter = ({ onFilter }) => {
     }
   };
 
+  // 🍉input range
   const handlePriceChange = (e) => {
     setPriceFilter(e.target.value);
   };
 
+  // 🍉input radio
   const handleSortChange = (e) => {
     setSortOrder(e.target.value);
   };
 
+  // applyFilters 👉 button generate
   const applyFilters = () => {
+    //🍉 onFilter object 만듬
     onFilter({
       categories: categoryFilters,
       maxPrice: priceFilter,
@@ -37,12 +46,16 @@ const Filter = ({ onFilter }) => {
     <div id="Filter">
       <h2>Filter Products</h2>
       <h3>Categories</h3>
+
+      {/* 🍀input checkbox */}
       <section className="checkboxWrapper">
           <label>
             <input
               type="checkbox"
               value="smartphones"
+              //🦄onChange
               onChange={handleCategoryChange}
+              // 🦄input checked Attribute
               checked={categoryFilters.includes("smartphones")}
             />
             Smartphones
@@ -93,17 +106,20 @@ const Filter = ({ onFilter }) => {
             Home Decoration
           </label>
       </section>
+      {/* 🍀input range */}
       <section>
         <h3>Price</h3>
         <input
           type="range"
           min="0"
-          max="1800" // Adjust the max price as per your data
+          max="1800" 
           value={priceFilter}
           onChange={handlePriceChange}
         />
         <p>Price range: $0~ ${priceFilter}</p>
       </section>
+
+      {/* 🍀input radio */}
       <section>
         <h3>Sort Order</h3>
         <label>
@@ -112,6 +128,8 @@ const Filter = ({ onFilter }) => {
             name="sortOrder"
             value="asc"
             onChange={handleSortChange}
+
+            // 🦄input checked Attribute
             checked={sortOrder === "asc"}
           />
           Ascending
@@ -127,6 +145,8 @@ const Filter = ({ onFilter }) => {
           Descending
         </label>
       </section>
+
+      {/* 🦄applyFilters */}
       <button className="myButton" onClick={applyFilters}>Apply Filters</button>
     </div>
   );
