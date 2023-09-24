@@ -6,7 +6,7 @@ redering filtered product with input range, radio, checkbox.
 */
 
 /* 🎃-ing
-productpage.js
+
 cart.js
 redux
 
