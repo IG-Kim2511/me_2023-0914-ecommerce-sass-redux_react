@@ -7,7 +7,7 @@ const Categories = () => {
       <h1>Categories</h1>
       <section class="parent">
         <div class="div1">
-          <img src="/img/groceries.jpg" alt=""/>
+         <img src="/img/groceries.jpg" alt=""/>
           <button>
           {/* 🍀/products/~~~ */}
             <Link className="link" to="/products/groceries">groceries</Link>

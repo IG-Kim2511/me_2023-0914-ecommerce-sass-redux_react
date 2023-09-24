@@ -33,12 +33,9 @@ const Slider = () => {
       <section className="container" style={{transform:`translateX(-${currentSlide * 50}vw)`}}>
 
       {/* // 🦄 */}
-        {/* <img src={data[0]} alt="" />
-        <img src={data[1]} alt="" />
-        <img src={data[2]} alt="" /> */}
-        <img src="/img/skincare.jpg" />
-        <img src="/img/smartphones.jpg" />
-        <img src="/img/groceries.jpg" />
+      <img src={data[0]} alt="0" />
+      <img src={data[1]} alt="1" />
+      <img src={data[2]} alt="2" />
       </section>
 
       <section className="icons">
