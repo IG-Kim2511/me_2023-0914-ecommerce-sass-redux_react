@@ -38,11 +38,11 @@ const Product = () => {
   }, [id]);
 
   return (
-    <div id='product'>
+    <div >
       {loading ? (
         <p>Loading...</p>
       ) : product ? (
-        <div>
+        <div id='product'>
           <section className='left'>
             <div className='images'>
               <img src={product.images[1]} alt={product.title} />
@@ -55,8 +55,11 @@ const Product = () => {
 
           <section className='right'>
             <h1>{product.title}</h1>
+
             <span className="price">$ {product.price}</span>
+
             <p>{product.description}</p>
+            
             <div className="quantity">
               <button
                 /*🦄0127 : -1로 떨어지지 않게 하기
@@ -70,11 +73,11 @@ const Product = () => {
               <button onClick={()=>( setQuantity((prev)=>prev + 1))}>+</button>
             </div>
 
-            <button className='add'> <AddShoppingCartIcon/> ADD TO CART</button>
+            <button className='addCart'> <AddShoppingCartIcon/> ADD TO CART</button>
             <div className="links">
              <div className="item"><FavoriteBorderIcon/> ADD TO WISH LIST</div>
             </div>
-            <div className="description">description</div>
+            
 
 
 

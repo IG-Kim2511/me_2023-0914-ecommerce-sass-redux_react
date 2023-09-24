@@ -487,9 +487,116 @@ body {
 
 
 
-// ---------------🍀  --------------
+// ---------------🍀product  --------------
+
+#product{
+    display: flex;
+    gap: 10px;
+
+    padding: 20px;
+    
+    .left{
+        flex: 1;
+
+        display: flex;
+
+        gap: 10px;
+
+        .images{
+            flex: 1;
+            
+            img{
+                width: 100%;
+                height: 150px;
+                object-fit: cover;
+                cursor: pointer;
+
+                border: 1px solid rgb(212, 210, 210);
+            }
+        }
+        .mainImg {
+            flex: 5;
+            border: 1px solid rgb(212, 210, 210);
+            img{
+                width: 100%;
+                height: 800px;
+                object-fit: contain;
+            }
+        }
+    }
+
+    .right{
+        flex: 1;
+        
+        /*🦄display: flex;, flex-direction: column;을 사용하는 이유 : 
+         gap을 쓰기위해서  
+         하위 태그에 flex: 1, flex:3 등으로 레이아웃 하기 위해서         
+        */
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        .price{
+            font-size: 30px;
+            font-weight: 300;
+            text-align: justify;
+        }
+        
+        p{
+            font-size: 18px;
+            font-weight: 300;
+            text-align: justify;
+        }
+        .quantity{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            button{
+                width: 50px;
+                height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                border: none;
+              }
+            }
+            
+        .addCart{
+            width: 250px;
+            padding: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            gap: 20px;
+            cursor: pointer;
+
+            font-weight: 500;               
+            
+            background-color: #2879fe;
+            color: white;                
+        }
+
+        .links{
+            display: flex;
+            gap: 20px;
+      
+            .item{
+              display: flex;
+              align-items: center;
+              gap: 10px;
+              color: #2879fe;
+              font-size: 14px;
+            }
+          }
+    }
 
 
+
+}
 
 
 
