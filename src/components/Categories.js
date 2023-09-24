@@ -7,38 +7,38 @@ const Categories = () => {
       <h1>Categories</h1>
       <section class="parent">
         <div class="div1">
-         <img src="/img/groceries.jpg" alt=""/>
+         <img src="https://i.imgur.com/ngBbEN5.jpg" alt=""/>
           <button>
           {/* 🍀/products/~~~ */}
             <Link className="link" to="/products/groceries">groceries</Link>
           </button>
         </div>
         <div class="div2">
-          <img src="/img/fragrances.jpg" alt=""/>
+          <img src="https://i.imgur.com/jgcx4vg.jpg" alt=""/>
           <button>          
             <Link className="link" to="/products/fragrances">fragrances</Link>
           </button>
         </div>
         <div class="div3">
-          <img src="/img/home-decoration.jpg" alt=""/>
+          <img src="https://i.imgur.com/RdhpLtf.jpg" alt=""/>
           <button>          
             <Link className="link" to="/products/home-decoration">home-decoration</Link>
           </button>
         </div>
         <div class="div4">
-          <img src="/img/laptops.jpg" alt=""/>
+          <img src="https://i.imgur.com/qEiQtfA.jpg" alt=""/>
           <button>          
             <Link className="link" to="/products/laptops">laptops</Link>
           </button>
         </div>
         <div class="div5">
-          <img src="/img/skincare.jpg" alt=""/>
+          <img src="https://i.imgur.com/sVex7iS.jpg" alt=""/>
           <button>          
             <Link className="link" to="/products/skincare">skincare</Link>
           </button>
         </div>
         <div class="div6">
-          <img src="/img/smartphones.jpg" alt=""/>
+          <img src="https://i.imgur.com/12aNmCU.jpg" alt=""/>
           <button>          
             <Link className="link" to="/products/smartphones">smartphones</Link>
           </button>

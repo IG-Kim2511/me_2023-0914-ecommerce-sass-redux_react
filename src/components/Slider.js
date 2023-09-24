@@ -8,9 +8,12 @@ const Slider = () => {
 
   // 🦄
   const data = [
-    "https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    "https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    "https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1600",    
+    "https://i.imgur.com/Llb4srd.jpg",
+    "https://i.imgur.com/12aNmCU.jpg",
+    "https://i.imgur.com/ngBbEN5.jpg",
+    // "https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    // "https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    // "https://images.pexels.com/photos/949670/pexels-photo-949670.jpeg?auto=compress&cs=tinysrgb&w=1600",    
   ];
 
 // 🦄
@@ -33,9 +36,13 @@ const Slider = () => {
       <section className="container" style={{transform:`translateX(-${currentSlide * 50}vw)`}}>
 
       {/* // 🦄 */}
-      <img src={data[0]} alt="0" />
-      <img src={data[1]} alt="1" />
-      <img src={data[2]} alt="2" />
+        <img src={data[0]} alt="0" />
+        <img src={data[1]} alt="1" />
+        <img src={data[2]} alt="2" /> 
+
+        {/* <img src="../assets/skincare.jpg" />
+        <img src="/img/smartphones.jpg" />
+        <img src="/img/groceries.jpg" /> */} 
       </section>
 
       <section className="icons">

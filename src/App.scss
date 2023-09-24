@@ -197,6 +197,7 @@ body {
     // width: 100vw;
     height: 50vh;
     width: 50vw;
+    max-width: 1150px;
 
     margin: auto;
     position: relative;
@@ -332,6 +333,7 @@ body {
 // ---------------🍀categories--------------
 
 #categories{
+    text-align: center;
     img{
         width: 30%;
     }
