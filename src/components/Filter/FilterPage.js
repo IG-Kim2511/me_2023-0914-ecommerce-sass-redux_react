@@ -1,5 +1,7 @@
 // 🚀redering filtered product with input range, radio, checkbox. 
 
+
+
 import React, { useState } from "react";
 import Filter from "./Filter";
 import ProductsFiltered from "./ProductsFiltered";

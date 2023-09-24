@@ -5,6 +5,11 @@
 redering filtered product with input range, radio, checkbox. 
 */
 
+
+// 🎃filter page 리덕스로 다시 만들기
+
+
+
 import React from 'react'
 // 🦄전체 scss 한개파일에 몰아서 정리하기 (공부용이니까)
 import './App.scss';

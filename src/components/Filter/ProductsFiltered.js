@@ -10,7 +10,7 @@ const ProductsFiltered = ({ filteredProducts }) => {
         {filteredProducts.length === 0 ? (
           <p>No results</p>
         ) : (
-          <ul className="bottom">
+           <ul className="bottom">
             {filteredProducts.map((item) => (
 
               // 🦄link to product.js 
@@ -32,7 +32,7 @@ const ProductsFiltered = ({ filteredProducts }) => {
                     </section>
                 </div>
             </Link>
-        ))}         
+             ))}         
 
           </ul>
         )}
