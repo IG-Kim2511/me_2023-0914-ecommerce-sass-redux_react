@@ -5,9 +5,16 @@
 redering filtered product with input range, radio, checkbox. 
 */
 
+/* 🎃-ing
+productpage.js
+cart.js
+redux
 
-// 🎃filter page 리덕스로 다시 만들기
+filter page 리덕스로 다시 만들기
 
+
+constext api
+ */
 
 
 import React from 'react'
