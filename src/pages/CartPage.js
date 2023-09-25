@@ -24,7 +24,7 @@ const CartPage = () => {
             return (
                 <ul className="items">
                 {cartItems.map((item)=>(
-                    <li key={item.productId}>
+                    <li key={item.productId}>  
                     <img src={item.thumbnail} alt={item.title} />
                     <div className="details">
                         <h1>{item.title}</h1>
