@@ -333,7 +333,8 @@ body {
 // ---------------🍀categories--------------
 
 #categories{
-    text-align: center;
+    // text-align: center;
+    padding-top: 20px;
     img{
         width: 30%;
     }
@@ -344,8 +345,7 @@ body {
         grid-column-gap: 10px;  /* 🍤gap */
         grid-row-gap: 10px;  /* 🍤gap */
 
-        height: 50vh;
-        
+        height: 50vh;        
 
         div{
             position: relative;
