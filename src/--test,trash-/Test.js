@@ -1,30 +1,37 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import products from '../data';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
+// 🍉redux
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../redux/reducers/cartReducer';
 
 const Product = () => {
-  // Use destructuring to get the "id" parameter from the URL
   const { id } = useParams();
+  const dispatch = useDispatch();
 
-  const [loading, setLoading] = useState(true);
+  // 🍉fetchProductData로 찾아낸 data를 여기에 넣고 사용함
   const [product, setProduct] = useState(null);
 
+  const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    // Simulate loading data from your products array or an API
+    // 🍀find id, setProduct
     const fetchProductData = async () => {
       try {
-        // Assuming products is an array of objects, find the product by id
+        // 🍉find(~)
         const productData = products.find((product) => product.id === parseInt(id));
 
+        // setProduct
         if (productData) {
           setProduct(productData);
           setLoading(false);
         } else {
-          // Handle the case where the product with the given id is not found
           console.error(`Product with ID ${id} not found.`);
         }
       } catch (error) {
-        // Handle any errors that occur during data fetching
         console.error('Error fetching product data:', error);
       }
     };
@@ -32,24 +39,24 @@ const Product = () => {
     fetchProductData();
   }, [id]);
 
+  // 🍀redux
+  const cartItems = useSelector((state) => state.cart.cartItems);
+
+  const addProductToCart = (product) => {
+    // Dispatch the addToCart action with the product object
+    dispatch(addToCart(product));
+  };
+
   return (
-    <div id='product'>
+    <div>
       {loading ? (
         <p>Loading...</p>
       ) : product ? (
-        <div>
-          <section className='left'>
-            <div className='images'>
-              <img src={product.images[0]} alt={product.title} />
-              {/* Add additional images as needed */}
-            </div>
-            <div className='mainImg'>
-              <img src={product.images[0]} alt={product.title} />
-            </div>
-          </section>
-          <section className='right'>
-            {/* Add content for the right section as needed */}
-          </section>
+        <div id='product'>
+          {/* Rest of your component */}
+          <button className='addCart' onClick={() => addProductToCart(product)}>
+            <AddShoppingCartIcon /> ADD TO CART
+          </button>
         </div>
       ) : (
         <p>Product not found.</p>

@@ -16,7 +16,7 @@ const Product = () => {
   const [product, setProduct] = useState(null);
 
   const [loading, setLoading] = useState(true);
-  const [quantity, setQuantity] = useState(1); // Initialize quantity with 1
+  // const [quantity, setQuantity] = useState(1); // Initialize quantity with 1
 
   useEffect(() => {
     // 🍀find id, setProduct
@@ -42,10 +42,12 @@ const Product = () => {
 
   // 🍀redux
   const cartItem = useSelector((state)=> state.cart.cartItems);
-
-  const addtocartDispatch = (product, quantity) => {
-    const item = {...product,quantity}
-    dispatch(addToCart(item));
+  
+  const addtocartDispatch = (product) => {
+    
+    console.log(product)
+    console.log(cartItem)
+    dispatch(addToCart(product));
   };
 
   return (
@@ -70,22 +72,10 @@ const Product = () => {
             <span className="price">$ {product.price}</span>
 
             <p>{product.description}</p>
-            
-            <div className="quantity">
-              <button
-                /*🦄0127 : -1로 떨어지지 않게 하기
-                 값이 1이라면 1로 고정 (더이상 마이너스 떨어지지않음)              
-                 default값 : 1 로 만듬 */
-                 onClick={() =>
-                  setQuantity((prev) => (prev === 1 ? 1 : prev - 1))
-                }
-                >-</button>
-              <h3>{quantity}</h3>
-              <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
-            </div>
+
 
             {/* ⚡ Handle the addition to the cart with the selected quantity */}
-            <button className='addCart' onClick={() => addtocartDispatch(product, quantity)}> <AddShoppingCartIcon/> ADD TO CART</button>
+            <button className='addCart' onClick={() => addtocartDispatch(product)}> <AddShoppingCartIcon/> ADD TO CART</button>
             <div className="links">
               <div className="item"><FavoriteBorderIcon/> ADD TO WISH LIST</div>
             </div>
@@ -99,3 +89,18 @@ const Product = () => {
 };
 
 export default Product;
+
+
+            
+// <div className="quantity">
+// <button
+//   /*🦄0127 : -1로 떨어지지 않게 하기
+//    값이 1이라면 1로 고정 (더이상 마이너스 떨어지지않음)              
+//    default값 : 1 로 만듬 */
+//    onClick={() =>
+//     setQuantity((prev) => (prev === 1 ? 1 : prev - 1))
+//   }
+//   >-</button>
+// <h3>{quantity}</h3>
+// <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
+// </div>
