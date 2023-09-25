@@ -5,8 +5,8 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
 // 🍉redux
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../redux/actions/productActions'; // Correct the import here
+import { useDispatch, useSelector } from 'react-redux';
+import { addToCart } from '../redux/reducers/cartReducer';
 
 const Product = () => {
   const { id } = useParams();
@@ -41,10 +41,15 @@ const Product = () => {
   }, [id]);
 
   // 🍀redux
-  const handleAddToCart = (product, quantity) => {
-    const cartItem = { ...product, quantity }; // Create a new object with the product and quantity
-    dispatch(addToCart(cartItem)); // Dispatch the cartItem to the Redux store
-    console.log(cartItem);
+  const cartItem = useSelector((state)=> state.cart.cartItems);
+
+
+
+  const addtocartDispatch = (product, quantity) => {
+    // const cartItem = { ...product, quantity }; // Create a new object with the product and quantity
+    // // dispatch(addToCart(cartItem)); // Dispatch the cartItem to the Redux store
+    // console.log(cartItem);
+    dispatch(addToCart(cartItem));
   };
 
   return (
@@ -84,7 +89,7 @@ const Product = () => {
             </div>
 
             {/* ⚡ Handle the addition to the cart with the selected quantity */}
-            <button className='addCart' onClick={() => handleAddToCart(product, quantity)}> <AddShoppingCartIcon/> ADD TO CART</button>
+            <button className='addCart' onClick={() => addtocartDispatch(product, quantity)}> <AddShoppingCartIcon/> ADD TO CART</button>
             <div className="links">
               <div className="item"><FavoriteBorderIcon/> ADD TO WISH LIST</div>
             </div>

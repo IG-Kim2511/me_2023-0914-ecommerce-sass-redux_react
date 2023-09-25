@@ -1,17 +1,12 @@
-// src/store/store.js
-import { combineReducers } from 'redux';
+// store.js
 import { configureStore } from '@reduxjs/toolkit';
+import cartReducer from './reducers/cartReducer';
 
-import productReducer from './reducer/productReducer';
-import cartReducer from './reducer/cartReducer';
-
-const rootReducer = combineReducers({
-  product: productReducer,
-  cart: cartReducer,
-});
-
+// 🦄new : configureStore (createStore 새로운 버전)
 const store = configureStore({
-  reducer: rootReducer
+  reducer: {
+    cart: cartReducer, // Add more reducers if needed
+  },
 });
 
 export default store;
