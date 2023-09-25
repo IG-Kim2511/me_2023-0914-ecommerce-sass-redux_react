@@ -12,6 +12,8 @@ redux
 
 filter page 리덕스로 다시 만들기
 
+product.js : click image on side image and show it on main img container
+
 
 constext api
  */
