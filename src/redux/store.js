@@ -1,9 +1,13 @@
-import { configureStore } from '@reduxjs/toolkit'
-import counter_Reducer from './reducer/counter_Reducer'
+// store.js
+import { configureStore } from '@reduxjs/toolkit';
+import cartReducer from './reducers/cartReducer';
+import counterReducer from './reducers/counterReducer'; // Corrected the import path
 
-
-export default configureStore({
+const store = configureStore({
   reducer: {
-    counter: counter_Reducer
-  }
-})
+    cart: cartReducer,
+    counter: counterReducer,
+  },
+});
+
+export default store;

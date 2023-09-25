@@ -1,3 +1,6 @@
+
+// Product.js
+
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import products from '../data';
@@ -15,6 +18,8 @@ const Product = () => {
   const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(1); // Initialize quantity with 1
 
+
+  
   useEffect(() => {
     // 🍀find id, setProduct
     const fetchProductData = async () => {
