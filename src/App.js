@@ -29,6 +29,7 @@ import Products from './pages/Products';
 import Product from './pages/Product';
 import Home from './pages/Home';
 import FilterPage from './components/Filter/FilterPage';
+import CartPage from './pages/CartPage';
 
 const App = () => {
   return (
@@ -41,6 +42,7 @@ const App = () => {
           <Route path="/all" element={<FilterPage />} />
           <Route path="/products/:id" element={<Products />} />
           <Route path="/product/:id" element={<Product />} />
+          <Route path="/cart" element={<CartPage />} />
 
             {/* 🦄Catch-all route for unmatched paths */}
            <Route path="/*" element={<Navigate to="/" />} />
