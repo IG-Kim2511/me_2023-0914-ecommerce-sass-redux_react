@@ -14,7 +14,7 @@ const CartPage = () => {
     // dispatch(removeFromCart(productId));   
     dispatch({ type: "REMOVE_FROM_CART", payload: productId });
   };
-  const decreaseDispatch=(item)=>{
+  const decreaseDispatch=(item)=>{ 
     dispatch(decreaseQuantity(item))
   }
   const increaseDispatch=(item)=>{
