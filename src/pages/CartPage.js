@@ -10,10 +10,6 @@ const CartPage = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart.cartItems);
 
-  const handleRemoveFromCart = (productId) => {
-    // dispatch(removeFromCart(productId));   
-    dispatch({ type: "REMOVE_FROM_CART", payload: productId });
-  };
   const decreaseDispatch=(item)=>{
     dispatch(decreaseQuantity(item))
   }
@@ -23,8 +19,6 @@ const CartPage = () => {
   const removeDispatch=(item)=>{
     dispatch(removeFromCart(item))
   }
-
-
   
   return (
     <div id='CartPage'>
