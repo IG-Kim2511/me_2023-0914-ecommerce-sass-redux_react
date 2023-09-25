@@ -1,3 +1,4 @@
+//Product.js
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import products from '../data';
@@ -45,6 +46,8 @@ const Product = () => {
 
   const addtocartDispatch = (product, quantity) => {
     const item = {...product,quantity}
+    console.log(item)
+    
     dispatch(addToCart(item));
   };
 
