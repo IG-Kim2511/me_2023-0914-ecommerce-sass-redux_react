@@ -29,7 +29,7 @@ import Products from './pages/Products';
 import Product from './pages/Product';
 import Home from './pages/Home';
 import FilterPage from './components/Filter/FilterPage';
-import { Counter } from './redux/Counter';
+
 
 const App = () => {
   return (
@@ -47,7 +47,6 @@ const App = () => {
            <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
 
-        <Counter/>
         <Footer />
 
       </div>
