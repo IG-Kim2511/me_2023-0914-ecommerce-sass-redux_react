@@ -44,11 +44,8 @@ const Product = () => {
   const cartItem = useSelector((state)=> state.cart.cartItems);
 
   const addtocartDispatch = (product, quantity) => {
-    // const cartItem = { ...product, quantity }; // Create a new object with the product and quantity
-    // // dispatch(addToCart(cartItem)); // Dispatch the cartItem to the Redux store
-    // console.log(cartItem);
     const item = {...product,quantity}
-    dispatch(addToCart(cartItem));
+    dispatch(addToCart(item));
   };
 
   return (
