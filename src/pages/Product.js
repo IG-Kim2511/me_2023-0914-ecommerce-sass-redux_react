@@ -44,11 +44,11 @@ const Product = () => {
   // 🍀redux
   const cartItem = useSelector((state)=> state.cart.cartItems);
 
-  const addtocartDispatch = (product, quantity) => {
-    const item = {...product,quantity}
-    console.log(item)
+  const addtocartDispatch = (product) => {
+    // const item = {...product,quantity}
+    // console.log(item)
     
-    dispatch(addToCart(item));
+    dispatch(addToCart(product));
   };
 
   return (
@@ -77,7 +77,7 @@ const Product = () => {
      
 
             {/* ⚡ Handle the addition to the cart with the selected quantity */}
-            <button className='addCart' onClick={() => addtocartDispatch(product, quantity)}> <AddShoppingCartIcon/> ADD TO CART</button>
+            <button className='addCart' onClick={() => addtocartDispatch(product)}> <AddShoppingCartIcon/> ADD TO CART</button>
             <div className="links">
               <div className="item"><FavoriteBorderIcon/> ADD TO WISH LIST</div>
             </div>
