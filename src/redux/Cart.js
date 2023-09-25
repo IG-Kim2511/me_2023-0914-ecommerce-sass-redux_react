@@ -1,23 +1,29 @@
-const Cart = (props) => {
-    return (
-      <div>
-        <h2>Shopping Cart</h2>
-        <ul>
-          {props.cartItems.map((item) => (
-            <li key={item.id}>
-              {item.name} - ${item.price}{' '}
-              <button onClick={() => props.removeFromCart(item.id)}>Remove</button>
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
+// src/components/Cart.js
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeFromCart } from './actions/cartActions';
+
+const Cart = () => {
+  const cartItems = useSelector((state) => state.cart.cartItems);
+  const dispatch = useDispatch();
+
+  const handleRemoveFromCart = (productId) => {
+    dispatch(removeFromCart(productId));
   };
-  
-  const mapStateToProps = (state) => {
-    return {
-      cartItems: state.cart.cartItems,
-    };
-  };
-  
-  export default connect(mapStateToProps, { removeFromCart })(Cart);
+
+  return (
+    <div>
+      <h2>Shopping Cart</h2>
+      <ul>
+        {cartItems.map((item) => (
+          <li key={item.id}>
+            {item.name} - ${item.price}{' '}
+            <button onClick={() => handleRemoveFromCart(item.id)}>Remove</button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default Cart;
