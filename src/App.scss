@@ -152,6 +152,11 @@ ul {
 }
 
 
+// ---------------🍀Home--------------
+#Home{
+    padding-top: 80px; /* navbar */
+}
+
 // ---------------🍀footer--------------
 #footer{
     margin: 100px 200px 20px 200px;
@@ -401,6 +406,7 @@ ul {
 
 // ---------------🍀 FilterPage --------------
 #FilterPage{
+    padding-top: 80px; /* navbar */
     .wrapper{
         display: flex;
         
@@ -512,6 +518,7 @@ ul {
     gap: 10px;
 
     padding: 20px;
+    padding-top: 80px; /* navbar */
     
     .left{
         flex: 1;
@@ -623,7 +630,52 @@ ul {
 
 
 
-// ---------------🍀  --------------
+// ---------------🍀CartPage  --------------
+#CartPage{
+    padding-top: 80px;  /* navbar */
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    .items-wrap{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        border-radius: 5px;
+      
+        .thumbnail-container{
+            width: 350px;
+
+            img{
+                
+                width: 100%;
+            }
+        }
+        
+        .btn-container{
+            display: flex;     
+            gap: 10px;
+            .cartBtn{
+                width: 10px;            
+                display: flex;            
+                justify-content: center; 
+                align-items: center; 
+            }
+        }   
+    } 
+
+    .totalPrice{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        .btn-container{
+            display: flex;
+            gap: 5px;
+        }
+    }
+}
 
 
 

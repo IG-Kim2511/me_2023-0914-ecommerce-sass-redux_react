@@ -19,19 +19,43 @@ const CartPage = () => {
   const removeDispatch=(item)=>{
     dispatch(removeFromCart(item))
   }
+
+  
+  // Calculate total price, tax, and subtotal
+  const subtotal = cartItems.reduce((total, item) => {
+    return total + item.price * item.quantity;
+  }, 0);
+
+  // Assume a 10% tax rate, you can adjust this as needed
+  const taxRate = 0.10;
+  const tax = subtotal * taxRate;
+
+  const total = subtotal + tax;
+
+  // Function to clear the entire localStorage and Redux store
+  const handleResetCart = () => {
+    // Remove all items from the Redux store
+    cartItems.forEach((item) => dispatch(removeFromCart(item)));
+
+    // Clear localStorage
+    // localStorage.clear();
+  };
+
   
   return (
     <div id='CartPage'>
       <h1>Cart</h1>
-      <ul className="items">      
+      <ul className="items-wrap">      
 
         {cartItems.map((item) => (
-            <li key={item.id}>
+            <li key={item.id} className='items-container'>
+              <div className="thumbnail-container">
+              
               {item.thumbnail && <img src={item.thumbnail} alt={item.title} />}
+              </div>
               <section className="details">
                 <div>
-                  {item.title && <h1>{item.title}</h1>}
-                  {item.description && <p>{item.description}</p>}
+                  {item.title && <h1>{item.title}</h1>}                  
                   {item.price && <div className="price">${item.price}</div>}
                 </div>
                 <div className='price-container'>
@@ -40,21 +64,28 @@ const CartPage = () => {
                   <h4>QTY : {item.quantity}</h4>
                 </div>
 
-                <div>
-                  <button className="myButton" onClick={() => decreaseDispatch(item)}>-</button>
-                  <button className="myButton" onClick={() => increaseDispatch(item)}>+</button>
-                  <button className="myButton" onClick={() => removeDispatch(item)}> <DeleteForeverIcon />Remove</button>
+                <div className='btn-container'>
+                  <button className="myButton cartBtn" onClick={() => decreaseDispatch(item)}>-</button>
+                  <button className="myButton cartBtn" onClick={() => increaseDispatch(item)}>+</button>
+                  <button className="myButton cartBtn" onClick={() => removeDispatch(item)}> <DeleteForeverIcon /></button>
                 </div>    
               </section>
-              <section className="total">
+              <section className="itemPrice">
                 <span>Subtotal</span>
                 {item.price && <span>${item.price * item.quantity}</span>}
               </section>
             </li>
-          ))}
-          
-
+          ))}   
       </ul>
+      <section className='totalPrice'>
+        <h4>Subtotal: ${subtotal.toFixed(2)}</h4>
+        <h4>Tax (10%): ${tax.toFixed(2)}</h4>
+        <h4>Total: ${total.toFixed(2)}</h4>
+        <div className="btn-container">
+          <button className="myButton" onClick={handleResetCart}>Reset Cart</button>
+          <button className="myButton" >Order</button>
+        </div>
+      </section>
     </div>
   );
 };

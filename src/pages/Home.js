@@ -7,7 +7,7 @@ import Categories from '../components/Categories'
 
 const Home = () => {
   return (
-    <div>
+    <div id='Home'>
       <Slider/> 
       {/* <SliderMUI/> */}
       <Categories/>  
