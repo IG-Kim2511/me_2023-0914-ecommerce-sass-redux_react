@@ -7,13 +7,13 @@ redering filtered product with input range, radio, checkbox.
 
 /* 🎃-ing
 
-cart.js
-redux
+add qty on cartitem array on redux from product.js
+
+localstorage
 
 filter page 리덕스로 다시 만들기
 
 product.js : click image on side image and show it on main img container
-
 
 constext api
  */
