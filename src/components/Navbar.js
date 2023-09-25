@@ -72,10 +72,13 @@ const Navbar = () => {
                         <ShoppingCartOutlinedIcon/>
                         <span>{products.length}</span>
                         </div> */}
-                    <div className="cartIcon">                    
-                        <ShoppingCartIcon/>
-                        <span>0</span>
-                    </div>
+
+                    <Link className ="link" to="/cart">              
+                        <div className="cartIcon">                      
+                        <ShoppingCartIcon/>       
+                            <span>0</span>
+                        </div>
+                    </Link>    
                 </div>
             </section>
         

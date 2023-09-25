@@ -45,7 +45,7 @@ const Footer = () => {
         </div>
         <div className="right">
          {/* 🦄public 폴더안 img가져옴 , src="/img/~~~ " */}
-          <img src='/img/payment.png'/>
+          {/* <img src='/img/payment.png'/> */}
         </div>
       </section>
     </div>
