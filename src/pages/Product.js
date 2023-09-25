@@ -3,11 +3,12 @@ import { useParams } from 'react-router-dom';
 import products from '../data';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { useDispatch } from 'react-redux';
 // import { useDispatch } from 'react-redux';
 
 const Product = () => {
   const { id } = useParams();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   // 🍉fetchProductData로 찾아낸 data를 여기에 넣고 사용함
   const [product, setProduct] = useState(null);

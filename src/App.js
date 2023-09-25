@@ -29,9 +29,6 @@ import Products from './pages/Products';
 import Product from './pages/Product';
 import Home from './pages/Home';
 import FilterPage from './components/Filter/FilterPage';
-import ProductList from './redux/ProductList';
-import Cart from './redux/Cart';
-
 
 const App = () => {
   return (
@@ -39,8 +36,6 @@ const App = () => {
       <div className="app">
         <Navbar />
 
-        <ProductList/>
-        <Cart/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/all" element={<FilterPage />} />
@@ -52,7 +47,6 @@ const App = () => {
         </Routes>
 
         <Footer />
-
       </div>
     </BrowserRouter>
   );
