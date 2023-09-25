@@ -3,8 +3,11 @@ import { useParams } from 'react-router-dom';
 import products from '../data';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+
+// 🍉redux
 import { useDispatch } from 'react-redux';
-// import { useDispatch } from 'react-redux';
+import { addToCart } from '../redux/actions/productActions'; // Correct the import here
+
 
 const Product = () => {
   const { id } = useParams();
@@ -37,6 +40,13 @@ const Product = () => {
 
     fetchProductData();
   }, [id]);
+
+  // 🍀redux
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+    console.log(product)
+    
+  };
 
   return (
     <div >
@@ -74,7 +84,7 @@ const Product = () => {
               <button onClick={()=>( setQuantity((prev)=>prev + 1))}>+</button>
             </div>
 
-            <button className='addCart'> <AddShoppingCartIcon/> ADD TO CART</button>
+            <button className='addCart' onClick={()=>handleAddToCart(product)}> <AddShoppingCartIcon/> ADD TO CART</button>
             <div className="links">
              <div className="item"><FavoriteBorderIcon/> ADD TO WISH LIST</div>
             </div>
