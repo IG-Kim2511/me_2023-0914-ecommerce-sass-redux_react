@@ -13,6 +13,9 @@ import PersonIcon from '@mui/icons-material/Person';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Favorite } from '@mui/icons-material';
+import { useSelector } from 'react-redux';
+
+
 
 
 const Navbar = () => {
@@ -28,6 +31,9 @@ const Navbar = () => {
           window.location.href = `/products/${selectedCategory}`;
         }
       };
+
+    //   🍉redux    
+    const cartItems = useSelector((state) => state.cart.cartItems);
     
 
   return (
@@ -35,7 +41,7 @@ const Navbar = () => {
         <div className="wrapper">
             <section className="left">        
                 <div className="item">
-                 { <Link className='link' to="/">Store</Link>}                    
+                 { <Link className='link' to="/">Store0914</Link>}                    
                 </div> 
                 <div className="item">
                   { <Link className='link' to="/all">All Items</Link>}                    
@@ -76,7 +82,7 @@ const Navbar = () => {
                     <Link className ="link" to="/cart">              
                         <div className="cartIcon">                      
                         <ShoppingCartIcon/>       
-                            <span>0</span>
+                            <span>{cartItems.length}</span>
                         </div>
                     </Link>    
                 </div>
