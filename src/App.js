@@ -21,15 +21,15 @@ constext api
 import React from 'react';
 // 🦄전체 scss 한개파일에 몰아서 정리하기 (공부용이니까)
 import './App.scss';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Products from './pages/Products';
 import Product from './pages/Product';
-
 import Home from './pages/Home';
 import FilterPage from './components/Filter/FilterPage';
+import { Counter } from './redux/Counter';
 
 const App = () => {
   return (
@@ -42,9 +42,14 @@ const App = () => {
           <Route path="/all" element={<FilterPage />} />
           <Route path="/products/:id" element={<Products />} />
           <Route path="/product/:id" element={<Product />} />
+
+            {/* 🦄Catch-all route for unmatched paths */}
+           <Route path="/*" element={<Navigate to="/" />} />
         </Routes>
 
+        <Counter/>
         <Footer />
+
       </div>
     </BrowserRouter>
   );
