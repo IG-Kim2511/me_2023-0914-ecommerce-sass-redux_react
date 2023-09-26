@@ -67,7 +67,7 @@ const Navbar = () => {
 
             <section className="right">
                 <div className="item">
-                    <Link className ="link" to="/">Home</Link>
+                    <Link className ="link none" to="/">Home</Link>
                 </div>       
                 <div className="icons item">                
                 {/* 👉0255 icon click*/}

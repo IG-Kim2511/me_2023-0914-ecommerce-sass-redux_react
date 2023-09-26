@@ -753,6 +753,9 @@ ul {
     #navbar{    
         .wrapper{    
             width: 520px;
+            .none{
+                display: none;
+            }
         }
     }
     #slider{   
