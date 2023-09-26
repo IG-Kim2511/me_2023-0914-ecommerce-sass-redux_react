@@ -106,7 +106,7 @@
            }
         }
 
-        /* 🦄responsive + transform효과
+        /* 🦄responsive + transition 효과
             미리 만들어서 left -120%로 숨겨둔 후, 
             left 0 으로 이동시킴
         */
@@ -116,13 +116,14 @@
             left: -120%; /* 👉responsive */
 
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             flex-direction: column;
-            gap: 10px;
+            gap: 30px;
             
             width: 40vw;
             height: 100vh;   
+            padding-top: 90px;
             
             background-color: lightgray;
             z-index: 50;
