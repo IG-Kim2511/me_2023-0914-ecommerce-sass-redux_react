@@ -81,9 +81,9 @@ const CartPage = () => {
       </main>
       <main className='right'>
         <section className='totalPrice'>
-          <h4>Subtotal: ${subtotal.toFixed(2)}</h4>
-          <h4>Tax (10%): ${tax.toFixed(2)}</h4>
-          <h4>Total: ${total.toFixed(2)}</h4>
+          <h2>Subtotal: ${subtotal.toFixed(2)}</h2>
+          <h2>Tax (10%): ${tax.toFixed(2)}</h2>
+          <h2>Total: ${total.toFixed(2)}</h2>
           <div className="btn-container">
             <button className="myButton" onClick={handleResetCart}>Reset Cart</button>
             <button className="myButton" >Order</button>
