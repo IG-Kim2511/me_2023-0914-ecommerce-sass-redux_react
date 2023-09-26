@@ -3,15 +3,14 @@ $primary: #fff;
 $secondary: lightgray;
 $secondary-background: lightgray;
 
-.wrapper{
-  .left{          
-      display: flex;        
-      gap: 25px;
-      padding-left: 20px;
-      
+#Navbar2{     
+  display: flex;        
+  gap: 25px;
+  padding-left: 20px;
+
       // 🍀active
       .navbar-container.active {
-        background-color: transparent;
+        // background-color: transparent;
         transition: all 0.5s ease;
       }
 
@@ -32,17 +31,6 @@ $secondary-background: lightgray;
         background-color: $secondary-background;
         transition: all 0.5s ease; 
         z-index: 2;
-
-
-        // .navbar-logo {
-        //   color: $primary;
-        //   cursor: pointer;
-        //   text-decoration: none;
-        //   font-size: 1.5rem;
-        //   display: flex;
-        //   align-items: center;
-        //   gap: 0.5rem;
-        // }
 
           // 🦄responsive
           .menu-icon {
@@ -106,7 +94,7 @@ $secondary-background: lightgray;
                 }
             }
          }
-        }    
+       
 }
 
 

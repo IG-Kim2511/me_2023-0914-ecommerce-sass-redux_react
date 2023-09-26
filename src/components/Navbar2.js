@@ -49,60 +49,55 @@ const Navbar2 = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);  
 
   return (
-    <nav id={Navbar2}>
-      <div className="wrapper">
-        <section className="left">
-          {/* 🍉showNav? */}
-          <main className={showNav ? "navbar-container" : "navbar-container active"}>
-              <div className="item">
-                  { <Link className='link' to="/">Store0914</Link>}                    
-              </div> 
-
-            {/* burger menu , responsive*/}
-            <div className="menu-icon" onClick={handleClick}>
-              {click ? <CloseIcon/> : <MenuIcon/>}
-            </div>
-
-            <div className="nav-link-items" onClick={handleCloseMobileMenu}>
-            { <Link className='link' to="/all" >All Items</Link>}                    
-            </div> 
-            <form className={click ? "nav-menu active" : "nav-menu"}>              
-              {/* 👉useNavigate */}
-              <select className='nav-link-items' onChange={handleCategoryChange}>
-                  <option value="">Select a category</option>
-                  <option value="smartphones">Smartphones</option>
-                  <option value="laptops">Laptops</option>
-                  <option value="fragrances">Fragrances</option>
-                  <option value="skincare">Skincare</option>
-                  <option value="groceries">Groceries</option>
-                  <option value="home-decoration">Home Decoration</option>
-              </select>                   
-            </form>
+    <nav id="Navbar2">     
+        {/* 🍉showNav? */}
+        <main className={showNav ? "navbar-container" : "navbar-container active"}>
             <div className="item">
-                <Link className ="link none" to="/">Home</Link>
-            </div>       
-            <div className="icons item">                
-            {/* 👉0255 icon click*/}
-            {/*   
-                <SearchIcon/>
-                <PersonIcon/>
-                <FavoriteIcon/>
-                <div className="cartIcon"  onClick={()=>setOpen(!open)}>
-                    <ShoppingCartOutlinedIcon/>
-                    <span>{products.length}</span>
-                </div> 
-            */}
-                <Link className ="link" to="/cart">              
-                    <div className="cartIcon">                      
-                    <ShoppingCartIcon/>       
-                        <span>{cartItems.length}</span>
-                    </div>
-                </Link>    
-            </div>
-          </main>
-        </section>
-   
-      </div>      
+                { <Link className='link' to="/">Store0914</Link>}                    
+            </div> 
+
+          {/* burger menu , responsive */}
+          <div className="menu-icon" onClick={handleClick}>
+            {click ? <CloseIcon/> : <MenuIcon/>}
+          </div>
+
+          <div className="nav-link-items" onClick={handleCloseMobileMenu}>
+          { <Link className='link' to="/all" >All Items</Link>}                    
+          </div> 
+          <form className={click ? "nav-menu active" : "nav-menu"}>              
+            {/* 👉useNavigate */}
+            <select className='nav-link-items' onChange={handleCategoryChange}>
+                <option value="">Select a category</option>
+                <option value="smartphones">Smartphones</option>
+                <option value="laptops">Laptops</option>
+                <option value="fragrances">Fragrances</option>
+                <option value="skincare">Skincare</option>
+                <option value="groceries">Groceries</option>
+                <option value="home-decoration">Home Decoration</option>
+            </select>                   
+          </form>
+          <div className="item">
+              <Link className ="link none" to="/">Home</Link>
+          </div>       
+          <div className="icons item">                
+          {/* 👉0255 icon click*/}
+          {/*   
+              <SearchIcon/>
+              <PersonIcon/>
+              <FavoriteIcon/>
+              <div className="cartIcon"  onClick={()=>setOpen(!open)}>
+                  <ShoppingCartOutlinedIcon/>
+                  <span>{products.length}</span>
+              </div> 
+          */}
+              <Link className ="link" to="/cart">              
+                  <div className="cartIcon">                      
+                  <ShoppingCartIcon/>       
+                      <span>{cartItems.length}</span>
+                  </div>
+              </Link>    
+          </div>
+        </main>    
     </nav>
   );
 };
