@@ -54,16 +54,15 @@ const Navbar = () => {
   return (
     <div id='navbar'>
         <div className="wrapper">
-            <section className={`left`}>  
                 <div className="item">
                  { <Link className='link' to="/">Store0914</Link>}                    
                 </div> 
                 <div className="item">
-                  { <Link className='link close' to="/all">All Items</Link>}                    
+                  { <Link className='link none' to="/all">All Items</Link>}                    
                 </div> 
                 
                 {/* 👉useNavigate */}
-                <select className='item close' onChange={handleCategoryChange}>
+                <select className='item none' onChange={handleCategoryChange}>
                     <option value="">Select a category</option>
                     <option value="smartphones">Smartphones</option>
                     <option value="laptops">Laptops</option>
@@ -72,12 +71,9 @@ const Navbar = () => {
                     <option value="groceries">Groceries</option>
                     <option value="home-decoration">Home Decoration</option>
                 </select>        
-            </section>
-
-           
-            <section className="right">
-                <div className="item close">
-                    <Link className ="link none" to="/">Home</Link>
+         
+                <div className="item none">
+                    <Link className ="link " to="/">Home</Link>
                 </div>       
                 <div className="icons item">                
                 {/* 👉0255 icon click*/}
@@ -100,8 +96,7 @@ const Navbar = () => {
                 {/* 🦄burger menu , responsive */}
                 <div className="menu-icon" onClick={handleClick}>
                    {click ? <CloseIcon/> : <MenuIcon/>}
-               </div>
-            </section>
+               </div>           
         </div>
         {/*🦄responsive  */}    
         <form className={click ? "sideNav active" : "sideNav"}>     
