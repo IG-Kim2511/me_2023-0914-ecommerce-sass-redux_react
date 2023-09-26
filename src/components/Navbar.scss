@@ -106,29 +106,31 @@
            }
         }
 
-
-        .sideNav{         
-            display: none;  
-        }
-
-        .sideNav.active{
+        /* 🦄responsive + transform효과
+            미리 만들어서 left -120%로 숨겨둔 후, 
+            left 0 으로 이동시킴
+        */
+        .sideNav{   
+            position: fixed;
+            top: 0;
+            left: -120%; /* 👉responsive */
 
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             gap: 10px;
-
-            position: fixed;
-            top: 0;
-            left: 0;
-
+            
             width: 40vw;
             height: 100vh;   
-
+            
             background-color: lightgray;
             z-index: 50;
+        }
 
+        .sideNav.active{
+            left: 0; /* 👉responsive */
+                    
             .nav-link-items {
                 padding: 0.5rem 0;
                 // width: 100%;
@@ -141,9 +143,9 @@
                 .nav-link {
                   padding: 2rem 0;
                   font-size: 1.5rem;
+                  
                   &:hover {
-                    color: grey;
-                    transition: all 0.3s ease;
+                    transform: scale(1.1);                    
                   }
                 }
               }
