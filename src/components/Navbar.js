@@ -68,13 +68,15 @@ const Navbar = () => {
                 </select>        
             </section>
 
+            {/*
             <section className='burger-container'>
                 <div className={`burger`} onClick={toggleMenu}>
                     <div className="bar"></div>
                     <div className="bar"></div>
                     <div className="bar"></div>
                 </div>
-            </section>
+            </section> 
+            */}
 
             <section className={`burger-left`}>  
                 <div className="item">
