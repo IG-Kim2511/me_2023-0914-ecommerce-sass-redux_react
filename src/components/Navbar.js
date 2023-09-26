@@ -100,6 +100,7 @@ const Navbar = () => {
         </div>
         {/*🦄responsive  */}    
         <form className={click ? "sideNav active" : "sideNav"}>     
+            {/* 복붙, reponsive side menu용으로 따로 코딩해둠 */}
             <Link className='link myButton' to="/all">All Items</Link>     
 
             <select className='nav-link-items' onChange={handleCategoryChange}>
@@ -122,60 +123,3 @@ const Navbar = () => {
 export default Navbar
 
 
-
-
-        //    {/*  <div className="item">
-        //             <Link className ="link" to="/products/1">smartphones</Link>
-        //         </div>
-        //         <div className="item">
-        //             <Link className ="link" to="/products/2">laptops</Link>
-        //         </div>
-        //         <div className="item">
-        //             <Link className ="link" to="/products/3">fragrances</Link>
-        //         </div>
-        //         <div className="item">
-        //             <Link className ="link" to="/products/3">skincare</Link>
-        //         </div>
-        //         <div className="item">
-        //             <Link className ="link" to="/products/3">groceries</Link>
-        //         </div>
-        //         <div className="item">
-        //             <Link className ="link" to="/products/3">home-decoration</Link>
-        //         </div> */}
-
-
-        //  {/*
-        //     <section className='burger-container'>
-        //         <div className={`burger`} >
-        //             <div className="bar"></div>
-        //             <div className="bar"></div>
-        //             <div className="bar"></div>
-        //         </div>
-        //     </section> 
-        //     */}
-
-        //     <section className={`burger-left`}>  
-        //         <div className="item">
-        //         { <Link className='link' to="/">Store0914</Link>}                    
-        //         </div> 
-        //         <div className="item">
-        //         { <Link className='link' to="/all">All Items</Link>}                    
-        //         </div> 
-                
-        //         {/* 👉useNavigate */}
-        //         <select className='item' onChange={handleCategoryChange}>
-        //             <option value="">Select a category</option>
-        //             <option value="smartphones">Smartphones</option>
-        //             <option value="laptops">Laptops</option>
-        //             <option value="fragrances">Fragrances</option>
-        //             <option value="skincare">Skincare</option>
-        //             <option value="groceries">Groceries</option>
-        //             <option value="home-decoration">Home Decoration</option>
-        //         </select>        
-        //     </section>
-
-        //     {/*   
-        //     <section className="center">
-        //         { <Link className='link' to="/">Store</Link>}
-        //         </section> 
-        //     */}

@@ -10,7 +10,7 @@ const CategoryProducts = ({category}) => {
     const CategoryProducts = products.filter((product) => product.category === category);
 
   return (
-    <div className="CategoryProducts">
+    <div id="CategoryProducts">
         <section className='top'>
             <h1>{category} products</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga adipisci aliquid dolorum veniam modi architecto culpa, impedit, quas maiores vitae asperiores distinctio tenetur minus ipsa ducimus eum quae itaque porro?</p>
@@ -33,7 +33,7 @@ const CategoryProducts = ({category}) => {
                         <h4 className='title'>{item.title} <span>(id:{item.id})</span></h4>
                         <div className='prices'>
                             <h4>price : {item.price}</h4>
-                            <h4>(stock : {item.stock})</h4>
+                            <h4 className='stock'>(stock : {item.stock})</h4>
                         </div>
                         </section>
                     </div>
