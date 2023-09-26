@@ -3,6 +3,7 @@ $primary: #fff;
 $secondary: rgb(80, 80, 80);
 $secondary-background: rgb(103, 103, 103);
 
+// 🍀active
 .navbar-container.active {
   background-color: transparent;
   transition: all 0.5s ease;
@@ -36,6 +37,7 @@ $secondary-background: rgb(103, 103, 103);
     display: none;
   }
 
+  //🍀nav-menu
   .nav-menu {
     display: flex;
     align-items: center;
@@ -43,6 +45,7 @@ $secondary-background: rgb(103, 103, 103);
     gap: 1rem;
     // CSS fix for the li markers
     list-style: none;
+
     .nav-link {
       color: $primary;
       text-decoration: none;
@@ -53,6 +56,7 @@ $secondary-background: rgb(103, 103, 103);
       padding: 0 1rem;
       height: 100%;
       font-size: 1.25rem;
+      
       &:hover {
         color: $secondary;
         transition: all 0.3s ease;
@@ -85,6 +89,7 @@ $secondary-background: rgb(103, 103, 103);
       transition: all 0.5s ease;
     }
 
+    // 🍀active
     .nav-menu.active {
       background-color: $secondary;
       left: 0;
