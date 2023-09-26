@@ -76,6 +76,26 @@ const Navbar = () => {
                 </div>
             </section>
 
+            <section className={`burger-left`}>  
+                <div className="item">
+                { <Link className='link' to="/">Store0914</Link>}                    
+                </div> 
+                <div className="item">
+                { <Link className='link' to="/all">All Items</Link>}                    
+                </div> 
+                
+                {/* 👉useNavigate */}
+                <select className='item' onChange={handleCategoryChange}>
+                    <option value="">Select a category</option>
+                    <option value="smartphones">Smartphones</option>
+                    <option value="laptops">Laptops</option>
+                    <option value="fragrances">Fragrances</option>
+                    <option value="skincare">Skincare</option>
+                    <option value="groceries">Groceries</option>
+                    <option value="home-decoration">Home Decoration</option>
+                </select>        
+            </section>
+
             {/*   
             <section className="center">
                 { <Link className='link' to="/">Store</Link>}
