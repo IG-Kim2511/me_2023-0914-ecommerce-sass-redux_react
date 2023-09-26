@@ -36,10 +36,19 @@ const Navbar = () => {
   //   🍉redux    
   const cartItems = useSelector((state) => state.cart.cartItems);  
 
+    //   🍀responsive
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    };
+
+    // ----
+
   return (
     <div id='navbar'>
         <div className="wrapper">
-            <section className="left">        
+            <section className={`left`}>  
                 <div className="item">
                  { <Link className='link' to="/">Store0914</Link>}                    
                 </div> 
@@ -57,6 +66,14 @@ const Navbar = () => {
                     <option value="groceries">Groceries</option>
                     <option value="home-decoration">Home Decoration</option>
                 </select>        
+            </section>
+
+            <section className='burger-container'>
+                <div className={`burger`} onClick={toggleMenu}>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                    <div className="bar"></div>
+                </div>
             </section>
 
             {/*   
