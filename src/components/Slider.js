@@ -9,7 +9,7 @@ const Slider = () => {
   // 🦄
   const data = [
     "https://i.imgur.com/ngBbEN5.jpg",
-    "https://i.imgur.com/Llb4srd.jpg",
+    "https://i.imgur.com/jgcx4vg.jpg",
     "https://i.imgur.com/12aNmCU.jpg",
     // "https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=1600",
     // "https://images.pexels.com/photos/1549200/pexels-photo-1549200.jpeg?auto=compress&cs=tinysrgb&w=1600",
