@@ -1,0 +1,180 @@
+// Color variables
+$primary: #fff;
+$secondary: rgb(250, 127, 127);
+$secondary-background: lightgray;
+
+#Navbar2{       
+    display: flex;
+    justify-content: center;
+      // 🍀active
+      .navbar-container.active {
+        // background-color: transparent;
+        transition: all 0.5s ease;
+      }
+
+      .navbar-container {
+        // CSS fix for different background-color
+        
+        width: 1150px;
+        height: 60px;
+        
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        
+        position: fixed;
+        top: 0;        
+        margin: 0 auto; 
+
+        background-color: $secondary-background;
+        transition: all 0.5s ease; 
+        z-index: 20;
+
+          // 🦄responsive     
+          .menu-icon {
+            // display: none;    
+            transform: translateX(-100%);
+            z-index: 0;
+          }
+          
+          //🍀nav-menu
+          .nav-menu {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            // CSS fix for the li markers
+            list-style: none;
+
+            .nav-link {
+              color: $primary;
+              text-decoration: none;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              text-decoration: none;
+              padding: 0 1rem;
+              height: 100%;
+              font-size: 1.25rem;
+
+              &:hover {
+                color: $secondary;
+                transition: all 0.3s ease;
+              }
+            }
+          }
+          .icons{
+            display: flex;
+            gap: 15px;
+            color: #777;
+            cursor: pointer;                  
+        
+            .cartIcon{
+                position: relative;
+                
+                span{
+                    position: absolute;
+                    right: -10px;
+                    top: -10px;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    font-size: 12px;
+                    width: 20px;
+                    height: 20px;
+
+                    border-radius: 50%;
+                    background-color: rgb(212, 26, 26);
+                    color: white;                       
+                }
+            }
+         }
+       
+}
+
+
+  // 🦄responsive
+  @media screen and (max-width: 1150px) {
+    .navbar-container {           
+      width: 1000px;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .navbar-container {           
+      width: 900px;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .navbar-container {           
+      width: 800px;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .navbar-container {           
+      width: 740px;
+    }
+
+    .menu-icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      position: absolute;
+      top: 10px;
+      right: 20px;
+
+      transform: translate(0);
+      font-size: 1.5rem;
+      color: $secondary;
+      cursor: pointer;
+
+      border: 1px solid $secondary;
+    }
+
+    .nav-menu {
+      background-color: $secondary-background;
+
+      display: flex;
+      flex-direction: column;
+
+      width: 60%;
+      height: 100vh;
+
+      position: absolute;
+      top: 60px;
+      left: -150%;
+      opacity: 1;
+      transition: all 0.5s ease;
+    }
+
+    // 🍀active
+    .nav-menu.active {
+      background-color: $secondary-background;
+      left: 0;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: 1;
+
+      .nav-link-items {
+        padding: 2rem 0;
+        width: 100%;
+        cursor: pointer;
+
+        &:hover {
+          background-color: $secondary-background;
+        }
+
+        .nav-link {
+          padding: 2rem 0;
+          font-size: 1.5rem;
+          &:hover {
+            color: grey;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+  }
+}

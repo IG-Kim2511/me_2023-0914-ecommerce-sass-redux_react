@@ -30,13 +30,15 @@ import Product from './pages/Product';
 import Home from './pages/Home';
 import FilterPage from './components/Filter/FilterPage';
 import CartPage from './pages/CartPage';
+import Navbar2 from './components/Navbar2';
 
 const App = () => {
   return (
     <BrowserRouter>
       <div className="app">
         <Navbar />
-
+        {/* <Navbar2/> */}
+                
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/all" element={<FilterPage />} />
