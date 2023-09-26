@@ -70,15 +70,17 @@ const Navbar = () => {
                     <Link className ="link" to="/">Home</Link>
                 </div>       
                 <div className="icons">
+                
+                {/* 👉0255 icon click*/}
+                {/*   
                     <SearchIcon/>
                     <PersonIcon/>
                     <FavoriteIcon/>
-
-                     {/* 👉0255 icon click*/}
-                     {/*   <div className="cartIcon"  onClick={()=>setOpen(!open)}>
+                    <div className="cartIcon"  onClick={()=>setOpen(!open)}>
                         <ShoppingCartOutlinedIcon/>
                         <span>{products.length}</span>
-                        </div> */}
+                    </div> 
+                */}
 
                     <Link className ="link" to="/cart">              
                         <div className="cartIcon">                      
