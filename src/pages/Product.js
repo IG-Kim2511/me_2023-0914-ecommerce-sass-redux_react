@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import products from '../data';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import UndoIcon from '@mui/icons-material/Undo';
 
 // 🍉redux
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,6 +12,13 @@ import { addToCart } from '../redux/reducers/cartReducer';
 const Product = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+
+  //🍀 navigate(-1)
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1); // Use -1 to navigate back to the previous page
+  };
 
   // 🍉fetchProductData로 찾아낸 data를 여기에 넣고 사용함
   const [product, setProduct] = useState(null);
@@ -75,10 +83,11 @@ const Product = () => {
 
 
             {/* ⚡ Handle the addition to the cart with the selected quantity */}
-            <button className='addCart' onClick={() => addtocartDispatch(product)}> <AddShoppingCartIcon/> ADD TO CART</button>
-            <div className="links">
-              <div className="item"><FavoriteBorderIcon/> ADD TO WISH LIST</div>
-            </div>
+            <button className='myButton productBtn' onClick={() => addtocartDispatch(product)}> <AddShoppingCartIcon/> ADD TO CART</button>
+
+            {/* navigate(-1) */}
+            <button className='myButton productBtn' onClick={handleGoBack}><UndoIcon/> Back</button>
+          
           </section>
         </div>
       ) : (

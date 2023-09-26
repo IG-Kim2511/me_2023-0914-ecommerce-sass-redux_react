@@ -1,68 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import products from '../data';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
-// 🍉redux
-import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../redux/reducers/cartReducer';
+const Navbar = () => {
+  const navigate = useNavigate();
 
-const Product = () => {
-  const { id } = useParams();
-  const dispatch = useDispatch();
-
-  // 🍉fetchProductData로 찾아낸 data를 여기에 넣고 사용함
-  const [product, setProduct] = useState(null);
-
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    // 🍀find id, setProduct
-    const fetchProductData = async () => {
-      try {
-        // 🍉find(~)
-        const productData = products.find((product) => product.id === parseInt(id));
-
-        // setProduct
-        if (productData) {
-          setProduct(productData);
-          setLoading(false);
-        } else {
-          console.error(`Product with ID ${id} not found.`);
-        }
-      } catch (error) {
-        console.error('Error fetching product data:', error);
-      }
-    };
-
-    fetchProductData();
-  }, [id]);
-
-  // 🍀redux
-  const cartItems = useSelector((state) => state.cart.cartItems);
-
-  const addProductToCart = (product) => {
-    // Dispatch the addToCart action with the product object
-    dispatch(addToCart(product));
+  const handleGoBack = () => {
+    navigate(-1); // Use -1 to navigate back to the previous page
   };
 
+  // ... (other code)
+
   return (
-    <div>
-      {loading ? (
-        <p>Loading...</p>
-      ) : product ? (
-        <div id='product'>
-          {/* Rest of your component */}
-          <button className='addCart' onClick={() => addProductToCart(product)}>
-            <AddShoppingCartIcon /> ADD TO CART
-          </button>
-        </div>
-      ) : (
-        <p>Product not found.</p>
-      )}
+    <div id="navbar">
+      <div className="wrapper">
+        <section className="left">
+          <div className="item">
+            <Link className="link" to="/">
+              Store0914
+            </Link>
+          </div>
+          <div className="item">
+            <Link className="link" to="/all">
+              All Items
+            </Link>
+          </div>
+          <select onChange={handleCategoryChange}>
+            <option value="">Select a category</option>
+            <option value="smartphones">Smartphones</option>
+            <option value="laptops">Laptops</option>
+            <option value="fragrances">Fragrances</option>
+            <option value="skincare">Skincare</option>
+            <option value="groceries">Groceries</option>
+            <option value="home-decoration">Home Decoration</option>
+          </select>
+        </section>
+
+        <section className="right">
+          <div className="item">
+            <button onClick={handleGoBack}>Go Back</button>
+          </div>
+          <div className="icons">
+            {/* ... (other icons and links) */}
+          </div>
+        </section>
+      </div>
     </div>
   );
 };
 
-export default Product;
+export default Navbar;

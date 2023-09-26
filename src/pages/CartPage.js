@@ -2,6 +2,7 @@ import React from 'react';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import { useDispatch, useSelector } from 'react-redux';
 import { decreaseQuantity, increaseQuantity, removeFromCart } from '../redux/reducers/cartReducer';
+import { Link } from 'react-router-dom';
 // import { removeFromCart } from '../redux/actions/cartActions';
 
 const CartPage = () => {
@@ -42,6 +43,7 @@ const CartPage = () => {
   };
 
   
+
   return (
     <div id='CartPage'>
       <main className='left'>
@@ -50,9 +52,11 @@ const CartPage = () => {
 
           {cartItems.map((item) => (
               <li key={item.id} className='items-container'>
+              <Link className='link thumbnail-container' to={`/product/${item.id}`} key={item.id}>
                 <div className="thumbnail-container">                
                   <img src={item.images[0]} alt={item.title} />
                 </div>
+              </Link>
                 <section className="details">
                   <div>
                     {item.title && <h1>{item.title}</h1>}                  

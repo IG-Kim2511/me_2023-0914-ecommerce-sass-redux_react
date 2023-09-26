@@ -48,7 +48,7 @@ const Navbar = () => {
                 </div> 
                 
                 {/* 👉useNavigate */}
-                <select onChange={handleCategoryChange}>
+                <select className='item' onChange={handleCategoryChange}>
                     <option value="">Select a category</option>
                     <option value="smartphones">Smartphones</option>
                     <option value="laptops">Laptops</option>
@@ -69,8 +69,7 @@ const Navbar = () => {
                 <div className="item">
                     <Link className ="link" to="/">Home</Link>
                 </div>       
-                <div className="icons">
-                
+                <div className="icons item">                
                 {/* 👉0255 icon click*/}
                 {/*   
                     <SearchIcon/>
@@ -81,7 +80,6 @@ const Navbar = () => {
                         <span>{products.length}</span>
                     </div> 
                 */}
-
                     <Link className ="link" to="/cart">              
                         <div className="cartIcon">                      
                         <ShoppingCartIcon/>       
