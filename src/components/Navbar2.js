@@ -60,7 +60,7 @@ const Navbar2 = () => {
           <div className="menu-icon" onClick={handleClick}>
             {click ? <CloseIcon/> : <MenuIcon/>}
           </div>
-
+         
           <div className="nav-link-items" onClick={handleCloseMobileMenu}>
           { <Link className='link' to="/all" >All Items</Link>}                    
           </div> 

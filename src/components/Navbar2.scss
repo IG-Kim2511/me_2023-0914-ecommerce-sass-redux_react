@@ -1,13 +1,11 @@
 // Color variables
 $primary: #fff;
-$secondary: lightgray;
+$secondary: rgb(250, 127, 127);
 $secondary-background: lightgray;
 
-#Navbar2{     
-  display: flex;        
-  gap: 25px;
-  padding-left: 20px;
-
+#Navbar2{       
+    display: flex;
+    justify-content: center;
       // 🍀active
       .navbar-container.active {
         // background-color: transparent;
@@ -30,14 +28,15 @@ $secondary-background: lightgray;
 
         background-color: $secondary-background;
         transition: all 0.5s ease; 
-        z-index: 2;
+        z-index: 20;
 
-          // 🦄responsive
+          // 🦄responsive     
           .menu-icon {
-            display: none;    
-            z-index: 100;
+            // display: none;    
+            transform: translateX(-100%);
+            z-index: 0;
           }
-
+          
           //🍀nav-menu
           .nav-menu {
             display: flex;
@@ -88,9 +87,7 @@ $secondary-background: lightgray;
 
                     border-radius: 50%;
                     background-color: rgb(212, 26, 26);
-                    color: white;         
-                    
-                    
+                    color: white;                       
                 }
             }
          }
@@ -99,34 +96,62 @@ $secondary-background: lightgray;
 
 
   // 🦄responsive
+  @media screen and (max-width: 1150px) {
+    .navbar-container {           
+      width: 1000px;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .navbar-container {           
+      width: 900px;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .navbar-container {           
+      width: 800px;
+    }
+  }
   @media screen and (max-width: 768px) {
+    .navbar-container {           
+      width: 740px;
+    }
+
     .menu-icon {
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
       position: absolute;
-      top: 0;
-      right: 0;
-      transform: translate(-100%, 60%);
+      top: 10px;
+      right: 20px;
+
+      transform: translate(0);
       font-size: 1.5rem;
-      color: $primary;
+      color: $secondary;
       cursor: pointer;
+
+      border: 1px solid $secondary;
     }
 
     .nav-menu {
-      background-color: $secondary;
+      background-color: $secondary-background;
+
       display: flex;
       flex-direction: column;
-      width: 100%;
+
+      width: 60%;
       height: 100vh;
+
       position: absolute;
       top: 60px;
-      left: -100%;
+      left: -150%;
       opacity: 1;
       transition: all 0.5s ease;
     }
 
     // 🍀active
     .nav-menu.active {
-      background-color: $secondary;
+      background-color: $secondary-background;
       left: 0;
       opacity: 1;
       transition: all 0.5s ease;

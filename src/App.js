@@ -36,11 +36,9 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="app">
-        {/* <Navbar /> */}
-        <Navbar2/>
-
-
-        
+        <Navbar />
+        {/* <Navbar2/> */}
+                
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/all" element={<FilterPage />} />
