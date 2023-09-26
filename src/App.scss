@@ -535,16 +535,7 @@ ul {
           }
     }
 
-
-
 }
-
-
-
-
-
-
-
 
 // ---------------🍀CartPage  --------------
 #CartPage{
@@ -651,13 +642,11 @@ ul {
 //🍀 sidebar
 @media (max-width:700px) {
     body {
-        max-width: 620px;    
-        
+        max-width: 620px;            
       }
     #slider{   
         max-width: 620px;
     } 
-
 
     #ProductsFiltered,  
     #CategoryProducts{                    
@@ -689,6 +678,65 @@ ul {
             }
         }
     }
+    
+#CartPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0px;
+
+    .left{
+ 
+        .items-wrap{
+      
+          
+            .thumbnail-container{
+                width: 150px;
+                height: 150px;
+    
+                img{                    
+                    width: 100%;
+                }
+            }
+            
+            .btn-container{
+                display: flex;     
+                gap: 10px;
+                .cartBtn{
+                    width: 5px;    
+           
+                    .mui-icon{
+                        font-size: 16px;
+                    }
+                }
+            }   
+        } 
+
+    }
+    .right{
+        flex: 1;
+        padding-top: 10vh;
+
+        .totalPrice{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            .btn-container{
+                display: flex;
+                gap: 5px;
+            }
+        }
+
+        .btn-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+}
+
+
     
 }
 @media (max-width:600px) {

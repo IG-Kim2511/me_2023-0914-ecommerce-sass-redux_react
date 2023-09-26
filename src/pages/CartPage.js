@@ -71,7 +71,7 @@ const CartPage = () => {
                   <div className='btn-container'>
                     <button className="myButton cartBtn" onClick={() => decreaseDispatch(item)}>-</button>
                     <button className="myButton cartBtn" onClick={() => increaseDispatch(item)}>+</button>
-                    <button className="myButton cartBtn" onClick={() => removeDispatch(item)}> <DeleteForeverIcon /></button>
+                    <button className="myButton cartBtn" onClick={() => removeDispatch(item)}> <DeleteForeverIcon className='mui-icon'/></button>
                   </div>    
                 </section>
               </li>
