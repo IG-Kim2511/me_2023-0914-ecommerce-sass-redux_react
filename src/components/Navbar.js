@@ -5,7 +5,7 @@ I wanna move page as soon as i click option
 */
 
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import SearchIcon from '@mui/icons-material/Search';
@@ -19,22 +19,22 @@ import { useSelector } from 'react-redux';
 
 
 const Navbar = () => {
-      // 👉0255
-    //   const [open,setOpen] = useState(false)
-    //   const products = useSelector((state) => state.cart.products);
 
-    const [selectedCategory, setSelectedCategory] = useState(''); // State to track the selected category
+  // 🍀useNavigate (= useHistory new version)
+  const navigate = useNavigate();
 
-    const handleCategoryChange = (event) => {
-        const selectedCategory = event.target.value;
-        if (selectedCategory) {
-          window.location.href = `/products/${selectedCategory}`;
-        }
-      };
+  const handleCategoryChange = (event) => {
+    const selectedCategory = event.target.value;
+    if (selectedCategory) {
+      navigate(`/products/${selectedCategory}`); // Use navigate to navigate
+    }
+  };
+  
+  const [selectedCategory, setSelectedCategory] = useState(''); 
+  // --end--
 
-    //   🍉redux    
-    const cartItems = useSelector((state) => state.cart.cartItems);
-    
+  //   🍉redux    
+  const cartItems = useSelector((state) => state.cart.cartItems);  
 
   return (
     <div id='navbar'>
@@ -47,6 +47,7 @@ const Navbar = () => {
                   { <Link className='link' to="/all">All Items</Link>}                    
                 </div> 
                 
+                {/* 👉useNavigate */}
                 <select onChange={handleCategoryChange}>
                     <option value="">Select a category</option>
                     <option value="smartphones">Smartphones</option>

@@ -19,9 +19,10 @@ const CartPage = () => {
   const removeDispatch=(item)=>{
     dispatch(removeFromCart(item))
   }
+  // ----
 
   
-  // Calculate total price, tax, and subtotal
+  //🍀 Calculate total price, tax, and subtotal
   const subtotal = cartItems.reduce((total, item) => {
     return total + item.price * item.quantity;
   }, 0);
@@ -32,9 +33,8 @@ const CartPage = () => {
 
   const total = subtotal + tax;
 
-  // Function to clear the entire localStorage and Redux store
-  const handleResetCart = () => {
-    // Remove all items from the Redux store
+  // Remove all items from the Redux store
+  const handleResetCart = () => {    
     cartItems.forEach((item) => dispatch(removeFromCart(item)));
 
     // Clear localStorage
@@ -44,48 +44,52 @@ const CartPage = () => {
   
   return (
     <div id='CartPage'>
-      <h1>Cart</h1>
-      <ul className="items-wrap">      
+      <main className='left'>
+        <h1>Cart</h1>
+        <ul className="items-wrap">      
 
-        {cartItems.map((item) => (
-            <li key={item.id} className='items-container'>
-              <div className="thumbnail-container">
-              
-              {item.thumbnail && <img src={item.thumbnail} alt={item.title} />}
-              </div>
-              <section className="details">
-                <div>
-                  {item.title && <h1>{item.title}</h1>}                  
-                  {item.price && <div className="price">${item.price}</div>}
+          {cartItems.map((item) => (
+              <li key={item.id} className='items-container'>
+                <div className="thumbnail-container">
+                
+                <img src={item.images[0]} alt={item.title} />
                 </div>
-                <div className='price-container'>
-                  {/* <h4>Price  : ${item.price.toFixed(2)}</h4> */}
-                  <h4>Price  : ${item.price.toFixed(2)}</h4>
-                  <h4>QTY : {item.quantity}</h4>
-                </div>
+                <section className="details">
+                  <div>
+                    {item.title && <h1>{item.title}</h1>}                  
+                    {item.price && <div className="price">${item.price}</div>}
+                  </div>
+                  <div className='price-container'>
+                    {/* <h4>Price  : ${item.price.toFixed(2)}</h4> */}
+                    <h4>Price  : ${item.price.toFixed(2)}</h4>
+                    <h4>QTY : {item.quantity}</h4>
+                  </div>
 
-                <div className='btn-container'>
-                  <button className="myButton cartBtn" onClick={() => decreaseDispatch(item)}>-</button>
-                  <button className="myButton cartBtn" onClick={() => increaseDispatch(item)}>+</button>
-                  <button className="myButton cartBtn" onClick={() => removeDispatch(item)}> <DeleteForeverIcon /></button>
-                </div>    
-              </section>
-              <section className="itemPrice">
-                <span>Subtotal</span>
-                {item.price && <span>${item.price * item.quantity}</span>}
-              </section>
-            </li>
-          ))}   
-      </ul>
-      <section className='totalPrice'>
-        <h4>Subtotal: ${subtotal.toFixed(2)}</h4>
-        <h4>Tax (10%): ${tax.toFixed(2)}</h4>
-        <h4>Total: ${total.toFixed(2)}</h4>
-        <div className="btn-container">
-          <button className="myButton" onClick={handleResetCart}>Reset Cart</button>
-          <button className="myButton" >Order</button>
-        </div>
-      </section>
+                  <div className='btn-container'>
+                    <button className="myButton cartBtn" onClick={() => decreaseDispatch(item)}>-</button>
+                    <button className="myButton cartBtn" onClick={() => increaseDispatch(item)}>+</button>
+                    <button className="myButton cartBtn" onClick={() => removeDispatch(item)}> <DeleteForeverIcon /></button>
+                  </div>    
+                </section>
+                <section className="itemPrice">
+                  <span>Subtotal</span>
+                  {item.price && <span>${item.price * item.quantity}</span>}
+                </section>
+              </li>
+            ))}   
+        </ul>
+      </main>
+      <main className='right'>
+        <section className='totalPrice'>
+          <h4>Subtotal: ${subtotal.toFixed(2)}</h4>
+          <h4>Tax (10%): ${tax.toFixed(2)}</h4>
+          <h4>Total: ${total.toFixed(2)}</h4>
+          <div className="btn-container">
+            <button className="myButton" onClick={handleResetCart}>Reset Cart</button>
+            <button className="myButton" >Order</button>
+          </div>
+        </section>
+        </main>
     </div>
   );
 };
