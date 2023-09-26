@@ -9,7 +9,7 @@ import CloseIcon from '@mui/icons-material/Close';
 
 const Navbar2 = () => {
 
-    // 🍀responsive nav bar
+  // 🍀responsive nav bar
   const [click, setClicked] = useState(false);
   const [showNav, setShowNav] = useState(true);
 

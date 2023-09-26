@@ -36,14 +36,18 @@ const Navbar = () => {
   //   🍉redux    
   const cartItems = useSelector((state) => state.cart.cartItems);  
 
-    //   🍀responsive
-    const [isOpen, setIsOpen] = useState(false);
+  // 🍀responsive nav bar
+  const [click, setClicked] = useState(false);
+  const [showNav, setShowNav] = useState(true);
 
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
+  const handleClick = () => {
+    setClicked(!click);
+  };
 
-    // ----
+  const handleCloseMobileMenu = () => {
+    setShowNav(false);
+  };
+// ----
 
   return (
     <div id='navbar'>
@@ -68,42 +72,7 @@ const Navbar = () => {
                 </select>        
             </section>
 
-            {/*
-            <section className='burger-container'>
-                <div className={`burger`} onClick={toggleMenu}>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
-                    <div className="bar"></div>
-                </div>
-            </section> 
-            */}
-
-            <section className={`burger-left`}>  
-                <div className="item">
-                { <Link className='link' to="/">Store0914</Link>}                    
-                </div> 
-                <div className="item">
-                { <Link className='link' to="/all">All Items</Link>}                    
-                </div> 
-                
-                {/* 👉useNavigate */}
-                <select className='item' onChange={handleCategoryChange}>
-                    <option value="">Select a category</option>
-                    <option value="smartphones">Smartphones</option>
-                    <option value="laptops">Laptops</option>
-                    <option value="fragrances">Fragrances</option>
-                    <option value="skincare">Skincare</option>
-                    <option value="groceries">Groceries</option>
-                    <option value="home-decoration">Home Decoration</option>
-                </select>        
-            </section>
-
-            {/*   
-            <section className="center">
-                { <Link className='link' to="/">Store</Link>}
-                </section> 
-            */}
-
+           
             <section className="right">
                 <div className="item">
                     <Link className ="link none" to="/">Home</Link>
@@ -160,3 +129,40 @@ export default Navbar
         //         <div className="item">
         //             <Link className ="link" to="/products/3">home-decoration</Link>
         //         </div> */}
+
+
+        //  {/*
+        //     <section className='burger-container'>
+        //         <div className={`burger`} >
+        //             <div className="bar"></div>
+        //             <div className="bar"></div>
+        //             <div className="bar"></div>
+        //         </div>
+        //     </section> 
+        //     */}
+
+        //     <section className={`burger-left`}>  
+        //         <div className="item">
+        //         { <Link className='link' to="/">Store0914</Link>}                    
+        //         </div> 
+        //         <div className="item">
+        //         { <Link className='link' to="/all">All Items</Link>}                    
+        //         </div> 
+                
+        //         {/* 👉useNavigate */}
+        //         <select className='item' onChange={handleCategoryChange}>
+        //             <option value="">Select a category</option>
+        //             <option value="smartphones">Smartphones</option>
+        //             <option value="laptops">Laptops</option>
+        //             <option value="fragrances">Fragrances</option>
+        //             <option value="skincare">Skincare</option>
+        //             <option value="groceries">Groceries</option>
+        //             <option value="home-decoration">Home Decoration</option>
+        //         </select>        
+        //     </section>
+
+        //     {/*   
+        //     <section className="center">
+        //         { <Link className='link' to="/">Store</Link>}
+        //         </section> 
+        //     */}
