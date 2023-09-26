@@ -50,7 +50,7 @@ const Navbar2 = () => {
 
   return (
     <nav id="Navbar2">     
-        {/* 🍉showNav? */}
+        {/* 🍉showNav? 클릭하면 백그라운드 바뀜 - 안중요함 */}
         <main className={showNav ? "navbar-container" : "navbar-container active"}>
             <div className="item">
                 { <Link className='link' to="/">Store0914</Link>}                    
@@ -64,6 +64,8 @@ const Navbar2 = () => {
           <div className="nav-link-items" onClick={handleCloseMobileMenu}>
           { <Link className='link' to="/all" >All Items</Link>}                    
           </div> 
+
+          {/*🦄responsive  */}
           <form className={click ? "nav-menu active" : "nav-menu"}>              
             {/* 👉useNavigate */}
             <select className='nav-link-items' onChange={handleCategoryChange}>

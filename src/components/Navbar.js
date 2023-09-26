@@ -5,6 +5,7 @@ I wanna move page as soon as i click option
 */
 
 import React, { useState } from 'react'
+import "./Navbar.scss"
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -14,7 +15,8 @@ import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Favorite } from '@mui/icons-material';
-
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 
 
@@ -57,11 +59,11 @@ const Navbar = () => {
                  { <Link className='link' to="/">Store0914</Link>}                    
                 </div> 
                 <div className="item">
-                  { <Link className='link' to="/all">All Items</Link>}                    
+                  { <Link className='link close' to="/all">All Items</Link>}                    
                 </div> 
                 
                 {/* 👉useNavigate */}
-                <select className='item' onChange={handleCategoryChange}>
+                <select className='item close' onChange={handleCategoryChange}>
                     <option value="">Select a category</option>
                     <option value="smartphones">Smartphones</option>
                     <option value="laptops">Laptops</option>
@@ -74,7 +76,7 @@ const Navbar = () => {
 
            
             <section className="right">
-                <div className="item">
+                <div className="item close">
                     <Link className ="link none" to="/">Home</Link>
                 </div>       
                 <div className="icons item">                
@@ -95,11 +97,29 @@ const Navbar = () => {
                         </div>
                     </Link>    
                 </div>
+                {/* 🦄burger menu , responsive */}
+                <div className="menu-icon" onClick={handleClick}>
+                   {click ? <CloseIcon/> : <MenuIcon/>}
+               </div>
             </section>
-        
         </div>
-        {/* 🦄0255 open true일때  <Cart/> 보여줌 */}
-        {/* {open && <Cart/>} */}
+        {/*🦄responsive  */}    
+        <form className={click ? "sideNav active" : "sideNav"}>     
+            <div className="item">
+               <Link className='link close' to="/all">All Items</Link>                 
+            </div>          
+
+            <select className='nav-link-items' onChange={handleCategoryChange}>
+                <option value="">Select a category</option>
+                <option value="smartphones">Smartphones</option>
+                <option value="laptops">Laptops</option>
+                <option value="fragrances">Fragrances</option>
+                <option value="skincare">Skincare</option>
+                <option value="groceries">Groceries</option>
+                <option value="home-decoration">Home Decoration</option>
+            </select>                   
+         </form>
+      
         
     </div>
     
