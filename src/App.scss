@@ -692,72 +692,102 @@ ul {
             display: flex;
             flex-direction: column;
             justify-content: center;
-
         }
-
     }
-
- 
-
-
 }
 
 
 
 
+// ------🍀media query-----------
 
+@media (max-width:1200px) {
+  
+}
 
+@media (max-width:1050px) {
+    body {
+        max-width: 900px;    
+      }
+    #navbar{    
+        .wrapper{    
+            width: 900px;
+        }
+    }
+    #slider{   
+        max-width: 900px;
+    }   
+}
 
+@media (max-width:840px) {
+    body {
+        max-width: 800px;    
+      }
+    #navbar{    
+        .wrapper{    
+            width: 800px;
+        }
+    }
+    #slider{   
+        max-width: 800px;
+    }   
+}
 
+@media (max-width:700px) {
+    body {
+        max-width: 620px;    
+      }
+    #navbar{    
+        .wrapper{    
+            width: 620px;
+        }
+    }
+    #slider{   
+        max-width: 620px;
+    }
+}
+@media (max-width:600px) {
+    body {
+        max-width: 520px;    
+      }
+    #navbar{    
+        .wrapper{    
+            width: 520px;
+        }
+    }
+    #slider{   
+        max-width: 520px;
+    }
+}
+@media (max-width:500px) {
+    body {
+        max-width: 420px;    
+      }
+    #navbar{    
+        .wrapper{    
+            width: 420px;
+        }
+    }
+    #slider{   
+        max-width: 420px;
+    }
+}
 
+@media (max-width:450px) {
+    body {
+        max-width: 400px;    
+      }
+    #navbar{    
+        .wrapper{    
+            width: 400px;
+        }
+    }
+    #slider{   
+        max-width: 400px;
+    }
+}
 
-// ---------------🍀  --------------
-
-
-
-
-
-
-
-
-
-
-// ---------------🍀  --------------
-
-
-
-
-
-
-
-
-
-
-// ---------------🍀  --------------
-
-
-
-
-
-
-
-
-
-
-// ---------------🍀  --------------
-
-
-
-
-
-
-
-
-
-
-// ---------------🍀  --------------
-
-
+}
 
 
 
