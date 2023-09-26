@@ -105,9 +105,7 @@ const Navbar = () => {
         </div>
         {/*🦄responsive  */}    
         <form className={click ? "sideNav active" : "sideNav"}>     
-            <div className="item">
-               <Link className='link close' to="/all">All Items</Link>                 
-            </div>          
+            <Link className='link myButton' to="/all">All Items</Link>     
 
             <select className='nav-link-items' onChange={handleCategoryChange}>
                 <option value="">Select a category</option>

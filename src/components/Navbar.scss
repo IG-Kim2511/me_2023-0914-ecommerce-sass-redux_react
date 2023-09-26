@@ -87,7 +87,7 @@
         }
 
         .left{
-            flex: 2;    /* 🦄flex:1  */
+            flex: 1;    /* 🦄flex:1  */
             display: flex;            
             gap: 25px;
             padding-left: 20px;
@@ -131,9 +131,7 @@
 
                         border-radius: 50%;
                         background-color: rgb(212, 26, 26);
-                        color: white;         
-                        
-                        
+                        color: white;      
                     }
                 }
             }
@@ -151,27 +149,46 @@
             display: none;
         }
 
-        .sideNav{        
+        .sideNav{         
+            display: none;  
+        }
+
+        .sideNav.active{
 
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
+            gap: 10px;
 
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
 
-            width: 60vw;
-            height: 80vh;
-    
-            background-color: yellow;
+            width: 40vw;
+            height: 100vh;   
 
+            background-color: lightgray;
             z-index: 50;
 
-        }
-        .sideNav.active{
-            display: none;
-
+            .nav-link-items {
+                padding: 0.5rem 0;
+                // width: 100%;
+                cursor: pointer;
+        
+                &:hover {
+                  background-color: lightgray;
+                }
+        
+                .nav-link {
+                  padding: 2rem 0;
+                  font-size: 1.5rem;
+                  &:hover {
+                    color: grey;
+                    transition: all 0.3s ease;
+                  }
+                }
+              }
         }
 
     }
