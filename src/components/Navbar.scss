@@ -90,18 +90,22 @@
     #navbar{    
         .wrapper{    
             width: 620px;
+
+            // 🍀responsive
             .none{
                 display: none;
             }
+            .menu-icon{
+                display: block;
+                position: fixed;
+                top: 25px;
+                right: 50px;
+            }
+           .mui-icon{
+            font-size: 2rem;
+           }
         }
 
-        .menu-icon{
-            display: block;
-            position: fixed;
-            top: 20px;
-            left: 20px;
-
-        }
 
         .sideNav{         
             display: none;  

@@ -95,7 +95,7 @@ const Navbar = () => {
                 </div>
                 {/* 🦄burger menu , responsive */}
                 <div className="menu-icon" onClick={handleClick}>
-                   {click ? <CloseIcon/> : <MenuIcon/>}
+                   {click ? <CloseIcon className='mui-icon'/> : <MenuIcon className='mui-icon'/>}
                </div>           
         </div>
         {/*🦄responsive  */}    
