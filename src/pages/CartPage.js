@@ -50,9 +50,8 @@ const CartPage = () => {
 
           {cartItems.map((item) => (
               <li key={item.id} className='items-container'>
-                <div className="thumbnail-container">
-                
-                <img src={item.images[0]} alt={item.title} />
+                <div className="thumbnail-container">                
+                  <img src={item.images[0]} alt={item.title} />
                 </div>
                 <section className="details">
                   <div>
@@ -63,17 +62,13 @@ const CartPage = () => {
                     {/* <h4>Price  : ${item.price.toFixed(2)}</h4> */}
                     <h4>Price  : ${item.price.toFixed(2)}</h4>
                     <h4>QTY : {item.quantity}</h4>
+                    <h4>Subtotal : ${item.price * item.quantity}</h4>              
                   </div>
-
                   <div className='btn-container'>
                     <button className="myButton cartBtn" onClick={() => decreaseDispatch(item)}>-</button>
                     <button className="myButton cartBtn" onClick={() => increaseDispatch(item)}>+</button>
                     <button className="myButton cartBtn" onClick={() => removeDispatch(item)}> <DeleteForeverIcon /></button>
                   </div>    
-                </section>
-                <section className="itemPrice">
-                  <span>Subtotal</span>
-                  {item.price && <span>${item.price * item.quantity}</span>}
                 </section>
               </li>
             ))}   

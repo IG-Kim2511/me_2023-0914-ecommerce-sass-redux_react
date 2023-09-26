@@ -643,16 +643,18 @@ ul {
 
         .items-wrap{
             display: flex;
+            margin: auto;
+
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 30px;
     
             border-radius: 5px;
           
             .thumbnail-container{
-                width: 350px;
+                width: 250px;
+                height: 250px;
     
-                img{
-                    
+                img{                    
                     width: 100%;
                 }
             }
