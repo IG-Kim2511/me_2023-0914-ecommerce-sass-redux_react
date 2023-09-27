@@ -58,6 +58,9 @@ const Product = () => {
     dispatch(addToCart(product));
   };
 
+  // 🍀mainImg switch
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+  
   return (
     <div>
       {loading ? (
@@ -66,14 +69,22 @@ const Product = () => {
         <div id='product'>
           <section className='left'>
             <div className='images'>
-              <img src={product.images[1]} alt={product.title} />
-              <img src={product.images[2]} alt={product.title} />
+              {product.images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={product.title}
+                  onClick={() => setSelectedImageIndex(index)}
+                />
+              ))}
             </div>
             <div className='mainImg'>
-              <img src={product.images[0]} alt={product.title} />
+              <img
+                src={product.images[selectedImageIndex]}
+                alt={product.title}
+              />
             </div>
           </section>
-
           <section className='right'>
             <h1>{product.title}</h1>
 

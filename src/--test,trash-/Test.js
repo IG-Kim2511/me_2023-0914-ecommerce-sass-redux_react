@@ -1,33 +1,52 @@
-// Navbar.js
+            
+            
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import products from '../data';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import UndoIcon from '@mui/icons-material/Undo';
 
-import React, { useState } from 'react';
-import './Navbar.scss';
+// ...
 
-function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+const Product = () => {
+  // ...
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+
+  // ...
 
   return (
-    <nav className="navbar">
-      <div className="navbar-logo">Your Logo</div>
-      <div className={`navbar-links ${isOpen ? 'active' : ''}`}>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/contact">Contact</a></li>
-        </ul>
-      </div>
-      <div className={`navbar-burger ${isOpen ? 'active' : ''}`} onClick={toggleMenu}>
-        <div className="bar"></div>
-        <div className="bar"></div>
-        <div className="bar"></div>
-      </div>
-    </nav>
-  );
-}
+    <div>
+      {loading ? (
+        <p>Loading...</p>
+      ) : product ? (
+        <div id='product'>
+          <section className='left'>
+            <div className='images'>
+              {product.images.map((image, index) => (
+                <img
+                  key={index}
+                  src={image}
+                  alt={product.title}
+                  onClick={() => setSelectedImageIndex(index)}
+                />
+              ))}
+            </div>
+            <div className='mainImg'>
+              <img
+                src={product.images[selectedImageIndex]}
+                alt={product.title}
+              />
+            </div>
+          </section>
 
-export default Navbar;
+          {/* ...rest of your component */}
+        </div>
+      ) : (
+        <p>Product not found.</p>
+      )}
+    </div>
+  );
+};
+
+export default Product;
