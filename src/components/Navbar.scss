@@ -73,6 +73,7 @@
     #navbar{    
         .wrapper{    
             width: 900px;
+            background-color: yellow;
         }
     }  
 }
@@ -99,7 +100,7 @@
                 display: block;
                 position: fixed;
                 top: 25px;
-                right: 50px;
+                right: 40px;
             }
            .mui-icon{
             font-size: 2rem;
