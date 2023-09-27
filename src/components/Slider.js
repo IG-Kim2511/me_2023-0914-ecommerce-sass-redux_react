@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import EastOutlinedIcon from "@mui/icons-material/EastOutlined";
 import WestOutlinedIcon from "@mui/icons-material/WestOutlined";
+import { Link } from "react-router-dom";
 
 const Slider = () => {
   // 🦄
@@ -35,7 +36,6 @@ const Slider = () => {
       */} 
       <section className="container" style={{transform:`translateX(-${currentSlide * 50}vw)`}}>
 
-      {/* // 🦄 */}
         <img src={data[0]} alt="0" />
         <img src={data[1]} alt="1" />
         <img src={data[2]} alt="2" /> 
