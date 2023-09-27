@@ -1,9 +1,8 @@
 // reducers/filterReducer.js
 const initialState = {
     categories: [],
-    maxPrice: 0,
+    maxPrice: 1800,
     sortOrder: 'asc',
-    filteredProducts: [],
   };
   
   const filterReducer = (state = initialState, action) => {
@@ -14,8 +13,6 @@ const initialState = {
         return { ...state, maxPrice: action.payload };
       case 'SET_SORT_ORDER':
         return { ...state, sortOrder: action.payload };
-      case 'SET_FILTERED_PRODUCTS':
-        return { ...state, filteredProducts: action.payload };
       default:
         return state;
     }

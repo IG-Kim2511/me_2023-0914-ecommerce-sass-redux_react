@@ -1,5 +1,11 @@
 // Filter.js
-import React from 'react';
+import React from "react";
+import { connect } from "react-redux";
+import {
+  setCategoriesFilter,
+  setMaxPriceFilter,
+  setSortOrder,
+} from "../../actions/filterActions";
 
 const Filter = ({
   categories,
@@ -9,12 +15,30 @@ const Filter = ({
   setMaxPriceFilter,
   setSortOrder,
 }) => {
-  // Handle filter changes and dispatch actions
-  // ...
+  // ... Existing code ...
+
+  const applyFilters = () => {
+    // Dispatch actions to update Redux store
+    setCategoriesFilter(categoryFilters);
+    setMaxPriceFilter(priceFilter);
+    setSortOrder(sortOrder);
+  };
 
   return (
-    // Render filter inputs and apply filter button
+    // ... Existing code ...
   );
 };
 
-export default Filter;
+const mapStateToProps = (state) => ({
+  categories: state.filter.categories,
+  maxPrice: state.filter.maxPrice,
+  sortOrder: state.filter.sortOrder,
+});
+
+const mapDispatchToProps = {
+  setCategoriesFilter,
+  setMaxPriceFilter,
+  setSortOrder,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filter);

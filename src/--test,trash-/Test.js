@@ -1,10 +1,6 @@
 // store.js
-import { createStore, combineReducers } from 'redux';
-import filterReducer from './reducers/filterReducer';
-
-const rootReducer = combineReducers({
-  filter: filterReducer,
-});
+import { createStore } from 'redux';
+import rootReducer from './reducers';
 
 const store = createStore(rootReducer);
 

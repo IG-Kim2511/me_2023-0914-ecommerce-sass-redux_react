@@ -13,8 +13,3 @@ export const setSortOrder = (sortOrder) => ({
   type: 'SET_SORT_ORDER',
   payload: sortOrder,
 });
-
-export const setFilteredProducts = (filteredProducts) => ({
-  type: 'SET_FILTERED_PRODUCTS',
-  payload: filteredProducts,
-});
