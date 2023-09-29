@@ -38,17 +38,16 @@ const FilterPage = () => {
   };
 
   return (
-    <div id="FilterPage">
-      
+    <div id="FilterPage">      
       <section className="wrapper">
-      <div className="left">
+        <div className="left">
+          {/* 🦄*/}
+          <Filter onFilter={applyFilters} />      
+        </div>
+        <div className="right">
         {/* 🦄*/}
-        <Filter onFilter={applyFilters} />      
-      </div>
-      <div className="right">
-       {/* 🦄*/}
-        <ProductsFiltered filteredProducts={filteredProducts} />
-      </div>
+          <ProductsFiltered filteredProducts={filteredProducts} />
+        </div>
       </section>
     </div>
   );
