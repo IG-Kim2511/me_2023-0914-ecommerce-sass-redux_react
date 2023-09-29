@@ -28,7 +28,7 @@ import Footer from './components/Footer';
 import Products from './pages/Products';
 import Product from './pages/Product';
 import Home from './pages/Home';
-import FilterPage from './components/Filter/FilterPage';
+import FilterPage from './pages/FilterPage/FilterPage';
 import CartPage from './pages/CartPage';
 
 const App = () => {
