@@ -15,10 +15,15 @@ function MagnifyingGlass({ src }) {
       setCursorPosition({ x: cursorX, y: cursorY });
     };
 
-    imageRef.current.addEventListener('mousemove', handleMouseMove);
+    const imageElement = imageRef.current;
+    if (imageElement) {
+      imageElement.addEventListener('mousemove', handleMouseMove);
+    }
 
     return () => {
-      imageRef.current.removeEventListener('mousemove', handleMouseMove);
+      if (imageElement) {
+        imageElement.removeEventListener('mousemove', handleMouseMove);
+      }
     };
   }, []);
 
