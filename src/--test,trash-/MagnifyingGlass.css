@@ -7,6 +7,7 @@
   .image {
     max-width: 100%;
     display: block;
+    cursor: zoom-in;
   }
   
   .magnifying-glass {
@@ -17,8 +18,8 @@
     background-repeat: no-repeat;
     pointer-events: none;
     display: none;
-    transform: translate(-50%, -50%);
-    cursor: zoom-in;
+    /* transform: translate(-50%, -50%); */
+    
   }
   
   .magnifying-glass.zoomed {

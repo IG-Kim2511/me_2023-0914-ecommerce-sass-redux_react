@@ -9,8 +9,8 @@ function MagnifyingGlass({ src }) {
   useEffect(() => {
     const handleMouseMove = (e) => {
       const { left, top } = imageRef.current.getBoundingClientRect();
-      const cursorX = e.clientX - left;
-      const cursorY = e.clientY - top;
+      const cursorX = e.clientX - left - 50; // Remove 'TransformX' and '-50%'
+      const cursorY = e.clientY - top - 50;  // Remove 'TransformY' and '-50%'
 
       setCursorPosition({ x: cursorX, y: cursorY });
     };
