@@ -42,9 +42,7 @@ const Filter = ({ onFilter }) => {
   //onFilter object 만듬
   // input으로 filter된 const들을 onFilter 오브젝트안에 넣어서 결과물 완성시킴
 
-  /* 
- 
-
+  /*
     FilterPage.js에서 자식 컴포넌트인 Filter에서 호출된 onFilter 함수는 
     필터 매개변수를 받아와서 setFilteredProducts를 사용하여 filteredProducts의 상태를 업데이트합니다.
      이 상태 업데이트는 FilterPage 컴포넌트를 다시 렌더링하고, 그에 따라 필터링된 제품이 표시됩니다.
@@ -68,7 +66,7 @@ const Filter = ({ onFilter }) => {
             <input
               type="checkbox"
               value="smartphones"
-              //🦄onChange
+              //🦄onChange : input attribute가 onChange한때 handleCategoryChange function 실행
               onChange={handleCategoryChange}
               // 🦄input checked Attribute
               checked={categoryFilters.includes("smartphones")}
