@@ -11,8 +11,8 @@ const FilterPage = () => {
   // 🦄filteredProducts
   const [filteredProducts, setFilteredProducts] = useState(products);
 
-  // 🦄applyFilters
-  const applyFilters = ({ categories, maxPrice, sortOrder }) => {
+  // 🦄 onFilter
+  const onFilter = ({ categories, maxPrice, sortOrder }) => {
     // 🍀filtered array 만듬, based on categories, maxPrice, and sortOrder
     let filtered = [...products];
 
@@ -42,7 +42,7 @@ const FilterPage = () => {
       <section className="wrapper">
         <div className="left">
           {/* 🦄*/}
-          <Filter onFilter={applyFilters} />      
+          <Filter onFilter={onFilter} />      
         </div>
         <div className="right">
         {/* 🦄*/}
