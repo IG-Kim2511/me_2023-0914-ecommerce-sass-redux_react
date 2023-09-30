@@ -8,6 +8,7 @@ import UndoIcon from '@mui/icons-material/Undo';
 // 🍉redux
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../redux/reducers/cartReducer';
+import MagnifyingGlass from '../--test,trash-/MagnifyingGlass';
 
 const Product = () => {
   const { id } = useParams();
@@ -70,6 +71,7 @@ const Product = () => {
           <section className='left'>
             <div className='images'>
               {product.images.map((image, index) => (
+                
                 <img
                   key={index}
                   src={image}
@@ -79,7 +81,7 @@ const Product = () => {
               ))}
             </div>
             <div className='mainImg'>
-              <img
+              <MagnifyingGlass
                 src={product.images[selectedImageIndex]}
                 alt={product.title}
               />

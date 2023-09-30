@@ -11,8 +11,8 @@
   }
   
   .magnifying-glass {
-    width: 100px; /* Adjust the size of the magnifying glass */
-    height: 100px; /* Adjust the size of the magnifying glass */
+    width: 200px; /* Adjust the size of the magnifying glass */
+    height: 200px; /* Adjust the size of the magnifying glass */
     border: 2px solid #333; /* Customize the magnifying glass border */
     position: absolute;
     background-repeat: no-repeat;
