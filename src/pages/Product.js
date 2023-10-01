@@ -8,7 +8,7 @@ import UndoIcon from '@mui/icons-material/Undo';
 // 🍉redux
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../redux/reducers/cartReducer';
-import MagnifyingGlass from '../--test,trash-/MagnifyingGlass';
+import MagnifyingGlass from '../components/MagnifyingGlass';
 
 const Product = () => {
   const { id } = useParams();
