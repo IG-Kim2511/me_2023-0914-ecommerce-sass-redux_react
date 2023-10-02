@@ -112,15 +112,3 @@ export default Product;
 
 
             
-// <div className="quantity">
-// <button
-//   /*🦄0127 : -1로 떨어지지 않게 하기
-//    값이 1이라면 1로 고정 (더이상 마이너스 떨어지지않음)              
-//    default값 : 1 로 만듬 */
-//    onClick={() =>
-//     setQuantity((prev) => (prev === 1 ? 1 : prev - 1))
-//   }
-//   >-</button>
-// <h3>{quantity}</h3>
-// <button onClick={() => setQuantity((prev) => prev + 1)}>+</button>
-// </div>

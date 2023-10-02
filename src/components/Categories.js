@@ -44,30 +44,3 @@ export default Categories;
 
 
 
-    // {/* 🦄flex로 grid처럼 만들기 (grid x) */}
-
-    // {/* 👉css
-    //   .cate2{display: flex;}
-    // */}
-    //   {/* 
-    //     <main className="cate2">
-    //       <section className="col">
-    //         <div className="row">1</div>
-    //         <div className="row">2</div>
-    //       </section>
-    //       <section className="col">
-    //         <div className="row">3</div>
-    //       </section>
-    //       <section className="col col-l">
-    //         <div className="row">
-    //           <section className="col">
-    //             <div className="row">4</div>
-    //           </section>
-    //           <section className="col">
-    //             <div className="row">5</div>
-    //           </section>
-    //         </div>
-    //         <div className="row">6</div>
-    //       </section>
-    //     </main> 
-    //    */}

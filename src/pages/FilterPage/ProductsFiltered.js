@@ -44,11 +44,3 @@ const ProductsFiltered = ({ filteredProducts }) => {
 export default ProductsFiltered;
 
 
-// {products.map((product) => (
-//   <li key={product.id}>
-//     <h3>{product.title}</h3>
-//     <p>Category: {product.category}</p>
-//     <p>Price: ${product.price}</p>
-//     <p>Rating: {product.rating}</p>
-//   </li>
-// ))}
