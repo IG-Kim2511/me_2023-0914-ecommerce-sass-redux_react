@@ -9,6 +9,7 @@ redering filtered product with input range, radio, checkbox.
 
 add qty on cartitem array on redux from product.js
 
+라마 -localstorage대신해서 사용하는 library 사용법 익힘
 localstorage
 
 filter page 리덕스로 다시 만들기
@@ -16,6 +17,8 @@ filter page 리덕스로 다시 만들기
 product.js : click image on side image and show it on main img container
 
 constext api
+
+
  */
 
 import React from 'react';
