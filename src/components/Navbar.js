@@ -7,7 +7,7 @@ I wanna move page as soon as i click option
 import React, { useState } from 'react'
 import "./Navbar.scss"
 import { Link, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -47,12 +47,7 @@ const Navbar = () => {
   // --end--
 
   // 🍉redux-search-filter  
-  const [query, setQuery] = useState("")
-
-  const handleQueryChange = (e) => {
-    setQuery(e.target.value);
-    console.log("handleQueryChange")
-  };
+  const dispatch = useDispatch();
 
   const searchFilter=useSelector((state)=> state.filter.search);
 
@@ -111,8 +106,7 @@ const Navbar = () => {
                   <div className="search">
                     <SearchIcon/>
                     
-                    <input type="text" className='search-input' onChange={handleQueryChange}
-                    value={query} placeholder='search'/>
+                    <input type="text" className='search-input'  placeholder='search' dispatch={searchFilter}/>
                   </div>
 
                     <Link className ="link" to="/cart">              
