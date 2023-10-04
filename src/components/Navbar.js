@@ -53,7 +53,7 @@ const Navbar = () => {
 
   return (
     <div id='navbar'>
-        <div className="wrapper">
+        <section className="nav_wrap">
                 <div className="item">
                  { <Link className='link' to="/">Store0914</Link>}                    
                 </div> 
@@ -97,7 +97,8 @@ const Navbar = () => {
                 <div className="menu-icon" onClick={handleClick}>
                    {click ? <CloseIcon className='mui-icon'/> : <MenuIcon className='mui-icon'/>}
                </div>           
-        </div>
+        </section>
+
         {/*🦄responsive  */}    
         <form className={click ? "sideNav active" : "sideNav"}>     
             {/* 복붙, reponsive side menu용으로 따로 코딩해둠 */}
@@ -113,10 +114,7 @@ const Navbar = () => {
                 <option value="home-decoration">Home Decoration</option>
             </select>                   
          </form>
-      
-        
-    </div>
-    
+    </div>    
   )
 }
 

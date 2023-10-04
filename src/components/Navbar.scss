@@ -1,6 +1,6 @@
 // ---------------🍀navbar--------------
 #navbar{    
-    .wrapper{
+    .nav_wrap{
         height: 80px;  
         // padding: 10px 30px;
         width: 1150px;
@@ -14,8 +14,10 @@
         margin: 0 auto; 
     
         z-index: 100;
-        background-color: lightgrey;
-
+        background-color: whitesmoke;
+        
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1); 
+        
         .item{
             /* 🦄text 수직정렬
               display: flex;  
