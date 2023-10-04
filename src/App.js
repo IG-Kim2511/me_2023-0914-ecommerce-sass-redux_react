@@ -18,6 +18,7 @@ product.js : click image on side image and show it on main img container
 
 constext api
 
+input search feature
 
  */
 

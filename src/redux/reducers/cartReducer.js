@@ -2,22 +2,24 @@
 // reducers/cartReducer.js
 import { createSlice } from '@reduxjs/toolkit';
 
-// 🍀local storage-getItem
+// 🍀 localStorage.getItem
 const loadCartState = () => {
   try {
     const serializedState = localStorage.getItem('cartState');
     if (serializedState === null) {
       return undefined;
     }
+    // JSON.parse
     return JSON.parse(serializedState);
   } catch (err) {
     return undefined;
   }
 };
 
-// 👉local storage-setItem
+// 👉 localStorage.setItem
 const saveCartState = (state) => {
   try {
+    // JSON.stringify
     const serializedState = JSON.stringify(state);
     localStorage.setItem('cartState', serializedState);
   } catch (err) {
