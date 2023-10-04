@@ -1,8 +1,6 @@
-
-// reducers/cartReducer.js
 import { createSlice } from '@reduxjs/toolkit';
 
-// 🍀local storage
+// Import functions for local storage
 const loadCartState = () => {
   try {
     const serializedState = localStorage.getItem('cartState');
