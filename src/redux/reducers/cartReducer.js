@@ -2,7 +2,7 @@
 // reducers/cartReducer.js
 import { createSlice } from '@reduxjs/toolkit';
 
-// 🍀local storage
+// 🍀local storage-getItem
 const loadCartState = () => {
   try {
     const serializedState = localStorage.getItem('cartState');
@@ -15,6 +15,7 @@ const loadCartState = () => {
   }
 };
 
+// 👉local storage-setItem
 const saveCartState = (state) => {
   try {
     const serializedState = JSON.stringify(state);
@@ -24,6 +25,7 @@ const saveCartState = (state) => {
   }
 };
 
+// 👉local storage
 const initialState = loadCartState() || {
   cartItems: [],
 };
@@ -39,19 +41,19 @@ const cartSlice = createSlice({
       } else {
         state.cartItems.push({ ...action.payload, quantity: 1 });
       }
-      // Save the updated state to local storage
+      // 👉local storage
       saveCartState(state);
     },
     removeFromCart: (state, action) => {
       state.cartItems = state.cartItems.filter(item => item.id !== action.payload.id);
-      // Save the updated state to local storage
+     
       saveCartState(state);
     },
     increaseQuantity: (state, action) => {
       const itemToIncrease = state.cartItems.find(item => item.id === action.payload.id);
       if (itemToIncrease) {
         itemToIncrease.quantity++;
-        // Save the updated state to local storage
+
         saveCartState(state);
       }
     },
@@ -59,7 +61,7 @@ const cartSlice = createSlice({
       const itemToDecrease = state.cartItems.find(item => item.id === action.payload.id);
       if (itemToDecrease && itemToDecrease.quantity > 1) {
         itemToDecrease.quantity--;
-        // Save the updated state to local storage
+
         saveCartState(state);
       }
     },
