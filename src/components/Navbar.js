@@ -35,11 +35,11 @@ const Navbar = () => {
   const [selectedCategory, setSelectedCategory] = useState(''); 
   // --end--
 
-  // 🍉redux
+  // 🍉redux-filter
   const [value, setValue] = useState("")
 
 
-  // 🍉redux    
+  // 🍉redux-cart
   const cartItems = useSelector((state) => state.cart.cartItems);  
 
   // 🍀responsive nav bar
