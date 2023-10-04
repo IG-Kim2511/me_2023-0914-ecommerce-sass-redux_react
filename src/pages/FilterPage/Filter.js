@@ -5,6 +5,8 @@ const Filter = ({ onFilter }) => {
   /* 🍉🦄prop데이터를 자식에서 부모 컴포넌트로 전달했음..
     console- onFilter찍어보면 setFilteredProducts 가 나옴... 
     👉여기에서 set~을 해서 props 자식 컴포넌트인데도 불구하고, 상위컴포넌트에 데이터 전달할 수있는 것임 
+    
+    🍉prevFilters는 이전 상태 값을 나타내는 변수입니다
   */
   console.log(onFilter)
 
