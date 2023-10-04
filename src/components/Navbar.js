@@ -19,6 +19,17 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
 
+/* 
+  //🍀js 100  query : nav input search bar에서의 value
+  const [query, setQuery] = useState('');
+
+  // 👉js 100
+  const handleQueryChange = (e) => {
+    setQuery(e.target.value);
+    console.log("handleQueryChange")
+  };
+
+*/
 
 const Navbar = () => {
 
@@ -35,9 +46,15 @@ const Navbar = () => {
   const [selectedCategory, setSelectedCategory] = useState(''); 
   // --end--
 
-  // 🍉redux-filter
-  const [value, setValue] = useState("")
+  // 🍉redux-search-filter  
+  const [query, setQuery] = useState("")
 
+  const handleQueryChange = (e) => {
+    setQuery(e.target.value);
+    console.log("handleQueryChange")
+  };
+
+  const searchFilter=useSelector((state)=> state.filter.search);
 
   // 🍉redux-cart
   const cartItems = useSelector((state) => state.cart.cartItems);  
@@ -89,9 +106,13 @@ const Navbar = () => {
                 <span>{products.length}</span>
                 </div> 
               */}
+
+                {/* 👉search */}
                   <div className="search">
                     <SearchIcon/>
-                    <input type="search" value={value} placeholder='search'/>
+                    
+                    <input type="text" className='search-input' onChange={handleQueryChange}
+                    value={query} placeholder='search'/>
                   </div>
 
                     <Link className ="link" to="/cart">              
