@@ -39,7 +39,7 @@ const CartPage = () => {
     cartItems.forEach((item) => dispatch(removeFromCart(item)));
 
     // Clear localStorage
-    // localStorage.clear();
+    localStorage.clear();
   };
 
   
