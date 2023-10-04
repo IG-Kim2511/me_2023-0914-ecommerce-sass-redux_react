@@ -35,7 +35,11 @@ const Navbar = () => {
   const [selectedCategory, setSelectedCategory] = useState(''); 
   // --end--
 
-  //   🍉redux    
+  // 🍉redux
+  const [value, setValue] = useState("")
+
+
+  // 🍉redux    
   const cartItems = useSelector((state) => state.cart.cartItems);  
 
   // 🍀responsive nav bar
@@ -78,14 +82,18 @@ const Navbar = () => {
                 <div className="icons item">                
                 {/* 👉0255 icon click*/}
                 {/*   
+                <PersonIcon/>
+                <FavoriteIcon/>
+                <div className="cartIcon"  onClick={()=>setOpen(!open)}>
+                <ShoppingCartOutlinedIcon/>
+                <span>{products.length}</span>
+                </div> 
+              */}
+                  <div className="search">
                     <SearchIcon/>
-                    <PersonIcon/>
-                    <FavoriteIcon/>
-                    <div className="cartIcon"  onClick={()=>setOpen(!open)}>
-                        <ShoppingCartOutlinedIcon/>
-                        <span>{products.length}</span>
-                    </div> 
-                */}
+                    <input type="search" value={value} placeholder='search'/>
+                  </div>
+
                     <Link className ="link" to="/cart">              
                         <div className="cartIcon">                      
                         <ShoppingCartIcon/>       
