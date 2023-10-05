@@ -1,32 +1,45 @@
-
-
-import React, { useContext, useReducer, useState } from 'react';
+// SearchState.js
+import React, { useContext, useState } from 'react';
 import SearchContext from './Context';
+import products from '../data';
 
-// 🍉action type
+const searchedProducts=[];
 
-
-// 🍀initialState
-
-
-// 🍀reducer
 
 export function useSearch() {
-    return useContext(SearchContext);
-  }
-  
-// Search provider component
+  return useContext(SearchContext);
+}
+
 export function SearchProvider({ children }) {
-    const [searchQuery, setSearchQuery] = useState('');
-  
-    const contextValue = {
-      searchQuery,
-      setSearchQuery,
-    };
-  
-    return (
-      <SearchContext.Provider value={contextValue}>
-        {children}
-      </SearchContext.Provider>
-    );
-  }
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleInputChange = (e) => {
+    setSearchQuery(e.target.value);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      // Trigger the search action here, you can use setSearchQuery if needed
+      console.log('Enter key pressed. Perform search here.');
+      
+      searchedProducts = products.filter((product) =>
+        product.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+    }
+  };
+
+
+  const contextValue = {
+    searchQuery,
+    setSearchQuery,    
+    handleInputChange,
+    searchedProducts,
+    handleKeyPress, // Add the handleKeyPress function to the context
+  };
+
+  return (
+    <SearchContext.Provider value={contextValue}>
+      {children}
+    </SearchContext.Provider>
+  );
+}

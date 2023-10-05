@@ -4,7 +4,7 @@ when i click option tap. address is not move to  the page.
 I wanna move page as soon as i click option
 */
 
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "./Navbar.scss"
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -17,9 +17,11 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Favorite } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
-import { useSearch } from '../context/SearchContext';
+
+
 import products from '../data';
-import SearchInput from './SearchInput';
+
+import SearchContext from '../context/Context';
 
 
 
@@ -43,12 +45,9 @@ const Navbar = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);  
 
   // 🍉 context
-  const { searchQuery, setSearchQuery } = useSearch();
 
-   // Filtering logic based on searchQuery
-   const filteredProducts = products.filter((product) =>
-   product.title.toLowerCase().includes(searchQuery.toLowerCase())
- );
+  const {searchQuery,setSearchQuery,filteredProducts,handleKeyPress, handleInputChange} = useContext(SearchContext)
+
 
   // 🍀responsive nav bar
   const [click, setClicked] = useState(false);
@@ -99,7 +98,14 @@ const Navbar = () => {
                     </div> 
                 */}
 
-                  <SearchInput setSearchQuery={setSearchQuery} searchQuery={searchQuery} />
+                  
+                  <input
+                    type="text"
+                    placeholder="Search..."
+                    value={searchQuery}
+                    onChange={handleInputChange}
+                  />
+                  
                     <Link className ="link" to="/cart">              
                         <div className="cartIcon">                      
                         <ShoppingCartIcon/>       

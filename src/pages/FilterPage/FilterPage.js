@@ -9,6 +9,9 @@ import products from "../../data";
 import { Link } from "react-router-dom";
 
 const FilterPage = () => {
+
+  
+
   // 🦄filteredProducts
   const [filteredProducts, setFilteredProducts] = useState(products);
 

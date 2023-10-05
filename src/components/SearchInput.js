@@ -2,18 +2,18 @@
 import React from "react";
 import { useSearch } from "./SearchContext";
 
-function SearchInput({searchQuery,setSearchQuery}) {
+function SearchInput({contextValue}) {
 //   const { searchQuery, setSearchQuery } = useSearch();
 
   const handleInputChange = (e) => {
-    setSearchQuery(e.target.value);
+    contextValue.setSearchQuery(e.target.value);
   };
 
   return (
     <input
       type="text"
       placeholder="Search..."
-      value={searchQuery}
+      value={contextValue.searchQuery}
       onChange={handleInputChange}
     />
   );
