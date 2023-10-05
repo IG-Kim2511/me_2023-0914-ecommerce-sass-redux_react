@@ -17,6 +17,10 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Favorite } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { useSearch } from '../context/SearchContext';
+import products from '../data';
+import SearchInput from './SearchInput';
+
 
 
 
@@ -35,8 +39,16 @@ const Navbar = () => {
   const [selectedCategory, setSelectedCategory] = useState(''); 
   // --end--
 
-  //   🍉redux    
+  // 🍉 redux    
   const cartItems = useSelector((state) => state.cart.cartItems);  
+
+  // 🍉 context
+  const { searchQuery, setSearchQuery } = useSearch();
+
+   // Filtering logic based on searchQuery
+   const filteredProducts = products.filter((product) =>
+   product.title.toLowerCase().includes(searchQuery.toLowerCase())
+ );
 
   // 🍀responsive nav bar
   const [click, setClicked] = useState(false);
@@ -86,6 +98,8 @@ const Navbar = () => {
                         <span>{products.length}</span>
                     </div> 
                 */}
+
+                  <SearchInput setSearchQuery={setSearchQuery} searchQuery={searchQuery} />
                     <Link className ="link" to="/cart">              
                         <div className="cartIcon">                      
                         <ShoppingCartIcon/>       
