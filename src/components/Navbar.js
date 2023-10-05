@@ -4,10 +4,10 @@ when i click option tap. address is not move to  the page.
 I wanna move page as soon as i click option
 */
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Navbar.scss"
 import { Link, useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -17,6 +17,7 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Favorite } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { applyFilter, setSearchQuery } from '../redux/actions/searchActions';
 
 
 
@@ -35,8 +36,26 @@ const Navbar = () => {
   const [selectedCategory, setSelectedCategory] = useState(''); 
   // --end--
 
-  // 🍉redux
-  const [value, setValue] = useState("")
+  // 🍉redux-search
+  const searchQuery = useSelector((state) => state.search.searchQuery);
+  const dispatch = useDispatch();
+
+  const handleSearchChange = (event) => {
+    const query = event.target.value;
+    dispatch(setSearchQuery(query));
+  };
+
+  useEffect(() => {
+    // Apply filter whenever searchQuery changes
+    dispatch(applyFilter(searchQuery));
+  }, [searchQuery, dispatch]);
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      // Prevent the default form submission behavior
+      event.preventDefault();
+    }
+  };
 
 
   // 🍉redux    
@@ -91,7 +110,16 @@ const Navbar = () => {
               */}
                   <div className="search">
                     <SearchIcon/>
-                    <input type="search" value={value} placeholder='search'/>
+                    
+                    <input
+                    type="text"
+                    placeholder="Search..."
+                    value={searchQuery}
+                    onChange={handleSearchChange}
+                    onKeyPress={handleKeyPress}
+                  />
+
+
                   </div>
 
                     <Link className ="link" to="/cart">              
