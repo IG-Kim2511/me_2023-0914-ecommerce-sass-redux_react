@@ -36,9 +36,8 @@ import FilterPage from './pages/FilterPage/FilterPage';
 import CartPage from './pages/CartPage';
 
 const App = () => {
-  return (
-    <BrowserRouter>
-      <div className="app">
+  return (   
+      <div id="app">
         <Navbar />
                 
         <Routes>
@@ -54,7 +53,6 @@ const App = () => {
 
         <Footer />
       </div>
-    </BrowserRouter>
   );
 }
 
