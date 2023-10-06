@@ -18,12 +18,7 @@ import { Favorite } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
-
 import products from '../data';
-import { SearchContext } from '../context/Context';
-
-
-
 
 
 
@@ -47,7 +42,6 @@ const Navbar = () => {
 
   // 🍉 context
 
-  const {searchQuery,setSearchQuery,filteredProducts,handleKeyPress, handleInputChange} = useContext(SearchContext)
 
 
   // 🍀responsive nav bar
@@ -99,14 +93,6 @@ const Navbar = () => {
                     </div> 
                 */}
 
-                  
-                  <input
-                    type="text"
-                    placeholder="Search..."
-                    value={searchQuery}
-                    onChange={handleInputChange}
-                  />
-                  
                   
                     <Link className ="link" to="/cart">              
                         <div className="cartIcon">                      
