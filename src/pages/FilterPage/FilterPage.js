@@ -3,6 +3,7 @@ import React from 'react';
 import { useFilter } from '../../context/FilterContext';
 import products from '../../data' // Replace with your product data source
 import { Link } from 'react-router-dom';
+import FilterInput from './FilterInput';
 
 function FilterPage() {
   const {
@@ -25,11 +26,11 @@ function FilterPage() {
   return (
     <div id="FilterPage">      
       <section className="wrapper">
-        {/*     
+
           <main className="left">
      
-          <Filter onFilter={onFilter} />      
-        </main> */}
+          <FilterInput />      
+        </main> 
 
         <main className="right">
         {/* 🦄*/}
