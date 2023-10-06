@@ -24,6 +24,8 @@ import Home from './pages/Home';
 import FilterPage from './pages/FilterPage/FilterPage';
 import CartPage from './pages/CartPage';
 
+
+
 const App = () => {
   return (   
       <div id="app">

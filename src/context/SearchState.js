@@ -1,7 +1,8 @@
 // SearchState.js
 import React, { useContext, useState } from 'react';
-import SearchContext from './Context';
+
 import products from '../data';
+import { SearchContext } from './Context';
 
 const searchedProducts=[];
 

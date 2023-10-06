@@ -1,6 +1,5 @@
-import React, { createContext } from 'react'
+import React, { createContext } from 'react';
 
-
-const SearchContext = createContext();
-
-export default SearchContext
+// Create SearchContext and FilterContext
+export const SearchContext = createContext();
+export const FilterContext = createContext();

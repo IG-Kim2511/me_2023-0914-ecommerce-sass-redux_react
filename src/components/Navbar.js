@@ -20,8 +20,9 @@ import CloseIcon from '@mui/icons-material/Close';
 
 
 import products from '../data';
+import { SearchContext } from '../context/Context';
 
-import SearchContext from '../context/Context';
+
 
 
 
