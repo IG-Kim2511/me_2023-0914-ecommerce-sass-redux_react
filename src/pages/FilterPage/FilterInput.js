@@ -65,7 +65,7 @@ const FilterInput = () => {
        }      
       </section>
 
-      {/* 🍀input range */}
+      {/* 🍀 Price-input range */}
       <section>
         <h3>Price</h3>
         <input
@@ -78,7 +78,7 @@ const FilterInput = () => {
         <p>Price range: $0~ ${priceFilter}</p>
       </section>
 
-      {/* 🍀input radio */}
+      {/* 🍀 Sort-input radio */}
       <section>
         <h3>Sort Order</h3>
         <label>
