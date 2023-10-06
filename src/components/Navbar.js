@@ -107,6 +107,7 @@ const Navbar = () => {
                     onChange={handleInputChange}
                   />
                   
+                  
                     <Link className ="link" to="/cart">              
                         <div className="cartIcon">                      
                         <ShoppingCartIcon/>       

@@ -31,6 +31,7 @@ export function FilterProvider({ children }) {
   );
 }
 
+// useFilterContext
 export function useFilterContext() {
   return useContext(FilterContext);
 }

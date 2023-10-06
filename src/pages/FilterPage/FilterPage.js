@@ -13,7 +13,7 @@ function FilterPage() {
     applyFilters,
   } = useFilterContext();
 
-  // Apply filters to products
+  // filteredProducts and rendering
   const filteredProducts = products
     .filter(product => (
       categoryFilters.length === 0 || categoryFilters.includes(product.category)
@@ -58,7 +58,7 @@ function FilterPage() {
                               <section className='titleWrapper'>
                               <h4 className='title'>{item.title} <span>(id:{item.id})</span></h4>
                               <div className='prices'>
-                                  <h4>price : {item.price}</h4>
+                                  <h4>price : $ {item.price}</h4>
                                   <h4 className="stock">(stock : {item.stock})</h4>
                               </div>
                               </section>
