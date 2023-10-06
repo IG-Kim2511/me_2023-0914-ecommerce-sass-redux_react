@@ -11,6 +11,10 @@ export function FilterProvider({ children }) {
   const [priceFilter, setPriceFilter] = useState(1800);
   const [sortOrder, setSortOrder] = useState('asc');
 
+
+  
+  // 🍀applyFilters 👉 button generate
+  // input으로 filter된 const들을 set~~ state를 통해서 수정함
   const applyFilters = ({ categories, maxPrice, sortOrder }) => {
     setCategoryFilters(categories);
     setPriceFilter(maxPrice);

@@ -41,87 +41,30 @@ const FilterInput = () => {
     setSortOrder(e.target.value);
   };
 
-  // 🍀applyFilters 👉 button generate
-  //onFilter object 만듬
-  // input으로 filter된 const들을 onFilter 오브젝트안에 넣어서 결과물 완성시킴
-
-  /*
-    FilterPage.js에서 자식 컴포넌트인 Filter에서 호출된 onFilter 함수는 
-    필터 매개변수를 받아와서 setFilteredProducts를 사용하여 filteredProducts의 상태를 업데이트합니다.
-     이 상태 업데이트는 FilterPage 컴포넌트를 다시 렌더링하고, 그에 따라 필터링된 제품이 표시됩니다.
-  */
-  // const applyFilters = () => {
-  //   onFilter({
-  //     categories: categoryFilters,
-  //     maxPrice: priceFilter,
-  //     sortOrder: sortOrder,
-  //   });
-  // };
-
   return (
     <div id="FilterInput">
       <h2>Filter Products</h2>
       <h3>Categories</h3>
 
       {/* 🍀input checkbox */}
-      <section className="checkboxWrapper">
-          <label>
+      <section className="checkboxWrapper">   
+        { 
+          ["smartphones", "laptops", "fragrances", "skincare", "groceries", "home-decoration"].map((category) => (
+          <label key={category}>
             <input
               type="checkbox"
-              value="smartphones"
+              value={category}
               //🦄onChange : input attribute가 onChange한때 handleCategoryChange function 실행
               onChange={handleCategoryChange}
-              // 🦄input checked Attribute
-              checked={categoryFilters.includes("smartphones")}
+                // 🦄input checked Attribute
+              checked={categoryFilters.includes(category)}
             />
-            Smartphones
+            {category.charAt(0).toUpperCase() + category.slice(1)}
           </label>
-          <label>
-            <input
-              type="checkbox"
-              value="laptops"
-              onChange={handleCategoryChange}
-              checked={categoryFilters.includes("laptops")}
-            />
-            Laptops
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              value="fragrances"
-              onChange={handleCategoryChange}
-              checked={categoryFilters.includes("fragrances")}
-            />
-            Fragrances
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              value="skincare"
-              onChange={handleCategoryChange}
-              checked={categoryFilters.includes("skincare")}
-            />
-            Skincare
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              value="groceries"
-              onChange={handleCategoryChange}
-              checked={categoryFilters.includes("groceries")}
-            />
-            Groceries
-          </label>
-          <label>
-            <input
-              type="checkbox"
-              value="home-decoration"
-              onChange={handleCategoryChange}
-              checked={categoryFilters.includes("home-decoration")}
-            />
-            Home Decoration
-          </label>
+        ))
+       }      
       </section>
+
       {/* 🍀input range */}
       <section>
         <h3>Price</h3>
@@ -162,8 +105,6 @@ const FilterInput = () => {
         </label>
       </section>
 
-      {/* 🦄applyFilters */}
-      <button className="myButton" onClick={applyFilters}>Apply Filters</button>
     </div>
   );
 };
