@@ -6,15 +6,22 @@ import store from './redux/store';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
+import { FilterProvider } from './context/FilterContext';
+import { SearchProvider } from './context/SearchContext';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <FilterProvider>
+        <SearchProvider>      
+            <BrowserRouter>
+              <App />
+            </BrowserRouter>
+        </SearchProvider>
+      </FilterProvider>
     </Provider>
   </React.StrictMode>
 );

@@ -4,7 +4,7 @@ when i click option tap. address is not move to  the page.
 I wanna move page as soon as i click option
 */
 
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import "./Navbar.scss"
 import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -17,6 +17,8 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import { Favorite } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+
+import products from '../data';
 
 
 
@@ -35,8 +37,12 @@ const Navbar = () => {
   const [selectedCategory, setSelectedCategory] = useState(''); 
   // --end--
 
-  //   🍉redux    
+  // 🍉 redux    
   const cartItems = useSelector((state) => state.cart.cartItems);  
+
+  // 🍉 context
+
+
 
   // 🍀responsive nav bar
   const [click, setClicked] = useState(false);
@@ -86,6 +92,8 @@ const Navbar = () => {
                         <span>{products.length}</span>
                     </div> 
                 */}
+
+                  
                     <Link className ="link" to="/cart">              
                         <div className="cartIcon">                      
                         <ShoppingCartIcon/>       

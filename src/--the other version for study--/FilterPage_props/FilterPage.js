@@ -1,37 +1,53 @@
-import React from 'react';
+// 🚀redering filtered product with input range, radio, checkbox. 
 
-import { useFilterContext } from '../../context/FilterContext';
-import products from '../../data' // Replace with your product data source
-import { Link } from 'react-router-dom';
-import FilterInput from './FilterInput';
 
-function FilterPage() {
-  const {
-    categoryFilters,
-    priceFilter,
-    sortOrder,
-    applyFilters,
-  } = useFilterContext();
 
-  // filteredProducts and rendering
-  const filteredProducts = products
-    .filter(product => (
-      categoryFilters.length === 0 || categoryFilters.includes(product.category)
-    ))
-    .filter(product => product.price <= priceFilter)
-    .sort((a, b) => (
-      sortOrder === 'asc' ? a.price - b.price : b.price - a.price
-    ));
+import React, { useState } from "react";
+import Filter from "./Filter";
+// import ProductsFiltered from "../../--test,trash-/ProductsFiltered";
+import products from "../../data";
+import { Link } from "react-router-dom";
+
+const FilterPage = () => {
+
+  
+
+  // 🦄filteredProducts
+  const [filteredProducts, setFilteredProducts] = useState(products);
+
+  // 🦄 onFilter
+  const onFilter = ({ categories, maxPrice, sortOrder }) => {
+    // 🍀filtered array 만듬, based on categories, maxPrice, and sortOrder
+    let filtered = [...products];
+
+    // 🍉filtered array 에 input-checkbox-category에서 체크된 항목 filter(~)
+    if (categories.length > 0) {
+      filtered = filtered.filter((product) =>
+        categories.includes(product.category)
+      );
+    }
+
+    // 🍉filtered array 에 input-range- price에서 선택된 항목 filter(~) 
+    filtered = filtered.filter((product) => product.price <= maxPrice);
+
+    // 🍉filtered array 에 input radio에서 ascending descending 선택된 항목 filter(~) 
+    if (sortOrder === "asc") {
+      filtered.sort((a, b) => a.price - b.price);
+    } else {
+      filtered.sort((a, b) => b.price - a.price);
+    }
+
+    // 🍉setFilteredProducts
+    setFilteredProducts(filtered);
+  };
 
   return (
     <div id="FilterPage">      
       <section className="wrapper">
-
-          <main className="left">
-     
-          <FilterInput />      
-        </main> 
-
+        <div className="left">
+          {/* 🦄*/}
+          <Filter onFilter={onFilter} />      
+        </div>
         <main className="right">
         {/* 🦄*/}
           {/* <ProductsFiltered filteredProducts={filteredProducts} /> */}
@@ -58,7 +74,7 @@ function FilterPage() {
                               <section className='titleWrapper'>
                               <h4 className='title'>{item.title} <span>(id:{item.id})</span></h4>
                               <div className='prices'>
-                                  <h4>price : $ {item.price}</h4>
+                                  <h4>price : {item.price}</h4>
                                   <h4 className="stock">(stock : {item.stock})</h4>
                               </div>
                               </section>
@@ -73,6 +89,6 @@ function FilterPage() {
       </section>
     </div>
   );
-}
+};
 
 export default FilterPage;

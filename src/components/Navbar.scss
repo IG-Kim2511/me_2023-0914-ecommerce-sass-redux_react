@@ -73,7 +73,7 @@
 
 @media (max-width:1050px) {
     #navbar{    
-        .wrapper{    
+        .nav_wrap{    
             width: 900px;            
         }
     }  
@@ -81,7 +81,7 @@
 
 @media (max-width:840px) {
     #navbar{    
-        .wrapper{    
+        .nav_wrap{    
             width: 800px;
         }
     }  
@@ -90,7 +90,7 @@
 // 🍀sidebar
 @media (max-width:700px) {
     #navbar{    
-        .wrapper{    
+        .nav_wrap{    
             width: 620px;
 
             // 🍀responsive
@@ -160,7 +160,7 @@
 
 @media (max-width:600px) {
     #navbar{    
-        .wrapper{    
+        .nav_wrap{    
             width: 520px;
          
         }
@@ -168,7 +168,7 @@
 }
 @media (max-width:500px) {
     #navbar{    
-        .wrapper{    
+        .nav_wrap{    
             width: 420px;
         }
     }
@@ -176,7 +176,7 @@
 
 @media (max-width:450px) {
     #navbar{    
-        .wrapper{    
+        .nav_wrap{    
             width: 400px;
         }
     }

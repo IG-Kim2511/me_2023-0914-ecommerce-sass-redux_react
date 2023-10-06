@@ -1,37 +1,22 @@
-import React from 'react';
+import React, { useContext } from "react";
+import Filter from "./Filter";
+import { FilterContext } from "../../context/Context";
+import { Link } from "react-router-dom";
 
-import { useFilterContext } from '../../context/FilterContext';
-import products from '../../data' // Replace with your product data source
-import { Link } from 'react-router-dom';
-import FilterInput from './FilterInput';
+const FilterPage = () => {
+  // ... Use the useFilter hook to access filter context values
 
-function FilterPage() {
-  const {
-    categoryFilters,
-    priceFilter,
-    sortOrder,
-    applyFilters,
-  } = useFilterContext();
-
-  // filteredProducts and rendering
-  const filteredProducts = products
-    .filter(product => (
-      categoryFilters.length === 0 || categoryFilters.includes(product.category)
-    ))
-    .filter(product => product.price <= priceFilter)
-    .sort((a, b) => (
-      sortOrder === 'asc' ? a.price - b.price : b.price - a.price
-    ));
+  const { filteredProducts} = useContext(FilterContext)
+  
 
   return (
+   
     <div id="FilterPage">      
       <section className="wrapper">
-
-          <main className="left">
-     
-          <FilterInput />      
-        </main> 
-
+        <div className="left">
+          {/* 🦄*/}
+          <Filter />      
+        </div>
         <main className="right">
         {/* 🦄*/}
           {/* <ProductsFiltered filteredProducts={filteredProducts} /> */}
@@ -58,7 +43,7 @@ function FilterPage() {
                               <section className='titleWrapper'>
                               <h4 className='title'>{item.title} <span>(id:{item.id})</span></h4>
                               <div className='prices'>
-                                  <h4>price : $ {item.price}</h4>
+                                  <h4>price : {item.price}</h4>
                                   <h4 className="stock">(stock : {item.stock})</h4>
                               </div>
                               </section>
@@ -73,6 +58,6 @@ function FilterPage() {
       </section>
     </div>
   );
-}
+};
 
 export default FilterPage;
