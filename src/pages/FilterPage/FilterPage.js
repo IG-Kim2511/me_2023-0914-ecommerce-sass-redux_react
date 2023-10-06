@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useFilter } from '../../context/FilterContext';
+import { useFilterContext } from '../../context/FilterContext';
 import products from '../../data' // Replace with your product data source
 import { Link } from 'react-router-dom';
 import FilterInput from './FilterInput';
@@ -11,7 +11,7 @@ function FilterPage() {
     priceFilter,
     sortOrder,
     applyFilters,
-  } = useFilter();
+  } = useFilterContext();
 
   // Apply filters to products
   const filteredProducts = products

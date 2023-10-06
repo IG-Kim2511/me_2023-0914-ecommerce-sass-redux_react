@@ -3,11 +3,10 @@ import React, { createContext, useContext, useState } from 'react';
 const FilterContext = createContext();
 
 export function FilterProvider({ children }) {
-  const [categoryFilters, setCategoryFilters] = useState([
-    'smartphones', // Add all your possible categories here
-    'laptops',
-    'fragrances',
-    // Add more categories as needed
+  const [categoryFilters, setCategoryFilters] = useState([   
+    // Add categories as needed    
+    // 'laptops',
+    // 'fragrances',
   ]);
   const [priceFilter, setPriceFilter] = useState(1800);
   const [sortOrder, setSortOrder] = useState('asc');
@@ -21,9 +20,9 @@ export function FilterProvider({ children }) {
   return (
     <FilterContext.Provider
       value={{
-        categoryFilters,
-        priceFilter,
-        sortOrder,
+        categoryFilters,setCategoryFilters,
+        priceFilter,setPriceFilter,
+        sortOrder,setSortOrder,
         applyFilters,
       }}
     >
@@ -32,6 +31,6 @@ export function FilterProvider({ children }) {
   );
 }
 
-export function useFilter() {
+export function useFilterContext() {
   return useContext(FilterContext);
 }

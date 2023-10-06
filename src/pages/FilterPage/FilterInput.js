@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { useFilterContext } from "../../context/FilterContext";
 
-const FilterInput = ({ onFilter }) => {
+const FilterInput = () => {
   
   /* 🍉🦄prop데이터를 자식에서 부모 컴포넌트로 전달했음..
     console- onFilter찍어보면 setFilteredProducts 가 나옴... 
@@ -8,14 +9,15 @@ const FilterInput = ({ onFilter }) => {
     
     🍉prevFilters는 이전 상태 값을 나타내는 변수입니다
   */
-  console.log(onFilter)
 
   // 🍉
-  const [categoryFilters, setCategoryFilters] = useState([]);
+  const {
+    categoryFilters,setCategoryFilters,
+    priceFilter,setPriceFilter,
+    sortOrder,setSortOrder,
+    applyFilters,
+  } = useFilterContext();
 
-  const [priceFilter, setPriceFilter] = useState(1800);
-
-  const [sortOrder, setSortOrder] = useState("asc");
 
   // 🍉input checkbox
   const handleCategoryChange = (e) => {
@@ -49,13 +51,13 @@ const FilterInput = ({ onFilter }) => {
     필터 매개변수를 받아와서 setFilteredProducts를 사용하여 filteredProducts의 상태를 업데이트합니다.
      이 상태 업데이트는 FilterPage 컴포넌트를 다시 렌더링하고, 그에 따라 필터링된 제품이 표시됩니다.
   */
-  const applyFilters = () => {
-    onFilter({
-      categories: categoryFilters,
-      maxPrice: priceFilter,
-      sortOrder: sortOrder,
-    });
-  };
+  // const applyFilters = () => {
+  //   onFilter({
+  //     categories: categoryFilters,
+  //     maxPrice: priceFilter,
+  //     sortOrder: sortOrder,
+  //   });
+  // };
 
   return (
     <div id="FilterInput">
