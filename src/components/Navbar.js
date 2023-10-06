@@ -77,10 +77,7 @@ const Navbar = () => {
                     <option value="groceries">Groceries</option>
                     <option value="home-decoration">Home Decoration</option>
                 </select>        
-         
-                <div className="item none">
-                    <Link className ="link " to="/">Home</Link>
-                </div>       
+              
                 <div className="icons item">                
                 {/* 👉0255 icon click*/}
                 {/*   
