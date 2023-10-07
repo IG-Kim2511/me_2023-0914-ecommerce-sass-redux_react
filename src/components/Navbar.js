@@ -57,19 +57,15 @@ const Navbar = () => {
   return (
     <div id="navbar">
       <section className="nav_wrap">
-        <div className="item">
-          {
+        <div className="item">          
             <Link className="link" to="/">
               Store0914
-            </Link>
-          }
+            </Link>          
         </div>  
-        <div className="item">
-          {
+        <div className="item">          
             <Link className="link none" to="/SearchPage">
               SearchPage
-            </Link>
-          }
+            </Link>          
         </div>  
 
         <div>
@@ -85,12 +81,10 @@ const Navbar = () => {
           </select>
         </div>
 
-        <div className="item">
-          {
+        <div className="item">          
             <Link className="link none" to="/slider">
               Slider
-            </Link>
-          }
+            </Link>          
         </div>
  
         <div className="icons item">
@@ -126,10 +120,18 @@ const Navbar = () => {
       {/*🦄responsive  */}
       <form className={click ? "sideNav active" : "sideNav"}>
         {/* 복붙, reponsive side menu용으로 따로 코딩해둠 */}
-        <Link className="link myButton" to="/all">
-          All Items
-        </Link>
-
+     
+        <div className="item myButton"> 
+          <Link className="link" to="/">
+            Filter Page
+          </Link>          
+        </div>  
+        <div className="item myButton">          
+          <Link className="link none" to="/SearchPage">
+            SearchPage
+          </Link>          
+        </div>  
+        
         <select className="nav-link-items" onChange={handleCategoryChange}>
           <option value="">Select a category</option>
           <option value="smartphones">Smartphones</option>
@@ -139,6 +141,21 @@ const Navbar = () => {
           <option value="groceries">Groceries</option>
           <option value="home-decoration">Home Decoration</option>
         </select>
+
+        <div className="item myButton">          
+          <Link className="link none" to="/slider">
+            Slider
+          </Link>          
+        </div>        
+
+        <div className="icons item">
+          <Link className="link" to="/cart">
+            <div className="cartIcon">
+              <ShoppingCartIcon />
+              <span>{cartItems.length}</span>
+            </div>
+          </Link>
+        </div>
       </form>
     </div>
   );
