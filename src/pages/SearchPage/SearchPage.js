@@ -12,21 +12,23 @@ const SearchPage = () => {
   );
 
   return (
-    <div>
+    <div id='SearchPage'>
       <h1>SearchPage</h1>
 
-      <main className="left">
-        <SearchInput/>      
-      </main>
-      <main className="right">
-        <ul>
-          {filteredProducts.map((product) => (
-            <li key={product.id}>
-            {product.title} - ${product.price}
-            </li>
-            ))}
-        </ul>
-      </main>
+      <section className="wrapper">      
+        <main className="left">
+          <SearchInput/>      
+        </main>
+        <main className="right">
+          <ul>
+            {filteredProducts.map((product) => (
+              <li key={product.id}>
+              {product.title} - ${product.price}
+              </li>
+              ))}
+          </ul>
+        </main>
+      </section>
     </div>
   );
 };
