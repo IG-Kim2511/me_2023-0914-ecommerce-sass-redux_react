@@ -19,6 +19,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
 import products from '../data';
+import { useSearchContext } from '../context/SearchContext';
 
 
 
@@ -40,8 +41,12 @@ const Navbar = () => {
   // 🍉 redux    
   const cartItems = useSelector((state) => state.cart.cartItems);  
 
-  // 🍉 context
+  // 🍉 context-search context
+  const { searchTerm, setSearchTerm ,handleSearch } = useSearchContext(); // Use the context
 
+  const handleSearchInputChange = (e) => {
+    handleSearch(e.target.value);
+  };
 
 
   // 🍀responsive nav bar
@@ -67,36 +72,45 @@ const Navbar = () => {
                   { <Link className='link none' to="/all">All Items</Link>}                    
                 </div> 
                 
-                {/* 👉useNavigate */}
-                <select className='item none' onChange={handleCategoryChange}>
-                    <option value="">Select a category</option>
-                    <option value="smartphones">Smartphones</option>
-                    <option value="laptops">Laptops</option>
-                    <option value="fragrances">Fragrances</option>
-                    <option value="skincare">Skincare</option>
-                    <option value="groceries">Groceries</option>
-                    <option value="home-decoration">Home Decoration</option>
-                </select>        
-              
-                <div className="icons item">                
-                {/* 👉0255 icon click*/}
-                {/*   
-                    <SearchIcon/>
-                    <PersonIcon/>
-                    <FavoriteIcon/>
-                    <div className="cartIcon"  onClick={()=>setOpen(!open)}>
-                        <ShoppingCartOutlinedIcon/>
-                        <span>{products.length}</span>
-                    </div> 
-                */}
-
-                  
+                <div>
+                  {/* 👉useNavigate */}
+                  <select className='item none' onChange={handleCategoryChange}>
+                      <option value="">Select a category</option>
+                      <option value="smartphones">Smartphones</option>
+                      <option value="laptops">Laptops</option>
+                      <option value="fragrances">Fragrances</option>
+                      <option value="skincare">Skincare</option>
+                      <option value="groceries">Groceries</option>
+                      <option value="home-decoration">Home Decoration</option>
+                  </select>    
+                </div>                  
+                <div>
+                  <input
+                  type="text"
+                  placeholder="Search products..."
+                  value={searchTerm}
+                  onChange={handleSearchInputChange}
+                  // You can handle the Enter key press here if needed
+                />
+                </div>
+                <div className="icons item">          
                     <Link className ="link" to="/cart">              
                         <div className="cartIcon">                      
                         <ShoppingCartIcon/>       
                             <span>{cartItems.length}</span>
                         </div>
                     </Link>    
+
+                  {/* 👉0255 icon click*/}
+                  {/*   
+                      <SearchIcon/>
+                      <PersonIcon/>
+                      <FavoriteIcon/>
+                      <div className="cartIcon"  onClick={()=>setOpen(!open)}>
+                          <ShoppingCartOutlinedIcon/>
+                          <span>{products.length}</span>
+                      </div> 
+                  */}
                 </div>
                 {/* 🦄burger menu , responsive */}
                 <div className="menu-icon" onClick={handleClick}>

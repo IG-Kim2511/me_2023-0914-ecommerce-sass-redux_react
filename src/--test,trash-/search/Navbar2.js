@@ -1,26 +1,30 @@
 import React from 'react';
-import { useSearchContext } from './SearchContext'; // Import the useSearchContext hook
+import { useSearchContext } from '../../context/SearchContext'; // Import the useSearchContext hook
 import { Link } from 'react-router-dom';
 
 const Navbar2 = () => {
-  const { searchTerm, setSearchTerm ,handleSearch } = useSearchContext(); // Use the context
 
-  const handleSearchInputChange = (e) => {
-    handleSearch(e.target.value);
-  };
 
   return (
     <div className="navbar">
-      <input
-      type="text"
-      placeholder="Search products..."
-      value={searchTerm}
-      onChange={handleSearchInputChange}
-      // You can handle the Enter key press here if needed
-    />
+   
     {/* Other navbar elements */}
     <div>hi</div>
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <section className="nav_wrap">
     <div className="item">
      { <Link className='link' to="/">Store0914</Link>}                    
@@ -29,6 +33,13 @@ const Navbar2 = () => {
       { <Link className='link none' to="/all">All Items</Link>}                    
     </div> 
     
+
+
+
+
+
+
+
     {/* 👉useNavigate */}
     <select className='item none' >
         <option value="">Select a category</option>
