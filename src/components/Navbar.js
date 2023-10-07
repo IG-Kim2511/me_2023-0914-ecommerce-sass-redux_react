@@ -82,14 +82,7 @@ const Navbar = () => {
               Store0914
             </Link>
           }
-        </div>
-        <div className="item">
-          {
-            <Link className="link none" to="/all">
-              All Items
-            </Link>
-          }
-        </div>
+        </div>  
 
         <div>
           {/* 👉useNavigate */}
@@ -103,6 +96,15 @@ const Navbar = () => {
             <option value="home-decoration">Home Decoration</option>
           </select>
         </div>
+
+        <div className="item">
+          {
+            <Link className="link none" to="/slider">
+              Slider
+            </Link>
+          }
+        </div>
+
         <div>
           <input
             type="text"

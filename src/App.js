@@ -24,20 +24,16 @@ import Home from './pages/Home';
 import FilterPage from './pages/FilterPage/FilterPage';
 import CartPage from './pages/CartPage';
 
-import Product_Searched from './pages/FilterPage/Product_Searched';
-
-
 
 const App = () => {
   return (   
       <div id="app">
         
-        <Navbar/>
-        <Product_Searched/>
+        <Navbar/>        
                 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/all" element={<FilterPage />} />
+          <Route path="/" element={<FilterPage/>} />
+          <Route path="/slider" element={<Home/>} />
           <Route path="/products/:id" element={<Products />} />
           <Route path="/product/:id" element={<Product />} /> 
           <Route path="/cart" element={<CartPage />} />
