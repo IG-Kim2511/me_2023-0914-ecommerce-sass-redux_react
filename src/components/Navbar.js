@@ -22,9 +22,11 @@ import products from "../data";
 import { useSearchContext } from "../context/SearchContext";
 
 const Navbar = () => {
+
   // 🍀useNavigate (= useHistory new version)
   const navigate = useNavigate();
 
+  // input - select 
   const handleCategoryChange = (event) => {
     const selectedCategory = event.target.value;
     if (selectedCategory) {
@@ -38,27 +40,6 @@ const Navbar = () => {
   // 🍉 redux
   const cartItems = useSelector((state) => state.cart.cartItems);
 
-  // 🍉 context-search context  
-  const {
-    searchTerm,
-    setSearchTerm,            
-  } = useSearchContext(); // Use the context
-
-  const handleSearch = (term) => {
-    setSearchTerm(term);
-
-    navigate(`/abc?search=${searchTerm}`);
-  };
-
-  const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
-      handleSearch();
-    }
-  };
-
-  const handleSearchInputChange = (e) => {
-    handleSearch(e.target.value);
-  };
 
   // 🍀responsive nav bar
   const [click, setClicked] = useState(false);
@@ -105,18 +86,7 @@ const Navbar = () => {
           }
         </div>
 
-        <div>
-          <input
-            type="text"
-            placeholder="Search products..."
-            value={searchTerm}
-            onChange={handleSearchInputChange}
-            // You can handle the Enter key press here if needed
-
-            onKeyPress={handleKeyPress}
-          />
-          <button onClick={handleSearch}>Search</button>
-        </div>
+ 
         <div className="icons item">
           <Link className="link" to="/cart">
             <div className="cartIcon">
