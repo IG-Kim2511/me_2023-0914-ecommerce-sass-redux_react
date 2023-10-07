@@ -13,14 +13,8 @@ const SearchInput = () => {
   } = useSearchContext(); // Use the context
 
   const handleSearch = (term) => {
-    setSearchTerm(term);
-
-  };
-
-  const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
-      handleSearch();
-    }
+    const formattedSearchTerm = typeof term === "string" ? term : "";
+    setSearchTerm(formattedSearchTerm);  
   };
 
   const handleSearchInputChange = (e) => {
@@ -33,6 +27,7 @@ const SearchInput = () => {
     
         <section>   
             <input
+            className='input-search'
             type="text"
             placeholder="Search products..."
             value={searchTerm}
@@ -41,7 +36,6 @@ const SearchInput = () => {
 
             // onKeyPress={handleKeyPress}
             />
-            <button onClick={handleSearch}>Search</button>
         </section>
         
     

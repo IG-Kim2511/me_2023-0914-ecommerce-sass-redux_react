@@ -23,10 +23,17 @@ body {
     margin: auto;
   }
 
-ul {
-    list-style: none;
-    padding-left: 0;
-}
+/* input search bar css  */
+.input-search {
+    padding: 12px 20px;
+    border: none;
+    background: #f7f6f6;
+    outline: none;
+    margin-right: 20px;
+    border-radius: 5px;
+    position: relative;
+    width: 14rem;
+  }
 
 .link{
     color: inherit;
@@ -66,6 +73,10 @@ ul {
   }
 }
 
+ul {
+    list-style: none;
+    padding-left: 0;
+}
 
 // ---------------🍀navbar--------------
 // 👉Navbar.scss
