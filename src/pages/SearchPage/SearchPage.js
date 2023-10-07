@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSearchContext } from '../../context/SearchContext'; // Import the useSearchContext hook
 import products from '../../data'; // Import your product data (assuming it's in productData.js)
+import SearchInput from './SearchInput';
 
-const Product_Searched = () => {
+const SearchPage = () => {
   const { searchTerm } = useSearchContext(); // Access the search term from context
 
   // Filter the products based on the search term
@@ -12,16 +13,22 @@ const Product_Searched = () => {
 
   return (
     <div>
-      <h1>Products</h1>
-      <ul>
-        {filteredProducts.map((product) => (
-          <li key={product.id}>
+      <h1>SearchPage</h1>
+
+      <main className="left">
+        <SearchInput/>      
+      </main>
+      <main className="right">
+        <ul>
+          {filteredProducts.map((product) => (
+            <li key={product.id}>
             {product.title} - ${product.price}
-          </li>
-        ))}
-      </ul>
+            </li>
+            ))}
+        </ul>
+      </main>
     </div>
   );
 };
 
-export default Product_Searched;
+export default SearchPage;

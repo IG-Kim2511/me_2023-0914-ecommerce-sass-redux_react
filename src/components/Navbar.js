@@ -64,6 +64,13 @@ const Navbar = () => {
             </Link>
           }
         </div>  
+        <div className="item">
+          {
+            <Link className="link" to="/SearchPage">
+              SearchPage
+            </Link>
+          }
+        </div>  
 
         <div>
           {/* 👉useNavigate */}

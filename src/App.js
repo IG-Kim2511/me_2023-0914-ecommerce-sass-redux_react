@@ -23,6 +23,7 @@ import Product from './pages/Product';
 import Home from './pages/Home';
 import FilterPage from './pages/FilterPage/FilterPage';
 import CartPage from './pages/CartPage';
+import SearchPage from './pages/SearchPage/SearchPage';
 
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
                 
         <Routes>
           <Route path="/" element={<FilterPage/>} />
+          <Route path="/SearchPage" element={<SearchPage/>} />
           <Route path="/slider" element={<Home/>} />
           <Route path="/products/:id" element={<Products />} />
           <Route path="/product/:id" element={<Product />} /> 
