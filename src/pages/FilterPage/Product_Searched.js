@@ -1,8 +1,8 @@
 import React from 'react';
-import { useSearchContext } from './SearchContext'; // Import the useSearchContext hook
+import { useSearchContext } from '../../context/SearchContext'; // Import the useSearchContext hook
 import products from '../../data'; // Import your product data (assuming it's in productData.js)
 
-const Product = () => {
+const Product_Searched = () => {
   const { searchTerm } = useSearchContext(); // Access the search term from context
 
   // Filter the products based on the search term
@@ -24,4 +24,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default Product_Searched;
