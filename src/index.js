@@ -8,6 +8,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { FilterProvider } from './context/FilterContext';
 import { SearchProvider } from './context/SearchContext';
+import { SearchProvider2 } from './--test,trash-/search/SearchContext';
 
 
 
@@ -16,11 +17,13 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       <FilterProvider>
-        <SearchProvider>      
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-        </SearchProvider>
+      <SearchProvider2>
+      <SearchProvider>      
+      <BrowserRouter>
+          <App />
+      </BrowserRouter>
+      </SearchProvider>
+      </SearchProvider2>
       </FilterProvider>
     </Provider>
   </React.StrictMode>

@@ -19,23 +19,27 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Products from './pages/Products';
-import Product from './pages/Product';
+// import Product from './pages/Product';
 import Home from './pages/Home';
 import FilterPage from './pages/FilterPage/FilterPage';
 import CartPage from './pages/CartPage';
+import Navbar2 from './--test,trash-/search/Navbar2';
+import Product from './--test,trash-/search/Product';
 
 
 
 const App = () => {
   return (   
       <div id="app">
-        <Navbar />
+        {/* <Navbar /> */}
+        <Navbar2/>
+        <Product/>
                 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/all" element={<FilterPage />} />
           <Route path="/products/:id" element={<Products />} />
-          <Route path="/product/:id" element={<Product />} />
+          {/* <Route path="/product/:id" element={<Product />} /> */}
           <Route path="/cart" element={<CartPage />} />
 
             {/* 🦄Catch-all route for unmatched paths */}
