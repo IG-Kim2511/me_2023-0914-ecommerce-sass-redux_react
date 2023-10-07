@@ -7,14 +7,14 @@ function valuetext(value) {
 }
 
 export default function Input({priceFilter,handlePriceChange}) {
-  const [value, setValue] = React.useState([20, 37]);
+  const [value, setValue] = React.useState([0, 1800]);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
 
   return (
-    <Box sx={{ width: 300 }}>
+    <Box sx={{ width: 200 }}>
       <Slider
         getAriaLabel={() => 'Temperature range'}
         value={value}
