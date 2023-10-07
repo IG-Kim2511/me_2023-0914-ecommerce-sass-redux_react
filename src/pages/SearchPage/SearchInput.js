@@ -30,31 +30,24 @@ const SearchInput = () => {
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      // Prevent the default form submission behavior
-      e.preventDefault();
-      handleSearch(searchTerm); // Proceed with the search
+    if (e.key === 'Enter') {      
+      e.preventDefault();// Prevent the default form submission behavior
+      handleSearch(searchTerm);
     }
   };
 
   return (
-    <div id='SearchInput'>
-    
+    <div id='SearchInput'>    
         <section>   
             <input
             className='input-search'
             type="text"
             placeholder="Search products..."
             value={searchTerm}
-            onChange={handleSearchInputChange}
-            // You can handle the Enter key press here if needed
-
+            onChange={handleSearchInputChange}    
             onKeyPress={handleKeyPress}
             />
         </section>
-        
-    
-    
     </div>
   )
 }

@@ -66,7 +66,7 @@ const Navbar = () => {
         </div>  
         <div className="item">
           {
-            <Link className="link" to="/SearchPage">
+            <Link className="link none" to="/SearchPage">
               SearchPage
             </Link>
           }
@@ -92,7 +92,6 @@ const Navbar = () => {
             </Link>
           }
         </div>
-
  
         <div className="icons item">
           <Link className="link" to="/cart">
@@ -113,6 +112,7 @@ const Navbar = () => {
                       </div> 
                   */}
         </div>
+
         {/* 🦄burger menu , responsive */}
         <div className="menu-icon" onClick={handleClick}>
           {click ? (
