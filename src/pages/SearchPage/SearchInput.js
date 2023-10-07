@@ -1,3 +1,4 @@
+// SearchInput.js
 import React from 'react'
 import { useSearchContext } from '../../context/SearchContext';
 import { useNavigate } from 'react-router-dom';
@@ -38,7 +39,7 @@ const SearchInput = () => {
             onChange={handleSearchInputChange}
             // You can handle the Enter key press here if needed
 
-            onKeyPress={handleKeyPress}
+            // onKeyPress={handleKeyPress}
             />
             <button onClick={handleSearch}>Search</button>
         </section>
