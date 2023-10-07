@@ -29,7 +29,12 @@ const SearchPage = () => {
         <main className="right">
       
           {filteredProducts.length === 0 ? (
-            <p>No results</p>
+            <div>
+              <h3>All items list</h3>
+              <div>
+                {products.map((item)=>(<div>{item.title}</div>))}
+              </div>
+            </div>
           ) : (
             <ul className="bottom">
               {filteredProducts.map((item) => (

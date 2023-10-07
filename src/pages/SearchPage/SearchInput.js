@@ -12,15 +12,30 @@ const SearchInput = () => {
     setSearchTerm,            
   } = useSearchContext(); // Use the context
 
-  const handleSearch = (term) => {
+  // onchange
+  const handleSearchInputChange = (e) => {
+    
+    const term = e.target.value
+    
     const formattedSearchTerm = typeof term === "string" ? term : "";
     setSearchTerm(formattedSearchTerm);  
   };
 
-  const handleSearchInputChange = (e) => {
-    handleSearch(e.target.value);
+  // onClick
+  const handleSearch = (term) => {
+    const formattedSearchTerm = typeof term === "string" ? term : "";
+    setSearchTerm(formattedSearchTerm);  
+
+    setSearchTerm('');
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      // Prevent the default form submission behavior
+      e.preventDefault();
+      handleSearch(searchTerm); // Proceed with the search
+    }
+  };
 
   return (
     <div id='SearchInput'>
@@ -34,7 +49,7 @@ const SearchInput = () => {
             onChange={handleSearchInputChange}
             // You can handle the Enter key press here if needed
 
-            // onKeyPress={handleKeyPress}
+            onKeyPress={handleKeyPress}
             />
         </section>
         
