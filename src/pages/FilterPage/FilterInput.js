@@ -13,28 +13,6 @@ const FilterInput = () => {
     👉여기에서 set~을 해서 context api에 데이터 전달함
     🍉prevFilters는 이전 상태 값을 나타내는 변수입니다
   */
- 
-  // 🍉 context-search context  
-  const {
-    searchTerm,
-    setSearchTerm,            
-  } = useSearchContext(); // Use the context
-
-  const handleSearch = (term) => {
-    setSearchTerm(term);
-
-    navigate(`/abc?search=${searchTerm}`);
-  };
-
-  const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
-      handleSearch();
-    }
-  };
-
-  const handleSearchInputChange = (e) => {
-    handleSearch(e.target.value);
-  };
 
 
   // 🍉context-useFilterContext  
@@ -76,18 +54,6 @@ const FilterInput = () => {
       <h2>Filter Products</h2>
       <h3>Categories</h3>
 
-      <section>   
-        <input
-          type="text"
-          placeholder="Search products..."
-          value={searchTerm}
-          onChange={handleSearchInputChange}
-          // You can handle the Enter key press here if needed
-
-          onKeyPress={handleKeyPress}
-        />
-        <button onClick={handleSearch}>Search</button>
-      </section>
 
       {/* 🍀input checkbox */}
       <section className="checkboxWrapper">   
