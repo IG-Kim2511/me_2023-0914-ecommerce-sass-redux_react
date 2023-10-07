@@ -38,7 +38,7 @@ const Navbar = () => {
   // 🍉 redux
   const cartItems = useSelector((state) => state.cart.cartItems);
 
-  // 🍉 context-search context
+  // 🍉 context-search context  
   const {
     searchTerm,
     setSearchTerm,            
