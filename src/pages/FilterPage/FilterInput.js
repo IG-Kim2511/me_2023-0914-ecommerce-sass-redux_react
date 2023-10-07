@@ -1,15 +1,21 @@
 import React, { useState } from "react";
 import { useFilterContext } from "../../context/FilterContext";
+import { useNavigate } from "react-router-dom";
+import { useSearchContext } from "../../context/SearchContext";
 
 const FilterInput = () => {
-  
+
+  // 🍀useNavigate (= useHistory new version)
+  const navigate = useNavigate();  
+
   /* 
     🦄prop데이터를 자식에서 부모 컴포넌트로 전달했음..     
     👉여기에서 set~을 해서 context api에 데이터 전달함
     🍉prevFilters는 이전 상태 값을 나타내는 변수입니다
   */
 
-  // 🍉
+
+  // 🍉context-useFilterContext  
   const {
     categoryFilters,setCategoryFilters,
     priceFilter,setPriceFilter,
@@ -41,10 +47,13 @@ const FilterInput = () => {
     setSortOrder(e.target.value);
   };
 
+  
+
   return (
     <div id="FilterInput">
       <h2>Filter Products</h2>
       <h3>Categories</h3>
+
 
       {/* 🍀input checkbox */}
       <section className="checkboxWrapper">   

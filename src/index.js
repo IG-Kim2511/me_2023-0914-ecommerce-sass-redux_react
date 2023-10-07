@@ -10,17 +10,16 @@ import { FilterProvider } from './context/FilterContext';
 import { SearchProvider } from './context/SearchContext';
 
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
       <FilterProvider>
-        <SearchProvider>      
-            <BrowserRouter>
-              <App />
-            </BrowserRouter>
-        </SearchProvider>
+      <SearchProvider>      
+      <BrowserRouter>
+          <App />
+      </BrowserRouter>
+      </SearchProvider>
       </FilterProvider>
     </Provider>
   </React.StrictMode>

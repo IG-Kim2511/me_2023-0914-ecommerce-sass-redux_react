@@ -26,9 +26,7 @@ function FilterPage() {
   return (
     <div id="FilterPage">      
       <section className="wrapper">
-
-          <main className="left">
-     
+        <main className="left">     
           <FilterInput />      
         </main> 
 

@@ -23,19 +23,21 @@ import Product from './pages/Product';
 import Home from './pages/Home';
 import FilterPage from './pages/FilterPage/FilterPage';
 import CartPage from './pages/CartPage';
-
+import SearchPage from './pages/SearchPage/SearchPage';
 
 
 const App = () => {
   return (   
       <div id="app">
-        <Navbar />
+        
+        <Navbar/>        
                 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/all" element={<FilterPage />} />
+          <Route path="/" element={<FilterPage/>} />
+          <Route path="/SearchPage" element={<SearchPage/>} />
+          <Route path="/slider" element={<Home/>} />
           <Route path="/products/:id" element={<Products />} />
-          <Route path="/product/:id" element={<Product />} />
+          <Route path="/product/:id" element={<Product />} /> 
           <Route path="/cart" element={<CartPage />} />
 
             {/* 🦄Catch-all route for unmatched paths */}
