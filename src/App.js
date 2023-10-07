@@ -28,7 +28,7 @@ import Product_Searched from './pages/FilterPage/Product_Searched';
 
 
 
-const App = () => {
+const App = () => {  
   return (   
       <div id="app">
         
