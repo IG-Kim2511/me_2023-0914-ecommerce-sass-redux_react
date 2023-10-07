@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useFilterContext } from "../../context/FilterContext";
 import { useNavigate } from "react-router-dom";
 import { useSearchContext } from "../../context/SearchContext";
+import Input from "../../components/Input";
 
 const FilterInput = () => {
 
@@ -77,6 +78,9 @@ const FilterInput = () => {
       {/* 🍀 Price-input range */}
       <section>
         <h3>Price</h3>
+
+        <Input priceFilter={priceFilter} handlePriceChange={handlePriceChange}/>
+
         <input
           type="range"
           min="0"
