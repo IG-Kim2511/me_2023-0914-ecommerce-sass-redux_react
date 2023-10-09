@@ -64,11 +64,9 @@ const FilterInput = () => {
   };
 
   const handle_PriceRange_Filters = () => {
-    // You can perform filtering and other actions here
     applyFilters({
-      // ...other filter parameters...
-      minPrice: priceFilter.min,
-      maxPrice: priceFilter.max,
+      minPrice: priceRange_Filter.min,
+      maxPrice: priceRange_Filter.max,
     });
   };
   
@@ -118,30 +116,31 @@ const FilterInput = () => {
         <div>$50 to $100</div>
         <div>$100 to $200</div>
         <div>$200 & Above</div>     
-        <div className="input-wrap"> 
-        <input
-        type="text"
-        className="input-text"
-        placeholder="$ min"
-        value={priceRange_Filter.min}
-        onChange={handleMinPriceChange}
-      />
-          <span>~</span>
+        <form className="input-wrap"> 
           <input
-          type="text"
-          className="input-text"
-          placeholder="$ max"
-          value={priceRange_Filter.max}
-          onChange={handleMaxPriceChange}
-        />
-        <button
-        type="button"
-        className="myButton smallBtn"
-        onClick={handle_PriceRange_Filters}
-      >
-        Go
-      </button>
-        </div>      
+              type="text"
+              className="input-text"
+              placeholder="$ min"
+              value={priceRange_Filter.min}
+              onChange={handleMinPriceChange}
+            />
+              <span>~</span>
+
+            <input
+              type="text"
+              className="input-text"
+              placeholder="$ max"
+              value={priceRange_Filter.max}
+              onChange={handleMaxPriceChange}
+            />
+            <button
+              type="button"
+              className="myButton smallBtn"
+              onClick={handle_PriceRange_Filters}
+            >
+            Go
+          </button>
+        </form>      
       </section>
 
 

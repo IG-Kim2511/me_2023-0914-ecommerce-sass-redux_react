@@ -13,18 +13,23 @@ function FilterPage() {
   } = useFilterContext();
 
   // Filter the products based on the applied filters
-  const filteredProducts = products
-    .filter((product) => {
+  const filteredProducts = products.filter((product) => {
       const meetsCategoryFilter =
         categoryFilters.length === 0 ||
         categoryFilters.includes(product.category);
+
+
       const meetsMinPriceFilter =
         priceFilter.min === "" || product.price >= parseFloat(priceFilter.min);
+
+
       const meetsMaxPriceFilter =
         priceFilter.max === "" || product.price <= parseFloat(priceFilter.max);
 
       return meetsCategoryFilter && meetsMinPriceFilter && meetsMaxPriceFilter;
     })
+
+
     .sort((a, b) => {
       return sortOrder === "asc" ? a.price - b.price : b.price - a.price;
     });
