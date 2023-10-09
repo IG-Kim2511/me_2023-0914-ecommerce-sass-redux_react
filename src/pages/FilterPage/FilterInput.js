@@ -94,6 +94,20 @@ const FilterInput = () => {
         $200 & Above
         $Min $Max  Go */}
 
+      <section className="Price2">
+        <div>$25 to $50</div>
+        <div>$50 to $100</div>
+        <div>$100 to $200</div>
+        <div>$200 & Above</div>     
+        <div className="input-wrap"> 
+          <input type="text" className="input-text" value="$" placeholder="min"/>
+          <span>~</span>
+          <input type="text" className="input-text " value="$" placeholder="max"/>
+          <button type="submit" className="myButton smallBtn">Go</button>
+        </div>      
+      </section>
+
+
       {/* 🍀 Sort-input radio */}
       <section className="Sort"> 
         <h3>Sort Order</h3>
