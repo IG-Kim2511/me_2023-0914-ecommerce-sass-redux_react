@@ -4,10 +4,9 @@ const FilterContext = createContext();
 
 export function FilterProvider({ children }) {
   const [categoryFilters, setCategoryFilters] = useState([]);
-  
-  const [minPriceFilter, setMinPriceFilter] = useState("");
-  const [maxPriceFilter, setMaxPriceFilter] = useState("");
 
+  const [priceFilter, setPriceFilter] = useState({ min: "", max: "" });
+  
   const [sortOrder, setSortOrder] = useState("asc");
 
   // ... other filter-related code ...
@@ -17,10 +16,8 @@ export function FilterProvider({ children }) {
       value={{
         categoryFilters,
         setCategoryFilters,
-        minPriceFilter,
-        setMinPriceFilter,
-        maxPriceFilter,
-        setMaxPriceFilter,
+        priceFilter,
+        setPriceFilter,
         sortOrder,
         setSortOrder,
         applyFilters,

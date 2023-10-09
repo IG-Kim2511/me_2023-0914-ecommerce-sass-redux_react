@@ -9,6 +9,9 @@ export function FilterProvider({ children }) {
     // 'fragrances',
   ]);
   const [priceFilter, setPriceFilter] = useState(1800);
+
+  const [priceRange_Filter, setPriceRange_Filter] = useState({ min: "", max: "" });
+
   const [sortOrder, setSortOrder] = useState('asc');
 
 
@@ -19,6 +22,8 @@ export function FilterProvider({ children }) {
     setCategoryFilters(categories);
     setPriceFilter(maxPrice);
     setSortOrder(sortOrder);
+    // minPrice: priceRange_Filter.min,
+    // maxPrice: priceRange_Filter.max,
   };
 
   return (
@@ -26,6 +31,7 @@ export function FilterProvider({ children }) {
       value={{
         categoryFilters,setCategoryFilters,
         priceFilter,setPriceFilter,
+        priceRange_Filter, setPriceRange_Filter,
         sortOrder,setSortOrder,
         applyFilters,
       }}

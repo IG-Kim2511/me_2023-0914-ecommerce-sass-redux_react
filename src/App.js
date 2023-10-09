@@ -6,9 +6,17 @@ redering filtered product with input range, radio, checkbox.
 */
 
 /* 🎃-ing
-  constext api
-  filter page 리덕스로 다시 만들기
-  input search feature
+  
+🍀filter page
+Under $25
+$25 to $50
+$50 to $100
+$100 to $200
+$200 & Above
+$Min $Max   Go
+
+🍉Button Go feature.
+When i click input radio..etc, don't render until i click button Go, rendering when i click Go button. 
 */
 
 import React from 'react';

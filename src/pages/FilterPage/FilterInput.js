@@ -19,6 +19,7 @@ const FilterInput = () => {
   const {
     categoryFilters,setCategoryFilters,
     priceFilter,setPriceFilter,
+    priceRange_Filter, setPriceRange_Filter,
     sortOrder,setSortOrder,
     applyFilters,
   } = useFilterContext();
@@ -47,6 +48,27 @@ const FilterInput = () => {
     setSortOrder(e.target.value);
   };
 
+  // 🍉input-price2 - PriceRange_Filter
+  const handleMinPriceChange = (e) => {
+    setPriceRange_Filter((prevPriceFilter) => ({
+      ...prevPriceFilter,
+      min: e.target.value,
+    }));
+  };
+
+  const handleMaxPriceChange = (e) => {
+    setPriceRange_Filter((prevPriceFilter) => ({
+      ...prevPriceFilter,
+      max: e.target.value,
+    }));
+  };
+
+/*   const handle_PriceRange_Filters = () => {
+    applyFilters({
+      minPrice: priceRange_Filter.min,
+      maxPrice: priceRange_Filter.max,
+    });
+  }; */
   
 
   return (
@@ -87,8 +109,45 @@ const FilterInput = () => {
         <p>Price range: $0~ ${priceFilter}</p>
       </section>
 
+      {/* PriceRange_Filter */}
+      <section className="Price2">
+ {/*        <div>Under $25</div>
+        <div>$25 to $50</div>
+        <div>$50 to $100</div>
+        <div>$100 to $200</div>
+        <div>$200 & Above</div>     */} 
+        <form className="input-wrap"> 
+          <input
+              type="text"
+              className="input-text"
+              placeholder="$ min"
+              value={priceRange_Filter.min}
+              onChange={handleMinPriceChange}
+            />
+
+          <span>~</span>
+
+          <input
+              type="text"
+              className="input-text"
+              placeholder="$ max"
+              value={priceRange_Filter.max}
+              onChange={handleMaxPriceChange}
+            />
+
+ {/*          <button
+              type="button"
+              className="myButton smallBtn"
+              onClick={handle_PriceRange_Filters}
+            >
+            Go
+          </button> */}
+        </form>      
+      </section>
+
+
       {/* 🍀 Sort-input radio */}
-      <section>
+      <section className="Sort"> 
         <h3>Sort Order</h3>
         <label>
           <input

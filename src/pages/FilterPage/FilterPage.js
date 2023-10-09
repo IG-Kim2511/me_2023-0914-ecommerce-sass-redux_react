@@ -9,16 +9,32 @@ function FilterPage() {
   const {
     categoryFilters,
     priceFilter,
+    priceRange_Filter,
     sortOrder,
     applyFilters,
   } = useFilterContext();
 
   // filteredProducts and rendering
-  const filteredProducts = products
-    .filter(product => (
+  /*  🦄 <= priceFilter: 이 부분은 검사되는 조건입니다. 
+   <=는 비교 연산자로, product의 price가 사용자가 설정한 priceFilter 값보다 작거나 같은지 확인합니다. */
+  const filteredProducts = products.filter(product => (
+    // category
       categoryFilters.length === 0 || categoryFilters.includes(product.category)
     ))
+    // priceFilter
     .filter(product => product.price <= priceFilter)
+    // priceRange_Filter
+    .filter((product) => { 
+      const meetsMinPriceFilter =
+        priceRange_Filter.min === "" || product.price >= parseFloat(priceRange_Filter.min);
+
+
+      const meetsMaxPriceFilter =
+        priceRange_Filter.max === "" || product.price <= parseFloat(priceRange_Filter.max);
+
+      return meetsMinPriceFilter && meetsMaxPriceFilter;
+    })
+    // sort
     .sort((a, b) => (
       sortOrder === 'asc' ? a.price - b.price : b.price - a.price
     ));
