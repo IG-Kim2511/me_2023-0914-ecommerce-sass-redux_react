@@ -87,14 +87,8 @@ const FilterInput = () => {
         <p>Price range: $0~ ${priceFilter}</p>
       </section>
 
-      {/* Under $25
-        $25 to $50
-        $50 to $100
-        $100 to $200
-        $200 & Above
-        $Min $Max  Go */}
-
       <section className="Price2">
+        <div>Under $25</div>
         <div>$25 to $50</div>
         <div>$50 to $100</div>
         <div>$100 to $200</div>
