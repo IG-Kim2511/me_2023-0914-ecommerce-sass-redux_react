@@ -7,8 +7,15 @@ redering filtered product with input range, radio, checkbox.
 
 /* 🎃-ing
   constext api
-  filter page 리덕스로 다시 만들기
-  input search feature
+  filter page 리덕스로 다시 만들기  
+
+Price
+Under $25
+$25 to $50
+$50 to $100
+$100 to $200
+$200 & Above
+$Min $Max  Go
 */
 
 import React from 'react';
