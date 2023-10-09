@@ -10,7 +10,7 @@ export function FilterProvider({ children }) {
   ]);
   const [priceFilter, setPriceFilter] = useState(1800);
 
-  const [PriceRange_Filter, setPriceRange_Filter] = useState({ min: "", max: "" });
+  const [priceRange_Filter, setPriceRange_Filter] = useState({ min: "", max: "" });
 
   const [sortOrder, setSortOrder] = useState('asc');
 
@@ -31,7 +31,7 @@ export function FilterProvider({ children }) {
       value={{
         categoryFilters,setCategoryFilters,
         priceFilter,setPriceFilter,
-        PriceRange_Filter, setPriceRange_Filter,
+        priceRange_Filter, setPriceRange_Filter,
         sortOrder,setSortOrder,
         applyFilters,
       }}

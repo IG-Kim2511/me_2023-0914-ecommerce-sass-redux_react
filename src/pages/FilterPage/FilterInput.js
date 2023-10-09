@@ -19,7 +19,7 @@ const FilterInput = () => {
   const {
     categoryFilters,setCategoryFilters,
     priceFilter,setPriceFilter,
-    PriceRange_Filter, setPriceRange_Filter,
+    priceRange_Filter, setPriceRange_Filter,
     sortOrder,setSortOrder,
     applyFilters,
   } = useFilterContext();
@@ -123,7 +123,7 @@ const FilterInput = () => {
         type="text"
         className="input-text"
         placeholder="$ min"
-        value={PriceRange_Filter.min}
+        value={priceRange_Filter.min}
         onChange={handleMinPriceChange}
       />
           <span>~</span>
@@ -131,7 +131,7 @@ const FilterInput = () => {
           type="text"
           className="input-text"
           placeholder="$ max"
-          value={PriceRange_Filter.max}
+          value={priceRange_Filter.max}
           onChange={handleMaxPriceChange}
         />
         <button
