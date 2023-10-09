@@ -22,8 +22,8 @@ export function FilterProvider({ children }) {
     setCategoryFilters(categories);
     setPriceFilter(maxPrice);
     setSortOrder(sortOrder);
-    // minPrice: priceFilter.min,
-    // maxPrice: priceFilter.max,
+    // minPrice: priceRange_Filter.min,
+    // maxPrice: priceRange_Filter.max,
   };
 
   return (
