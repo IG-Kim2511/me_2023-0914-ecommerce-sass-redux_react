@@ -100,9 +100,9 @@ const FilterInput = () => {
         <div>$100 to $200</div>
         <div>$200 & Above</div>     
         <div className="input-wrap"> 
-          <input type="text" className="input-text" value="$" placeholder="min"/>
+          <input type="text" className="input-text" placeholder="$ min"/>
           <span>~</span>
-          <input type="text" className="input-text " value="$" placeholder="max"/>
+          <input type="text" className="input-text"  placeholder="$ max"/>
           <button type="submit" className="myButton smallBtn">Go</button>
         </div>      
       </section>
