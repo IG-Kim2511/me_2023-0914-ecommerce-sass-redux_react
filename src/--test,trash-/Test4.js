@@ -3,28 +3,31 @@ import { useFilterContext } from "../../context/FilterContext";
 
 const FilterInput = () => {
   const {
-    minPriceFilter,
-    setMinPriceFilter,
-    maxPriceFilter,
-    setMaxPriceFilter,
-    
+    priceFilter,
+    setPriceFilter,
     applyFilters,
   } = useFilterContext();
 
   const handleMinPriceChange = (e) => {
-    setMinPriceFilter(e.target.value);
+    setPriceFilter((prevPriceFilter) => ({
+      ...prevPriceFilter,
+      min: e.target.value,
+    }));
   };
 
   const handleMaxPriceChange = (e) => {
-    setMaxPriceFilter(e.target.value);
+    setPriceFilter((prevPriceFilter) => ({
+      ...prevPriceFilter,
+      max: e.target.value,
+    }));
   };
 
   const handleApplyFilters = () => {
     // You can perform filtering and other actions here
     applyFilters({
       // ...other filter parameters...
-      minPrice: minPriceFilter,
-      maxPrice: maxPriceFilter,
+      minPrice: priceFilter.min,
+      maxPrice: priceFilter.max,
     });
   };
 
@@ -38,7 +41,7 @@ const FilterInput = () => {
             type="text"
             className="input-text"
             placeholder="$ min"
-            value={minPriceFilter}
+            value={priceFilter.min}
             onChange={handleMinPriceChange}
           />
         </div>
@@ -47,7 +50,7 @@ const FilterInput = () => {
             type="text"
             className="input-text"
             placeholder="$ max"
-            value={maxPriceFilter}
+            value={priceFilter.max}
             onChange={handleMaxPriceChange}
           />
         </div>

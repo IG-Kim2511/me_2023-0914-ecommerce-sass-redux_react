@@ -19,6 +19,7 @@ const FilterInput = () => {
   const {
     categoryFilters,setCategoryFilters,
     priceFilter,setPriceFilter,
+    PriceRange_Filter, setPriceRange_Filter,
     sortOrder,setSortOrder,
     applyFilters,
   } = useFilterContext();
@@ -47,6 +48,29 @@ const FilterInput = () => {
     setSortOrder(e.target.value);
   };
 
+  // 🍉input-price2 - PriceRange_Filter
+  const handleMinPriceChange = (e) => {
+    setPriceRange_Filter((prevPriceFilter) => ({
+      ...prevPriceFilter,
+      min: e.target.value,
+    }));
+  };
+
+  const handleMaxPriceChange = (e) => {
+    setPriceRange_Filter((prevPriceFilter) => ({
+      ...prevPriceFilter,
+      max: e.target.value,
+    }));
+  };
+
+  const handle_PriceRange_Filters = () => {
+    // You can perform filtering and other actions here
+    applyFilters({
+      // ...other filter parameters...
+      minPrice: priceFilter.min,
+      maxPrice: priceFilter.max,
+    });
+  };
   
 
   return (
@@ -87,6 +111,7 @@ const FilterInput = () => {
         <p>Price range: $0~ ${priceFilter}</p>
       </section>
 
+      {/* PriceRange_Filter */}
       <section className="Price2">
         <div>Under $25</div>
         <div>$25 to $50</div>
@@ -94,10 +119,28 @@ const FilterInput = () => {
         <div>$100 to $200</div>
         <div>$200 & Above</div>     
         <div className="input-wrap"> 
-          <input type="text" className="input-text" placeholder="$ min"/>
+        <input
+        type="text"
+        className="input-text"
+        placeholder="$ min"
+        value={PriceRange_Filter.min}
+        onChange={handleMinPriceChange}
+      />
           <span>~</span>
-          <input type="text" className="input-text"  placeholder="$ max"/>
-          <button type="submit" className="myButton smallBtn">Go</button>
+          <input
+          type="text"
+          className="input-text"
+          placeholder="$ max"
+          value={PriceRange_Filter.max}
+          onChange={handleMaxPriceChange}
+        />
+        <button
+        type="button"
+        className="myButton smallBtn"
+        onClick={handle_PriceRange_Filters}
+      >
+        Go
+      </button>
         </div>      
       </section>
 

@@ -14,6 +14,8 @@ function FilterPage() {
   } = useFilterContext();
 
   // filteredProducts and rendering
+  /*  🦄 <= priceFilter: 이 부분은 검사되는 조건입니다. 
+   <=는 비교 연산자로, product의 price가 사용자가 설정한 priceFilter 값보다 작거나 같은지 확인합니다. */
   const filteredProducts = products
     .filter(product => (
       categoryFilters.length === 0 || categoryFilters.includes(product.category)

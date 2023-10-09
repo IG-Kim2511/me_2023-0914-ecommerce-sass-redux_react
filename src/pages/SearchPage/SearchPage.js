@@ -30,7 +30,7 @@ const SearchPage = () => {
       
           {filteredProducts.length === 0 ? (
             <div>
-              <h3>All items list</h3>
+              <h3>All items list to search</h3>
               <div>
                 {products.map((item)=>(<div>{item.title}</div>))}
               </div>
