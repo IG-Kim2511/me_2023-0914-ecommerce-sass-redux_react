@@ -4,6 +4,7 @@ import { useFilterContext } from '../../context/FilterContext';
 import products from '../../data' // Replace with your product data source
 import { Link } from 'react-router-dom';
 import FilterInput from './FilterInput';
+import Card from '../../components/Card';
 
 function FilterPage() {
   const {
@@ -12,6 +13,7 @@ function FilterPage() {
     priceRange_Filter,
     sortOrder,
     applyFilters,
+    renderResults,
   } = useFilterContext();
 
   // filteredProducts and rendering
@@ -49,39 +51,21 @@ function FilterPage() {
         <main className="right">
         {/* 🦄*/}
           {/* <ProductsFiltered filteredProducts={filteredProducts} /> */}
-          <div id="ProductsFiltered">
-            <h2>Filtered Products</h2>
-      
-            <section>
-              {filteredProducts.length === 0 ? (
-                <p>No results</p>
-              ) : (
-                <ul className="bottom">
-                  {filteredProducts.map((item) => (
-
-                        // 🦄link to product.js 
-                      <Link className='link' to={`/product/${item.id}`} key={item.id}>
-          
-                          <div className="card">
-                              {/* 🦄q: hover하면 이미지가 바뀜.
-                                  컨테이너안에 이미지가 2개있어야 함 */}
-                              <section className='imageWrap'>
-                                  <img src={item.images[0]} className="mainImg" alt={item.title} />
-                                  <img src={item.images[2]} className="secondImg" alt={item.title} />
-                              </section>
-                              <section className='titleWrapper'>
-                              <h4 className='title'>{item.title} <span>(id:{item.id})</span></h4>
-                              <div className='prices'>
-                                  <h4>price : $ {item.price}</h4>
-                                  <h4 className="stock">(stock : {item.stock})</h4>
-                              </div>
-                              </section>
-                          </div>
-                      </Link>
-                  ))}   
-                </ul>
-              )}
-            </section>
+          <div id="ProductsFiltered">         
+            {/* 🍉 js112 renderResults */}
+            {renderResults ? (
+              <div>
+               <h2>All Products</h2>
+                <Card CardProducts={products} />          
+               </div>
+               )
+               : (                 
+                <div>
+                <h2>filteredProducts</h2>
+                  <Card CardProducts={filteredProducts}/>                
+                </div>             
+              )
+            }           
           </div>
         </main>
       </section>
@@ -90,3 +74,38 @@ function FilterPage() {
 }
 
 export default FilterPage;
+
+
+
+
+// {filteredProducts.length === 0 ? (
+//   <p>No results</p>
+// ) : (
+//   <div>
+//     <h2>Filtered Products</h2>                 
+//       <ul className="bottom">
+//         {filteredProducts.map((item) => (
+
+//               // 🦄link to product.js 
+//             <Link className='link' to={`/product/${item.id}`} key={item.id}>
+
+//                 <div className="card">
+//                     {/* 🦄q: hover하면 이미지가 바뀜.
+//                         컨테이너안에 이미지가 2개있어야 함 */}
+//                     <section className='imageWrap'>
+//                         <img src={item.images[0]} className="mainImg" alt={item.title} />
+//                         <img src={item.images[2]} className="secondImg" alt={item.title} />
+//                     </section>
+//                     <section className='titleWrapper'>
+//                     <h4 className='title'>{item.title} <span>(id:{item.id})</span></h4>
+//                     <div className='prices'>
+//                         <h4>price : $ {item.price}</h4>
+//                         <h4 className="stock">(stock : {item.stock})</h4>
+//                     </div>
+//                     </section>
+//                 </div>
+//             </Link>
+//           ))}   
+//         </ul>
+//   </div>
+//   )}

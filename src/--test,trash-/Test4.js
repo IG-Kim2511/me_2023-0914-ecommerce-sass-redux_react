@@ -1,71 +1,23 @@
-import React from "react";
-import { useFilterContext } from "../../context/FilterContext";
+// FilterContext.js
+import React, { createContext, useContext, useState } from 'react';
 
-const FilterInput = () => {
-  const {
-    priceFilter,
-    setPriceFilter,
-    applyFilters,
-  } = useFilterContext();
+const FilterContext = createContext();
 
-  const handleMinPriceChange = (e) => {
-    setPriceFilter((prevPriceFilter) => ({
-      ...prevPriceFilter,
-      min: e.target.value,
-    }));
-  };
+export function FilterProvider({ children }) {
+  const [selectedOption, setSelectedOption] = useState('');
 
-  const handleMaxPriceChange = (e) => {
-    setPriceFilter((prevPriceFilter) => ({
-      ...prevPriceFilter,
-      max: e.target.value,
-    }));
-  };
-
-  const handleApplyFilters = () => {
-    // You can perform filtering and other actions here
-    applyFilters({
-      // ...other filter parameters...
-      minPrice: priceFilter.min,
-      maxPrice: priceFilter.max,
-    });
-  };
+  
+  const [renderResults, setRenderResults] = useState(false);
 
   return (
-    <div id="FilterInput">
-      <h2>Filter Products</h2>
-      <h3>Price Range</h3>
-      <section className="Price2">
-        <div>
-          <input
-            type="text"
-            className="input-text"
-            placeholder="$ min"
-            value={priceFilter.min}
-            onChange={handleMinPriceChange}
-          />
-        </div>
-        <div>
-          <input
-            type="text"
-            className="input-text"
-            placeholder="$ max"
-            value={priceFilter.max}
-            onChange={handleMaxPriceChange}
-          />
-        </div>
-        <div className="input-wrap">
-          <button
-            type="button"
-            className="myButton smallBtn"
-            onClick={handleApplyFilters}
-          >
-            Go
-          </button>
-        </div>
-      </section>
-    </div>
+    <FilterContext.Provider
+      value={{ selectedOption, setSelectedOption, renderResults, setRenderResults }}
+    >
+      {children}
+    </FilterContext.Provider>
   );
-};
+}
 
-export default FilterInput;
+export function useFilterContext() {
+  return useContext(FilterContext);
+}

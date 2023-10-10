@@ -5,6 +5,7 @@ import { useSearchContext } from '../../context/SearchContext'; // Import the us
 import products from '../../data'; // Import your product data (assuming it's in productData.js)
 import SearchInput from './SearchInput';
 import { Link } from 'react-router-dom';
+import Card from '../../components/Card';
 
 const SearchPage = () => {
   const { searchTerm } = useSearchContext(); // Access the search term from context
@@ -36,30 +37,7 @@ const SearchPage = () => {
               </div>
             </div>
           ) : (
-            <ul className="bottom">
-              {filteredProducts.map((item) => (
-
-                    // 🦄link to product.js 
-                  <Link className='link' to={`/product/${item.id}`} key={item.id}>
-      
-                      <div className="card">
-                          {/* 🦄q: hover하면 이미지가 바뀜.
-                              컨테이너안에 이미지가 2개있어야 함 */}
-                          <section className='imageWrap'>
-                              <img src={item.images[0]} className="mainImg" alt={item.title} />
-                              <img src={item.images[2]} className="secondImg" alt={item.title} />
-                          </section>
-                          <section className='titleWrapper'>
-                          <h4 className='title'>{item.title} <span>(id:{item.id})</span></h4>
-                          <div className='prices'>
-                              <h4>price : $ {item.price}</h4>
-                              <h4 className="stock">(stock : {item.stock})</h4>
-                          </div>
-                          </section>
-                      </div>
-                  </Link>
-              ))}   
-            </ul>
+            <Card CardProducts={filteredProducts} />    
           )}     
         </main>
       </section>

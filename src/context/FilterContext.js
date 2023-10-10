@@ -26,6 +26,10 @@ export function FilterProvider({ children }) {
     // maxPrice: priceRange_Filter.max,
   };
 
+
+  // 🍀 js112 renderResults
+  const [renderResults, setRenderResults] = useState(true);
+
   return (
     <FilterContext.Provider
       value={{
@@ -34,6 +38,7 @@ export function FilterProvider({ children }) {
         priceRange_Filter, setPriceRange_Filter,
         sortOrder,setSortOrder,
         applyFilters,
+        renderResults, setRenderResults,
       }}
     >
       {children}
