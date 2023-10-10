@@ -71,7 +71,7 @@ const FilterInput = () => {
     });
   }; */
   
-
+  // 🍉 js112 renderResults
   const handleRenderResults = () => {
     setRenderResults(!renderResults)
   };
@@ -139,26 +139,8 @@ const FilterInput = () => {
               value={priceRange_Filter.max}
               onChange={handleMaxPriceChange}
             />
-
-          <button
-              type="button"
-              className="myButton smallBtn"
-              onClick={handleRenderResults}
-            >
-            Go
-          </button> 
-  
-
-          {/*<button
-              type="button"
-              className="myButton smallBtn"
-              onClick={handle_PriceRange_Filters}
-            >
-            Go
-          </button> */}
         </form>      
       </section>
-
 
       {/* 🍀 Sort-input radio */}
       <section className="Sort"> 
@@ -185,6 +167,15 @@ const FilterInput = () => {
           />
           Descending
         </label>
+      </section>
+      <section>        
+        <button
+          type="button"
+          className="myButton smallBtn"
+          onClick={handleRenderResults}
+          >
+          Go
+        </button>   
       </section>
 
     </div>

@@ -27,7 +27,7 @@ export function FilterProvider({ children }) {
   };
 
 
-  // 🍀 renderResults
+  // 🍀 js112 renderResults
   const [renderResults, setRenderResults] = useState(true);
 
   return (
