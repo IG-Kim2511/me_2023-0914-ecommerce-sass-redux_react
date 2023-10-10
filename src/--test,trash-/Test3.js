@@ -1,33 +1,27 @@
-import React, { createContext, useContext, useState } from "react";
+// Results.js
+import React from 'react';
+import { useFilterContext } from './FilterContext';
 
-const FilterContext = createContext();
+const Results = () => {
+  const { selectedOption, renderResults } = useFilterContext();
 
-export function FilterProvider({ children }) {
-  const [categoryFilters, setCategoryFilters] = useState([]);
-
-  const [priceFilter, setPriceFilter] = useState({ min: "", max: "" });
-  
-  const [sortOrder, setSortOrder] = useState("asc");
-
-  // ... other filter-related code ...
+  // Define a function to compute the results based on the selected option
+  const computeResults = () => {
+    // Implement your logic to generate results based on selectedOption
+    // Return the results as JSX
+  };
 
   return (
-    <FilterContext.Provider
-      value={{
-        categoryFilters,
-        setCategoryFilters,
-        priceFilter,
-        setPriceFilter,
-        sortOrder,
-        setSortOrder,
-        applyFilters,
-      }}
-    >
-      {children}
-    </FilterContext.Provider>
-  );
-}
+    <div>
+      {
+        renderResults && (
+                <>
+                  <h2>Results:</h2>
+                  {computeResults()}
+                </>
+              )}
+            </div>
+          );
+        };
 
-export function useFilterContext() {
-  return useContext(FilterContext);
-}
+export default Results;
