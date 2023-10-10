@@ -3,12 +3,12 @@ import "./Card.scss";
 
 import { Link } from 'react-router-dom'
 
-const Card = ({filteredProducts, title}) => {
+const Card = ({CardProducts, title}) => {
   return (
     <div id='Card'>
         <h2>{title}</h2>
         <ul className="bottom">
-        {filteredProducts.map((item) => (
+        {CardProducts.map((item) => (
 
             // 🦄link to product.js 
             <Link className='link' to={`/product/${item.id}`} key={item.id}>

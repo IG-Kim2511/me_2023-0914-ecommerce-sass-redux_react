@@ -56,13 +56,13 @@ function FilterPage() {
             {renderResults ? (
               <div>
                <h2>All Products</h2>
-                <Card filteredProducts={products} />          
+                <Card CardProducts={products} />          
                </div>
                )
                : (                 
                 <div>
                 <h2>filteredProducts</h2>
-                  <Card filteredProducts={filteredProducts}/>                
+                  <Card CardProducts={filteredProducts}/>                
                 </div>             
               )
             }           
